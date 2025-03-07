@@ -16,8 +16,23 @@ import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBrain, faLightbulb } from '@fortawesome/free-solid-svg-icons';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = [
+    {
+        id: 1,
+        subject: 'Math',
+        path: '/math'
+    }, 
+    {
+        id: 2,
+        subject: 'Reading',
+        path: '/reading'
+    }
+];
+
+
 
 const Header = () => {
     const navigate = useNavigate()
@@ -47,10 +62,13 @@ const Header = () => {
                 userLoggedIn
                     ?
                     <>
-                    <AppBar>
+                    <AppBar style={{background: '#B197FC'}}>
                     <Container maxWidth="xl">
                         <Toolbar disableGutters>
-                        <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+                        <Button href='/home'>
+                            <FontAwesomeIcon icon={faBrain} style={{color: '#FFD43B', fontSize: '35px'}}/>
+                            <FontAwesomeIcon icon={faLightbulb} style={{color: "#63E6bE", fontSize:'35px'}} />
+                        </Button>
                         <Typography
                             variant="h6"
                             noWrap
@@ -66,7 +84,7 @@ const Header = () => {
                             textDecoration: 'none',
                             }}
                         >
-                            LOGO
+                            
                         </Typography>
 
                         <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -97,8 +115,8 @@ const Header = () => {
                             sx={{ display: { xs: 'block', md: 'none' } }}
                             >
                             {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
+                                <MenuItem key={page.id} onClick={handleCloseNavMenu}>
+                                <Typography sx={{ textAlign: 'center' }}>{page.subject}</Typography>
                                 </MenuItem>
                             ))}
                             </Menu>
@@ -120,16 +138,16 @@ const Header = () => {
                             textDecoration: 'none',
                             }}
                         >
-                            LOGO
                         </Typography>
                         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                             {pages.map((page) => (
                             <Button
-                                key={page}
+                                key={page.id}
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
+                                href={page.path}
                             >
-                                {page}
+                                {page.subject}
                             </Button>
                             ))}
                         </Box>
@@ -167,14 +185,15 @@ const Header = () => {
                     </AppBar>
                     </>
                     :
-                    <>
+                    ""
+                    // <>
      
-                        <Stack spacing={2} direction="row">
-                        <Button variant='text'><Link to={'/login'}>Login</Link></Button>
-                        <Button variant='text'><Link to={'/register'}>Register New Account</Link></Button>
-                        </Stack>
+                    //     <Stack spacing={2} direction="row">
+                    //     <Button variant='text'><Link to={'/login'}>Login</Link></Button>
+                    //     <Button variant='text'><Link to={'/register'}>Register New Account</Link></Button>
+                    //     </Stack>
  
-                    </>
+                    // </>
             }
 
         </div>

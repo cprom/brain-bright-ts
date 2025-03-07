@@ -2,6 +2,12 @@ import React, { useState } from 'react'
 import { Navigate, Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../../contexts/authContext'
 import { doCreateUserWithEmailAndPassword } from '../../../firebase/auth'
+import Grid from '@mui/material/Grid2';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Box from '@mui/material/Box';
+import { TextField } from '@mui/material';
+import Button from '@mui/material/Button';
 
 const Register = () => {
 
@@ -26,12 +32,15 @@ const Register = () => {
     return (
         <>
             {userLoggedIn && (<Navigate to={'/home'} replace={true} />)}
-
-            <main className="w-full h-screen flex self-center place-content-center place-items-center">
-                <div className="w-96 text-gray-600 space-y-5 p-4 shadow-xl border rounded-xl">
-                    <div className="text-center mb-6">
-                        <div className="mt-2">
-                            <h3 className="text-gray-800 text-xl font-semibold sm:text-2xl">Create a New Account</h3>
+            <Grid container justifyContent="center">
+            <Card sx={{ width: 300, mt: 20, p: 5 }}>
+            <CardContent>
+                <Box>
+            <main >
+                <div>
+                    <div>
+                        <div>
+                            <h3>Create a New Account</h3>
                         </div>
 
                     </div>
@@ -39,65 +48,69 @@ const Register = () => {
                         onSubmit={onSubmit}
                         className="space-y-4"
                     >
-                        <div>
-                            <label className="text-sm text-gray-600 font-bold">
-                                Email
-                            </label>
-                            <input
+                        <Grid
+                          container
+                          spacing={1}
+                          direction="column"
+                          alignItems="center"
+                          justify="center"
+                        >
+                            <TextField
                                 type="email"
+                                label="Email"
                                 autoComplete='email'
                                 required
                                 value={email} onChange={(e) => { setEmail(e.target.value) }}
-                                className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:indigo-600 shadow-sm rounded-lg transition duration-300"
+                                fullWidth
                             />
-                        </div>
-
-                        <div>
-                            <label className="text-sm text-gray-600 font-bold">
-                                Password
-                            </label>
-                            <input
+                      
+                            <TextField
                                 disabled={isRegistering}
                                 type="password"
+                                label="Password"
                                 autoComplete='new-password'
                                 required
                                 value={password} onChange={(e) => { setPassword(e.target.value) }}
-                                className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg transition duration-300"
+                                fullWidth
                             />
-                        </div>
-
-                        <div>
-                            <label className="text-sm text-gray-600 font-bold">
-                                Confirm Password
-                            </label>
-                            <input
+                       
+                            <TextField
                                 disabled={isRegistering}
                                 type="password"
+                                label="Confirm Password"
                                 autoComplete='off'
                                 required
                                 value={confirmPassword} onChange={(e) => { setconfirmPassword(e.target.value) }}
-                                className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg transition duration-300"
+                                fullWidth
                             />
-                        </div>
 
-                        {errorMessage && (
-                            <span className='text-red-600 font-bold'>{errorMessage}</span>
-                        )}
-
-                        <button
+                        <Button
+                            variant='contained'
                             type="submit"
                             disabled={isRegistering}
-                            className={`w-full px-4 py-2 text-white font-medium rounded-lg ${isRegistering ? 'bg-gray-300 cursor-not-allowed' : 'bg-indigo-600 hover:bg-indigo-700 hover:shadow-xl transition duration-300'}`}
+                            fullWidth
+                            style={{background: 'blueviolet'}}
                         >
                             {isRegistering ? 'Signing Up...' : 'Sign Up'}
-                        </button>
-                        <div className="text-sm text-center">
+                        </Button>
+                        </Grid>
+
+                        {errorMessage && (
+                            <span>{errorMessage}</span>
+                        )}
+
+                   
+                        <div>
                             Already have an account? {'   '}
-                            <Link to={'/login'} className="text-center text-sm hover:underline font-bold">Continue</Link>
+                            <Link to={'/login'}>Sign In</Link>
                         </div>
                     </form>
                 </div>
             </main>
+            </Box>
+            </CardContent>
+            </Card>
+            </Grid>
         </>
     )
 }

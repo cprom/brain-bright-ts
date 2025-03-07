@@ -2,16 +2,15 @@ import React from 'react'
 import { useAuth } from '../../contexts/authContext'
 import { Box } from '@mui/material'
 
-const Home = () => {
+const Math = () => {
     const { currentUser } = useAuth()
     return (
         <>
         <Box sx={{p:5}}>
-        <h1>HOME</h1>
-        Hello {currentUser.displayName ? currentUser.displayName : currentUser.email}, you are now logged in.
+            <h1>Math</h1>
         </Box>
         </>
     )
 }
 
-export default Home
+export default Math
