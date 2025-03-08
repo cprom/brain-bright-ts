@@ -10,6 +10,7 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid2';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
+import '../../../App.css'
 
 
 const Login = () => {
@@ -75,7 +76,7 @@ const Login = () => {
                             type="submit"
                             disabled={isSigningIn}
                             fullWidth
-                            style={{background: 'blueviolet'}}
+                            className='button-hover-yellow'
                         >
                             {isSigningIn ? 'Signing In...' : 'Sign In'}
                         </Button>
