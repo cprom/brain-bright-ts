@@ -10,6 +10,7 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid2';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
+import '../../../App.css'
 
 
 const Login = () => {
@@ -35,12 +36,7 @@ const Login = () => {
 
             <Card sx={{ width: 300, mt: 20, p: 5 }}>
                 <CardContent>
-                  <Box
-                        component="form"
-                        noValidate
-                        autoComplete="off"
-
-                  >
+                  <Box>
                     <Typography sx={{ fontWeight: 'bold', fontSize: 18, p: 1 }}>
                             Welcome Back
                     </Typography>
@@ -77,10 +73,11 @@ const Login = () => {
 
                         <Button
                             variant='contained'
+                            color='secondary'
                             type="submit"
                             disabled={isSigningIn}
                             fullWidth
-                            style={{background: 'blueviolet'}}
+                            className='button-hover-yellow'
                         >
                             {isSigningIn ? 'Signing In...' : 'Sign In'}
                         </Button>

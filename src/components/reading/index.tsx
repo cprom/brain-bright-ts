@@ -6,7 +6,11 @@ const Reading = () => {
     const { currentUser } = useAuth()
     return (
         <>
-        <Box sx={{p:5}}>Reading {currentUser.displayName ? currentUser.displayName : currentUser.email}, you are now logged in.</Box>
+        <Box sx={{p:5}}>
+        <h1>Reading</h1>
+            {currentUser.displayName ? currentUser.displayName : currentUser.email}, you are now logged in.
+
+        </Box>
         </>
     )
 }

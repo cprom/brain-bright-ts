@@ -4,7 +4,7 @@ import { useAuth } from '../../contexts/authContext'
 import { doSignOut } from '../../firebase/auth'
 
 import AppBar from '@mui/material/AppBar';
-import { Button, Stack } from '@mui/material';
+import { Button } from '@mui/material';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
@@ -175,7 +175,13 @@ const Header = () => {
                             >
                            
                                 <MenuItem onClick={handleCloseUserMenu}>
-                                <Button variant="contained" onClick={() => { doSignOut().then(() => { navigate('/login') }) }}>Logout</Button>
+                                <Button
+                                    className='button-hover-yellow' 
+                                    variant="contained" 
+                                    color='secondary'
+                                    onClick={() => { doSignOut().then(() => { navigate('/login') }) }}>
+                                    Logout
+                                </Button>
                                 </MenuItem>
                        
                             </Menu>
@@ -186,14 +192,6 @@ const Header = () => {
                     </>
                     :
                     ""
-                    // <>
-     
-                    //     <Stack spacing={2} direction="row">
-                    //     <Button variant='text'><Link to={'/login'}>Login</Link></Button>
-                    //     <Button variant='text'><Link to={'/register'}>Register New Account</Link></Button>
-                    //     </Stack>
- 
-                    // </>
             }
 
         </div>
