@@ -35,12 +35,7 @@ const Login = () => {
 
             <Card sx={{ width: 300, mt: 20, p: 5 }}>
                 <CardContent>
-                  <Box
-                        component="form"
-                        noValidate
-                        autoComplete="off"
-
-                  >
+                  <Box>
                     <Typography sx={{ fontWeight: 'bold', fontSize: 18, p: 1 }}>
                             Welcome Back
                     </Typography>
