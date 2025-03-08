@@ -2,9 +2,9 @@ import Login from "./components/auth/login";
 import Register from "./components/auth/register";
 
 import Header from "./components/header";
-import Home from "./components/home";
-import Math from "./components/math";
-import Reading from "./components/reading";
+import Home from "./Pages/home";
+import Math from "./Pages/math";
+import Reading from "./Pages/reading";
 
 import { AuthProvider } from "./contexts/authContext";
 import { useRoutes } from "react-router-dom";
