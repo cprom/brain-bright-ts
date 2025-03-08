@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../contexts/authContext'
 import { doSignOut } from '../../firebase/auth'
+import { Navigate } from 'react-router-dom'
 
 import AppBar from '@mui/material/AppBar';
 import { Button } from '@mui/material';
@@ -29,6 +30,11 @@ const pages = [
         id: 2,
         subject: 'Reading',
         path: '/reading'
+    },
+    {
+        id: 3,
+        subject: 'Writing',
+        path: '/writing'
     }
 ];
 
@@ -73,18 +79,35 @@ const Header = () => {
                             variant="h6"
                             noWrap
                             component="a"
-                            href="#app-bar-with-responsive-menu"
+                            href="/home"
                             sx={{
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
                             fontFamily: 'monospace',
                             fontWeight: 700,
                             letterSpacing: '.3rem',
-                            color: 'inherit',
+                            color: '#FFD43B',
                             textDecoration: 'none',
                             }}
                         >
-                            
+                            Brain
+                        </Typography>
+                        <Typography
+                            variant="h6"
+                            noWrap
+                            component="a"
+                            href="/home"
+                            sx={{
+                            mr: 2,
+                            display: { xs: 'none', md: 'flex' },
+                            fontFamily: 'monospace',
+                            fontWeight: 700,
+                            letterSpacing: '.3rem',
+                            color: '#63E6bE',
+                            textDecoration: 'none',
+                            }}
+                        >
+                            Bright
                         </Typography>
 
                         <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -116,12 +139,18 @@ const Header = () => {
                             >
                             {pages.map((page) => (
                                 <MenuItem key={page.id} onClick={handleCloseNavMenu}>
-                                <Typography sx={{ textAlign: 'center' }}>{page.subject}</Typography>
+                                <Button
+                                key={page.id}
+                                onClick={handleCloseNavMenu}
+                                sx={{ color: 'black', display: 'block' }}
+                                href={page.path}
+                                >
+                                {page.subject}
+                                </Button>
                                 </MenuItem>
                             ))}
                             </Menu>
                         </Box>
-                        <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
                         <Typography
                             variant="h5"
                             noWrap
@@ -191,7 +220,7 @@ const Header = () => {
                     </AppBar>
                     </>
                     :
-                    ""
+                    <Navigate to="/login"/>  
             }
 
         </div>

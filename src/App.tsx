@@ -5,6 +5,7 @@ import Header from "./components/header";
 import Home from "./Pages/home";
 import Math from "./Pages/math";
 import Reading from "./Pages/reading";
+import Writing from "./Pages/writing";
 
 import { AuthProvider } from "./contexts/authContext";
 import { useRoutes } from "react-router-dom";
@@ -35,6 +36,10 @@ function App() {
     {
       path: "/reading",
       element: <Reading />,
+    },
+    {
+      path: "/writing",
+      element: <Writing />,
     },
   ];
   const routesElement = useRoutes(routesArray);
