@@ -86,6 +86,7 @@ const Register = () => {
 
                         <Button
                             variant='contained'
+                            color='secondary'
                             type="submit"
                             disabled={isRegistering}
                             fullWidth
