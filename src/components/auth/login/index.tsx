@@ -11,7 +11,8 @@ import Grid from '@mui/material/Grid2';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import '../../../App.css'
-
+import Title from '../../../components/title'
+import Stack from '@mui/material/Stack';
 
 const Login = () => {
     const { userLoggedIn } = useAuth()
@@ -31,8 +32,16 @@ const Login = () => {
     }
 
     return (
-        <Grid container justifyContent="center">
+        <Grid
+        container
+        spacing={0}
+        direction="column"
+        alignItems="center"
+        justifyContent="center"
+        >
+            <Stack spacing={5}>
             {userLoggedIn && (<Navigate to={'/home'} replace={true} />)}
+            <Title/>
 
             <Card sx={{ width: 300, mt: 20, p: 5 }}>
                 <CardContent>
@@ -73,7 +82,7 @@ const Login = () => {
 
                         <Button
                             variant='contained'
-                            color='secondary'
+                            color='primary'
                             type="submit"
                             disabled={isSigningIn}
                             fullWidth
@@ -83,10 +92,11 @@ const Login = () => {
                         </Button>
                         </Grid>
                     </form>
-                    <p>Don't have an account? <Link to={'/register'}>Register</Link></p>
+                    <Typography sx={{mt: 2}} >Don't have an account? <Link to={'/register'}>Register</Link></Typography>
                   </Box>
                 </CardContent>
             </Card>
+        </Stack>
         </Grid>
     )
 }

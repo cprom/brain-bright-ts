@@ -10,6 +10,21 @@ import Writing from "./Pages/writing";
 import { AuthProvider } from "./contexts/authContext";
 import { useRoutes } from "react-router-dom";
 
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#B197FC',
+    },
+    secondary: {
+      main: '#FFD43B'
+    },
+    warning: {
+      main: '#63E6bE'
+    }
+  }
+})
 
 function App() {
   const routesArray = [
@@ -45,9 +60,11 @@ function App() {
   const routesElement = useRoutes(routesArray);
   return (
     <AuthProvider>
+      <ThemeProvider theme={theme}>
       <Header />
       <br/><br/><br/>
       <div>{routesElement}</div>
+      </ThemeProvider>
     </AuthProvider>
   );
 }
