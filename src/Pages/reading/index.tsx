@@ -10,7 +10,6 @@ const Reading = () => {
             userLoggedIn
             ?
             <>
-
             <Box sx={{p:5}}>
             <h1>Reading</h1>
             </Box>
