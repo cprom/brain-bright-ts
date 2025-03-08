@@ -1,6 +1,7 @@
 import React from 'react'
 import { useAuth } from '../../contexts/authContext'
 import { Box } from '@mui/material'
+import { Navigate } from 'react-router-dom'
 
 const Reading = () => {
     const { userLoggedIn } = useAuth();
@@ -15,7 +16,7 @@ const Reading = () => {
             </Box>
             </>
             :
-            "Please Login"
+            <Navigate to="/login"/>  
         }
         </div>
     )

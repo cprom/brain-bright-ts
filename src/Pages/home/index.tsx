@@ -1,10 +1,11 @@
 import React from 'react'
 import { useAuth } from '../../contexts/authContext'
-import { Box } from '@mui/material'
-
+import { Box, Button } from '@mui/material'
+import { Navigate } from 'react-router-dom'
 
 const Home = () => {
     const { userLoggedIn } = useAuth();
+
     return (
         <div>
         { 
@@ -17,7 +18,7 @@ const Home = () => {
             </Box>
             </>
             :
-            "Please Login"
+            <Navigate to="/login"/>  
         }
         </div>
 
