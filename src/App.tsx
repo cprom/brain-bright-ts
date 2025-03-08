@@ -15,13 +15,13 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#B197FC',
+      main: '#B197FC', // purple
     },
     secondary: {
-      main: '#FFD43B'
+      main: '#FFD43B' // yellow
     },
     warning: {
-      main: '#63E6bE'
+      main: '#63E6bE' // green
     }
   }
 })
