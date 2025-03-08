@@ -1,8 +1,4 @@
-.button-hover-yellow{
-    background-color: blueviolet;
-}
-
 .button-hover-yellow:hover{
-background-color: #FFD43B;
+background-color: #B197FC;
 transition: .5s;
 }

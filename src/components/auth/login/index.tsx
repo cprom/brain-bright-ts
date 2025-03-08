@@ -73,6 +73,7 @@ const Login = () => {
 
                         <Button
                             variant='contained'
+                            color='secondary'
                             type="submit"
                             disabled={isSigningIn}
                             fullWidth
