@@ -6,8 +6,10 @@ import Grid from '@mui/material/Grid2';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Box from '@mui/material/Box';
-import { TextField } from '@mui/material';
+import { TextField, Typography } from '@mui/material';
 import Button from '@mui/material/Button';
+import Title from '../../../components/title'
+import Stack from '@mui/material/Stack';
 
 const Register = () => {
 
@@ -30,9 +32,16 @@ const Register = () => {
     }
 
     return (
-        <>
+        <Grid
+        container
+        spacing={0}
+        direction="column"
+        alignItems="center"
+        justifyContent="center"
+        >
+            <Stack spacing={5}>
             {userLoggedIn && (<Navigate to={'/home'} replace={true} />)}
-            <Grid container justifyContent="center">
+        <Title />
             <Card sx={{ width: 300, mt: 20, p: 5 }}>
             <CardContent>
                 <Box>
@@ -40,7 +49,7 @@ const Register = () => {
                 <div>
                     <div>
                         <div>
-                            <h3>Create a New Account</h3>
+                            <Typography>Create a New Account</Typography>
                         </div>
 
                     </div>
@@ -86,7 +95,7 @@ const Register = () => {
 
                         <Button
                             variant='contained'
-                            color='secondary'
+                            color='primary'
                             type="submit"
                             disabled={isRegistering}
                             fullWidth
@@ -99,20 +108,18 @@ const Register = () => {
                         {errorMessage && (
                             <span>{errorMessage}</span>
                         )}
-
-                   
-                        <div>
+                        <Typography sx={{mt: 2}}>
                             Already have an account? {'   '}
                             <Link to={'/login'}>Sign In</Link>
-                        </div>
+                        </Typography>
                     </form>
                 </div>
             </main>
             </Box>
             </CardContent>
             </Card>
-            </Grid>
-        </>
+            </Stack>
+        </Grid>
     )
 }
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../../contexts/authContext'
 import { doSignOut } from '../../firebase/auth'
 import { Navigate } from 'react-router-dom'
@@ -16,7 +16,6 @@ import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBrain, faLightbulb } from '@fortawesome/free-solid-svg-icons';
 
@@ -207,7 +206,7 @@ const Header = () => {
                                 <Button
                                     className='button-hover-yellow' 
                                     variant="contained" 
-                                    color='secondary'
+                                    color='primary'
                                     onClick={() => { doSignOut().then(() => { navigate('/login') }) }}>
                                     Logout
                                 </Button>
@@ -220,7 +219,7 @@ const Header = () => {
                     </AppBar>
                     </>
                     :
-                    <Navigate to="/login"/>  
+                    ""
             }
 
         </div>
