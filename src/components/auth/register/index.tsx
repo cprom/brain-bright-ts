@@ -99,7 +99,7 @@ const Register = () => {
                             type="submit"
                             disabled={isRegistering}
                             fullWidth
-                            className='button-hover-yellow'
+                            className='button-hover-green'
                         >
                             {isRegistering ? 'Signing Up...' : 'Sign Up'}
                         </Button>

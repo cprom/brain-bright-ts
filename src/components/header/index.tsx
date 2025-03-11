@@ -204,7 +204,7 @@ const Header = () => {
                            
                                 <MenuItem onClick={handleCloseUserMenu}>
                                 <Button
-                                    className='button-hover-yellow' 
+                                    className='button-hover-green' 
                                     variant="contained" 
                                     color='primary'
                                     onClick={() => { doSignOut().then(() => { navigate('/login') }) }}>
