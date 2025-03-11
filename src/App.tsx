@@ -6,6 +6,11 @@ import Home from "./Pages/home";
 import Math from "./Pages/math";
 import Reading from "./Pages/reading";
 import Writing from "./Pages/writing";
+import Counting from "./Pages/math/counting";
+import Addition from "./Pages/math/addition";
+import Subtraction from "./Pages/math/subtraction";
+import Multiplication from "./Pages/math/multiplication";
+import Division from "./Pages/math/division";
 
 import { AuthProvider } from "./contexts/authContext";
 import { useRoutes } from "react-router-dom";
@@ -16,12 +21,17 @@ const theme = createTheme({
   palette: {
     primary: {
       main: '#B197FC', // purple
+      dark: '#74C0FC'  // blue
     },
     secondary: {
       main: '#FFD43B' // yellow
     },
     warning: {
       main: '#63E6bE' // green
+    },
+    success: {
+      main: '#FFA047', // orange
+      light: '#FFZ0X0' // red
     }
   }
 })
@@ -55,6 +65,26 @@ function App() {
     {
       path: "/writing",
       element: <Writing />,
+    },
+    {
+      path: "/math/counting",
+      element: <Counting />,
+    },
+    {
+      path: "/math/addition",
+      element: <Addition />,
+    },
+    {
+      path: "/math/subtraction",
+      element: <Subtraction />,
+    },
+    {
+      path: "/math/multiplication",
+      element: <Multiplication />,
+    },
+    {
+      path: "/math/division",
+      element: <Division />,
     },
   ];
   const routesElement = useRoutes(routesArray);
