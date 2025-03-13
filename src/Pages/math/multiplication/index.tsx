@@ -16,7 +16,7 @@ const Multiplication = () => {
             <>
 
             <Box sx={{p:5}}>
-            <Typography><h1>Multiplication</h1></Typography>
+            <Typography>Multiplication</Typography>
             </Box>
             </>
             :
