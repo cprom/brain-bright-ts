@@ -51,47 +51,47 @@ function App() {
       element: <Login />,
     },
     {
-      path: "/login",
+      path: "/brain-bright-ts/login",
       element: <Login />,
     },
     {
-      path: "/register",
+      path: "/brain-bright-ts/register",
       element: <Register />,
     },
     {
-      path: "/home",
+      path: "/brain-bright-ts/home",
       element: <Home />,
     },
     {
-      path: "/math",
+      path: "/brain-bright-ts/math",
       element: <Math />,
     },
     {
-      path: "/reading",
+      path: "/brain-bright-ts/reading",
       element: <Reading />,
     },
     {
-      path: "/writing",
+      path: "/brain-bright-ts/writing",
       element: <Writing />,
     },
     {
-      path: "/math/counting",
+      path: "/brain-bright-ts/math/counting",
       element: <Counting />,
     },
     {
-      path: "/math/addition",
+      path: "/brain-bright-ts/math/addition",
       element: <Addition />,
     },
     {
-      path: "/math/subtraction",
+      path: "/brain-bright-ts/math/subtraction",
       element: <Subtraction />,
     },
     {
-      path: "/math/multiplication",
+      path: "/brain-bright-ts/math/multiplication",
       element: <Multiplication />,
     },
     {
-      path: "/math/division",
+      path: "/brain-bright-ts/math/division",
       element: <Division />,
     },
   ];
