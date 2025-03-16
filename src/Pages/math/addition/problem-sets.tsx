@@ -3,38 +3,14 @@ import { useAuth } from '../../../contexts/authContext'
 import { Box, Button, Card, CardContent, Container, Paper, Stack, TextField, Typography } from '@mui/material'
 import { Navigate } from 'react-router-dom'
 import Grid2 from '@mui/material/Grid2';
+import generateMultipleProblems from '../scripts/generateProblems'
+
+    const problems = generateMultipleProblems(10,1,10)
+    console.log(problems)
 
 
-function generateAdditionProblem(max : number, id : number) {
-    const num1 = Math.floor(Math.random() * (max + 1));
-    const num2 = Math.floor(Math.random() * (max + 1));
-    return {
-        id: id,
-      problem: `${num1} + ${num2} = `,
-      answer: num1 + num2,
-      inputValue: ''
-    };
-  }
-  
-  function generateMultipleProblems(numProblems: number, max: number) {
-      const problems = [];
-      for (let i = 0; i < numProblems; i++) {
-          problems.push(generateAdditionProblem(max, i));
-      }
-      return problems
-  }
-
-  const problems = generateMultipleProblems(10, 9)
-  console.log(problems)
-
-
-
-
-const CreateAdditionProblems = () => {
-    //const [inputValue, setInputValue] = useState('');
+    const CreateAdditionProblems = () => {
     const [items, setItems] = useState([...problems]);
-
-    //console.log(inputValue)
 
     const handleInputChange = (id: number, event: any) => {
         const newItems = items.map(item => {
@@ -44,7 +20,6 @@ const CreateAdditionProblems = () => {
           return item;
         });
         setItems(newItems);
-        console.log(newItems)
       };
     
       const checkAnswer = (e) => {
@@ -55,22 +30,18 @@ const CreateAdditionProblems = () => {
                 console.log("inputValue",item.inputValue)
                 document.getElementById(`check-btn-${item.id}`).innerText = 'Correct'
                 document.getElementById(`check-btn-${item.id}`).setAttribute('class', 'btn-correct');
-                
             }
             if(item.id == value[1] && item.answer !== parseInt(item.inputValue)){
                 document.getElementById(`check-btn-${item.id}`).innerText = 'Incorrect'
                 document.getElementById(`check-btn-${item.id}`).setAttribute('class', 'btn-incorrect');
-                
-                
             }
-           
         })
-
     }
+
 
         return (
             <>
-                <Container sx={{minWidth: '450px', m: 0}}>
+                <Container sx={{minWidth: '400px', m: 0}}>
                 <Box>     
                     {
                         problems.map((problem) => (
@@ -103,9 +74,9 @@ const CreateAdditionProblems = () => {
 }
 
 
-
 const ProblemSets = () => {
     const { userLoggedIn } = useAuth();
+    const [level, setLevel] = useState(problems[0].level);
 
     return (
     <div>
@@ -113,7 +84,10 @@ const ProblemSets = () => {
             userLoggedIn
             ?
             <>
-            <Typography sx={{p:0}}>Random</Typography>
+            <div style={{display: 'flex', justifyContent: 'space-between'}}>
+            <Typography>Level: {level} </Typography>
+            <Typography sx={{p:0}}> Random</Typography>
+            </div>
             <CreateAdditionProblems/>
             </>
             :
