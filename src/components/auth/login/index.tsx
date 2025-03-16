@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Navigate, Link, redirect } from 'react-router-dom'
+import { useState } from 'react'
+import { Navigate, Link } from 'react-router-dom'
 import { doSignInWithEmailAndPassword } from '../../../firebase/auth'
 import { useAuth } from '../../../contexts/authContext'
 
@@ -15,14 +15,14 @@ import Title from '../../../components/title'
 import Stack from '@mui/material/Stack';
 
 const Login = () => {
-    const { userLoggedIn } = useAuth()
+    const { userLoggedIn } : any = useAuth()
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [isSigningIn, setIsSigningIn] = useState(false)
-    const [errorMessage, setErrorMessage] = useState('')
+    const [errorMessage] = useState('')
 
-    const onSubmit = async (e) => {
+    const onSubmit = async (e: React.ChangeEvent<any>) => {
         e.preventDefault()
         if(!isSigningIn) {
             setIsSigningIn(true)
@@ -40,7 +40,7 @@ const Login = () => {
         justifyContent="center"
         >
             <Stack spacing={5}>
-            {userLoggedIn && (<Navigate to={'/home'} replace={true} />)}
+            {userLoggedIn && (<Navigate to={'/brain-bright-ts/home'} replace={true} />)}
             <Title/>
 
             <Card sx={{ width: 300, mt: 20, p: 5 }}>
@@ -92,7 +92,7 @@ const Login = () => {
                         </Button>
                         </Grid>
                     </form>
-                    <Typography sx={{mt: 2}} >Don't have an account? <Link to={'/register'}>Register</Link></Typography>
+                    <Typography sx={{mt: 2}} >Don't have an account? <Link to={'/brain-bright-ts/register'}>Register</Link></Typography>
                   </Box>
                 </CardContent>
             </Card>

@@ -40,7 +40,7 @@ const Register = () => {
         justifyContent="center"
         >
             <Stack spacing={5}>
-            {userLoggedIn && (<Navigate to={'/home'} replace={true} />)}
+            {userLoggedIn && (<Navigate to={'/brain-bright-ts/home'} replace={true} />)}
         <Title />
             <Card sx={{ width: 300, mt: 20, p: 5 }}>
             <CardContent>
@@ -110,7 +110,7 @@ const Register = () => {
                         )}
                         <Typography sx={{mt: 2}}>
                             Already have an account? {'   '}
-                            <Link to={'/login'}>Sign In</Link>
+                            <Link to={'/brain-bright-ts/login'}>Sign In</Link>
                         </Typography>
                     </form>
                 </div>
