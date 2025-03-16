@@ -1,7 +1,5 @@
-import React, {useState} from 'react'
-import { useAuth } from '../../../contexts/authContext'
-import { Box, Button, Card, CardContent, Container, Paper, Stack, TextField, Typography } from '@mui/material'
-import { Navigate } from 'react-router-dom'
+import {useState} from 'react'
+import { Box, Button,Container, Paper,TextField, Typography } from '@mui/material'
 import Grid2 from '@mui/material/Grid2';
 import generateMultipleProblems from '../scripts/generateProblems'
 
@@ -22,7 +20,7 @@ import generateMultipleProblems from '../scripts/generateProblems'
         setItems(newItems);
       };
     
-      const checkAnswer = (e) => {
+      const checkAnswer = (e : any) => {
         const value = e.target.value.split('_')
         items.forEach(item => {
             if(item.id == value[1] && item.answer == parseInt(item.inputValue)){

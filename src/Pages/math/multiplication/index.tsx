@@ -1,6 +1,4 @@
-import React from 'react'
-import { Box, Button, Stack, Typography } from '@mui/material'
-import { Navigate } from 'react-router-dom'
+import { Box, Typography } from '@mui/material'
 
 const Multiplication = () => {
 

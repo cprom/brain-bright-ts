@@ -1,17 +1,14 @@
-import React from 'react'
-import { useAuth } from '../../../contexts/authContext'
-import { Box, Button, Stack, Typography } from '@mui/material'
-import { Navigate } from 'react-router-dom'
+import { Box,Typography } from '@mui/material'
 import ProblemSets from './problem-sets'
 
 const Addition = () => {
-    const { userLoggedIn } = useAuth();
+
 
 
 
     return (
         <div>
-      
+    
             <Box style={{justifyItems: 'center'}}>
             <Typography sx={{mt: 1}}>Addition</Typography>
             <ProblemSets />

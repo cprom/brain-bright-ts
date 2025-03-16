@@ -1,5 +1,3 @@
-import Login from "./components/auth/login";
-import Register from "./components/auth/register";
 
 import Header from "./components/header";
 import Home from "./Pages/home";
@@ -12,7 +10,7 @@ import Subtraction from "./Pages/math/subtraction";
 import Multiplication from "./Pages/math/multiplication";
 import Division from "./Pages/math/division";
 
-import { AuthProvider } from "./contexts/authContext";
+
 import { useRoutes } from "react-router-dom";
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -90,13 +88,13 @@ function App() {
   ];
   const routesElement = useRoutes(routesArray);
   return (
-    <AuthProvider>
+  
       <ThemeProvider theme={theme}>
       <Header />
       <br/><br/><br/>
       <div>{routesElement}</div>
       </ThemeProvider>
-    </AuthProvider>
+
   );
 }
 

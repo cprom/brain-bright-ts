@@ -1,6 +1,4 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
-
 import AppBar from '@mui/material/AppBar';
 import { Button } from '@mui/material';
 import Box from '@mui/material/Box';
