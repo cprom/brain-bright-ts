@@ -69,7 +69,7 @@ const Math = () => {
             <>
             
             <Box sx={{p:5}}>
-            <Typography><h1>Math</h1></Typography>
+            <Typography>Math</Typography>
             </Box>
             <Grid
             container

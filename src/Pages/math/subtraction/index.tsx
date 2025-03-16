@@ -16,7 +16,7 @@ const Subtraction = () => {
             <>
 
             <Box sx={{p:5}}>
-            <Typography><h1>Subtraction</h1></Typography>
+            <Typography>Subtraction</Typography>
             </Box>
             </>
             :

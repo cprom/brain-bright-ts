@@ -14,7 +14,7 @@ const Counting = () => {
             <>
 
             <Box sx={{p:5}}>
-            <Typography><h1>Counting</h1></Typography>
+            <Typography>Counting</Typography>
             </Box>
             </>
             :

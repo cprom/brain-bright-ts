@@ -16,7 +16,7 @@ const Division = () => {
             <>
 
             <Box sx={{p:5}}>
-            <Typography><h1>Division</h1></Typography>
+            <Typography>Division</Typography>
             </Box>
             </>
             :

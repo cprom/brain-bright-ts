@@ -1,0 +1,101 @@
+import React, {useState} from 'react'
+import { useAuth } from '../../../contexts/authContext'
+import { Box, Button, Card, CardContent, Container, Paper, Stack, TextField, Typography } from '@mui/material'
+import { Navigate } from 'react-router-dom'
+import Grid2 from '@mui/material/Grid2';
+import generateMultipleProblems from '../scripts/generateProblems'
+
+    const problems = generateMultipleProblems(10,1,10)
+    console.log(problems)
+
+
+    const CreateAdditionProblems = () => {
+    const [items, setItems] = useState([...problems]);
+
+    const handleInputChange = (id: number, event: any) => {
+        const newItems = items.map(item => {
+          if (item.id === id) {
+            return { ...item, inputValue: event.target.value };
+          }
+          return item;
+        });
+        setItems(newItems);
+      };
+    
+      const checkAnswer = (e) => {
+        const value = e.target.value.split('_')
+        items.forEach(item => {
+            if(item.id == value[1] && item.answer == parseInt(item.inputValue)){
+                console.log(true, item.id)
+                console.log("inputValue",item.inputValue)
+                document.getElementById(`check-btn-${item.id}`).innerText = 'Correct'
+                document.getElementById(`check-btn-${item.id}`).setAttribute('class', 'btn-correct');
+            }
+            if(item.id == value[1] && item.answer !== parseInt(item.inputValue)){
+                document.getElementById(`check-btn-${item.id}`).innerText = 'Incorrect'
+                document.getElementById(`check-btn-${item.id}`).setAttribute('class', 'btn-incorrect');
+            }
+        })
+    }
+
+
+        return (
+            <>
+                <Container sx={{minWidth: '400px', m: 0}}>
+                <Box>     
+                    {
+                        problems.map((problem) => (
+                        <Paper key={problem.id} elevation={5} sx={{p: 2, m: 2}}>
+                            <Grid2 container spacing={2} display="flex" justifyContent="center" alignItems="center" size="grow">
+                                <Typography fontSize={30}>{problem.problem}</Typography>                                        
+                                <TextField 
+                                    id={(problem.id).toString()}
+                                    type='text' 
+                                    size='small'
+                                    slotProps={{ htmlInput: { maxLength: 2 } }}
+                                    onChange={(event) => handleInputChange(problem.id, event)}
+                                    sx={{
+                                        input: { fontSize: '1.70rem', textAlign: 'center', p: 0 }, 
+                                        width: '70px'
+                                      }}
+                                />
+                                <Button onClick={checkAnswer}  value={`${problem.answer}_${problem.id}`} id={`check-btn-${problem.id}`} variant='contained'>Check</Button>
+                            </Grid2>
+                        </Paper> 
+                        )) 
+                    }
+                
+                </Box>
+                </Container>
+               
+            </>
+        )
+
+}
+
+
+const ProblemSets = () => {
+    const { userLoggedIn } = useAuth();
+    const [level, setLevel] = useState(problems[0].level);
+
+    return (
+    <div>
+        { 
+            userLoggedIn
+            ?
+            <>
+            <div style={{display: 'flex', justifyContent: 'space-between'}}>
+            <Typography>Level: {level} </Typography>
+            <Typography sx={{p:0}}> Random</Typography>
+            </div>
+            <CreateAdditionProblems/>
+            </>
+            :
+            <Navigate to="/login"/>  
+        }
+    </div>
+
+    )
+}
+
+export default ProblemSets
