@@ -1,11 +1,10 @@
 import React from 'react'
-import { useAuth } from '../../contexts/authContext'
-import { Box, Button, Stack, Typography } from '@mui/material'
+
+import { Box, Button, Typography } from '@mui/material'
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import { Navigate } from 'react-router-dom'
 import Grid from '@mui/material/Grid2';
 import addition from '../../assets/img/addition.jpg'
 import subtraction from '../../assets/img/subtraction.jpg'
@@ -57,8 +56,6 @@ const subjects = [
 ]
 
 const Math = () => {
-    const { userLoggedIn } = useAuth();
-
    
 
     return (
