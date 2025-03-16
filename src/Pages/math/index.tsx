@@ -34,7 +34,7 @@ const subjects = [
         id: 3,
         name: "Subtraction",
         description: 'Learn to Subtract',
-        path: '/math/subtraction',
+        path: '/brain-bright-ts/math/subtraction',
         img: subtraction
 
     },
