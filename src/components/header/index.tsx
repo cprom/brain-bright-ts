@@ -2,7 +2,6 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../../contexts/authContext'
 import { doSignOut } from '../../firebase/auth'
-import { Navigate } from 'react-router-dom'
 
 import AppBar from '@mui/material/AppBar';
 import { Button } from '@mui/material';
@@ -41,7 +40,7 @@ const pages = [
 
 const Header = () => {
     const navigate = useNavigate()
-    const { userLoggedIn } = useAuth()
+    const { userLoggedIn } : any = useAuth()
 
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
     const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);

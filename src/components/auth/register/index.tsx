@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Navigate, Link, useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import { Navigate, Link } from 'react-router-dom'
 import { useAuth } from '../../../contexts/authContext'
 import { doCreateUserWithEmailAndPassword } from '../../../firebase/auth'
 import Grid from '@mui/material/Grid2';
@@ -13,17 +13,15 @@ import Stack from '@mui/material/Stack';
 
 const Register = () => {
 
-    const navigate = useNavigate()
-
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [confirmPassword, setconfirmPassword] = useState('')
     const [isRegistering, setIsRegistering] = useState(false)
-    const [errorMessage, setErrorMessage] = useState('')
+    const [errorMessage] = useState('')
 
-    const { userLoggedIn } = useAuth()
+    const { userLoggedIn }: any = useAuth()
 
-    const onSubmit = async (e) => {
+    const onSubmit = async (e: React.ChangeEvent<any>) => {
         e.preventDefault()
         if(!isRegistering) {
             setIsRegistering(true)
@@ -57,12 +55,12 @@ const Register = () => {
                         onSubmit={onSubmit}
                         className="space-y-4"
                     >
-                        <Grid
-                          container
-                          spacing={1}
-                          direction="column"
-                          alignItems="center"
-                          justify="center"
+                        <div
+                        //   container
+                        //   spacing={1}
+                        //   direction="column"
+                        //   alignItems="center"
+                        //   justify="center"
                         >
                             <TextField
                                 type="email"
@@ -103,7 +101,7 @@ const Register = () => {
                         >
                             {isRegistering ? 'Signing Up...' : 'Sign Up'}
                         </Button>
-                        </Grid>
+                        </div>
 
                         {errorMessage && (
                             <span>{errorMessage}</span>

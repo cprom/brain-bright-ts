@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBrain, faLightbulb } from '@fortawesome/free-solid-svg-icons';
 import Typography from '@mui/material/Typography';

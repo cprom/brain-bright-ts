@@ -53,12 +53,12 @@ const Login = () => {
                         onSubmit={onSubmit}
                         
                     >
-                        <Grid 
-                            container
-                            spacing={1}
-                            direction="column"
-                            alignItems="center"
-                            justify="center"
+                        <div 
+                            // container
+                            // spacing={1}
+                            // direction="column"
+                            // alignItems="center"
+                            // justify="center"
                         >
                         <TextField
                             type="email"
@@ -90,7 +90,7 @@ const Login = () => {
                         >
                             {isSigningIn ? 'Signing In...' : 'Sign In'}
                         </Button>
-                        </Grid>
+                        </div>
                     </form>
                     <Typography sx={{mt: 2}} >Don't have an account? <Link to={'/brain-bright-ts/register'}>Register</Link></Typography>
                   </Box>
