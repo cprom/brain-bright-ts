@@ -46,17 +46,10 @@ const theme = createTheme({
 
 function App() {
   const routesArray = [
+  
     {
-      path: "*",
-      element: <Login />,
-    },
-    {
-      path: "/brain-bright-ts/login",
-      element: <Login />,
-    },
-    {
-      path: "/brain-bright-ts/register",
-      element: <Register />,
+      path: "/brain-bright-ts/",
+      element: <Home />,
     },
     {
       path: "/brain-bright-ts/home",

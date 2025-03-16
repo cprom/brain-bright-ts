@@ -7,18 +7,12 @@ const Writing = () => {
     const { userLoggedIn } = useAuth();
     return (
         <div>
-        { 
-            userLoggedIn
-            ?
-            <>
 
             <Box sx={{p:5}}>
             <h1>Writing</h1>
             </Box>
-            </>
-            :
-            <Navigate to="/login"/>  
-        }
+
+
     </div>
 
     )
