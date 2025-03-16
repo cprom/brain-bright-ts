@@ -11,16 +11,12 @@ const Addition = () => {
 
     return (
         <div>
-        { 
-            userLoggedIn
-            ?       
+      
             <Box style={{justifyItems: 'center'}}>
             <Typography sx={{mt: 1}}>Addition</Typography>
             <ProblemSets />
             </Box>
-            :
-            <Navigate to="/login"/>  
-        }
+
         </div>
 
     )

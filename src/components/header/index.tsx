@@ -1,7 +1,5 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useAuth } from '../../contexts/authContext'
-import { doSignOut } from '../../firebase/auth'
 
 import AppBar from '@mui/material/AppBar';
 import { Button } from '@mui/material';
@@ -39,8 +37,7 @@ const pages = [
 
 
 const Header = () => {
-    const navigate = useNavigate()
-    const { userLoggedIn } : any = useAuth()
+
 
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
     const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
@@ -62,14 +59,12 @@ const Header = () => {
 
     return (
         <div>
-            {
-                userLoggedIn
-                    ?
+
                     <>
                     <AppBar style={{background: '#B197FC'}}>
                     <Container maxWidth="xl">
                         <Toolbar disableGutters>
-                        <Button href='/home'>
+                        <Button href='/brain-bright-ts/home/'>
                             <FontAwesomeIcon icon={faBrain} style={{color: '#FFD43B', fontSize: '35px'}}/>
                             <FontAwesomeIcon icon={faLightbulb} style={{color: "#63E6bE", fontSize:'35px'}} />
                         </Button>
@@ -77,7 +72,7 @@ const Header = () => {
                             variant="h6"
                             noWrap
                             component="a"
-                            href="/home"
+                            href="/brain-bright-ts/home"
                             sx={{
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
@@ -94,7 +89,7 @@ const Header = () => {
                             variant="h6"
                             noWrap
                             component="a"
-                            href="/home"
+                            href="/brain-bright-ts/home"
                             sx={{
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
@@ -202,13 +197,13 @@ const Header = () => {
                             >
                            
                                 <MenuItem onClick={handleCloseUserMenu}>
-                                <Button
+                                {/* <Button
                                     className='button-hover-green' 
                                     variant="contained" 
                                     color='primary'
                                     onClick={() => { doSignOut().then(() => { navigate('/login') }) }}>
                                     Logout
-                                </Button>
+                                </Button> */}
                                 </MenuItem>
                        
                             </Menu>
@@ -217,9 +212,8 @@ const Header = () => {
                     </Container>
                     </AppBar>
                     </>
-                    :
-                    ""
-            }
+                   
+
 
         </div>
     )

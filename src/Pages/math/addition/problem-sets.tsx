@@ -75,24 +75,17 @@ import generateMultipleProblems from '../scripts/generateProblems'
 
 
 const ProblemSets = () => {
-    const { userLoggedIn } = useAuth();
     const [level, setLevel] = useState(problems[0].level);
 
     return (
     <div>
-        { 
-            userLoggedIn
-            ?
-            <>
+      
             <div style={{display: 'flex', justifyContent: 'space-between'}}>
             <Typography>Level: {level} </Typography>
             <Typography sx={{p:0}}> Random</Typography>
             </div>
             <CreateAdditionProblems/>
-            </>
-            :
-            <Navigate to="/login"/>  
-        }
+
     </div>
 
     )

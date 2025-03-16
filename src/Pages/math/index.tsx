@@ -63,11 +63,7 @@ const Math = () => {
 
     return (
         <div>
-        { 
-            userLoggedIn
-            ?
-            <>
-            
+
             <Box sx={{p:5}}>
             <Typography>Math</Typography>
             </Box>
@@ -103,10 +99,8 @@ const Math = () => {
                 ) )
                }  
             </Grid>
-            </>
-            :
-            <Navigate to="/login"/>  
-        }
+
+        
     </div>
 
     )

@@ -1,19 +1,14 @@
 import React from 'react'
-import { useAuth } from '../../contexts/authContext'
-import { Navigate } from 'react-router-dom'
-
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 
 const Home = () => {
-    const { userLoggedIn } = useAuth();
+
 
     return (
         <div>
-        { 
-            userLoggedIn
-            ?
+        
             <>
             <Card sx={{ mt: 5, p: 10,minWidth: 275, minHeight: 300 }}>
                 <CardContent>
@@ -29,9 +24,7 @@ const Home = () => {
                 </CardContent>
                 </Card>
             </>
-            :
-            <Navigate to="/brain-bright-ts/login"/>  
-        }
+
         </div>
 
     )
