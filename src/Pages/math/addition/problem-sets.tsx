@@ -1,11 +1,11 @@
 import React, {useState} from 'react'
 import { useAuth } from '../../../contexts/authContext'
-import { Box, Button, TextField, Typography } from '@mui/material'
+import { Box, Button, Card, CardContent, Container, Paper, Stack, TextField, Typography } from '@mui/material'
 import { Navigate } from 'react-router-dom'
+import Grid2 from '@mui/material/Grid2';
 
 
-
-function generateAdditionProblem(max, id) {
+function generateAdditionProblem(max : number, id : number) {
     const num1 = Math.floor(Math.random() * (max + 1));
     const num2 = Math.floor(Math.random() * (max + 1));
     return {
@@ -16,7 +16,7 @@ function generateAdditionProblem(max, id) {
     };
   }
   
-  function generateMultipleProblems(numProblems, max) {
+  function generateMultipleProblems(numProblems: number, max: number) {
       const problems = [];
       for (let i = 0; i < numProblems; i++) {
           problems.push(generateAdditionProblem(max, i));
@@ -36,7 +36,7 @@ const CreateAdditionProblems = () => {
 
     //console.log(inputValue)
 
-    const handleInputChange = (id, event) => {
+    const handleInputChange = (id: number, event: any) => {
         const newItems = items.map(item => {
           if (item.id === id) {
             return { ...item, inputValue: event.target.value };
@@ -49,15 +49,19 @@ const CreateAdditionProblems = () => {
     
       const checkAnswer = (e) => {
         const value = e.target.value.split('_')
-        let clickedButton;
         items.forEach(item => {
             if(item.id == value[1] && item.answer == parseInt(item.inputValue)){
                 console.log(true, item.id)
                 console.log("inputValue",item.inputValue)
                 document.getElementById(`check-btn-${item.id}`).innerText = 'Correct'
+                document.getElementById(`check-btn-${item.id}`).setAttribute('class', 'btn-correct');
+                
             }
             if(item.id == value[1] && item.answer !== parseInt(item.inputValue)){
                 document.getElementById(`check-btn-${item.id}`).innerText = 'Incorrect'
+                document.getElementById(`check-btn-${item.id}`).setAttribute('class', 'btn-incorrect');
+                
+                
             }
            
         })
@@ -66,22 +70,32 @@ const CreateAdditionProblems = () => {
 
         return (
             <>
-               {problems.map((problem) => (
-                     <Typography sx={{fontSize: '3rem', m: '25px'}} key={problem.id}>
-                     <span>{problem.problem}</span>
-                     <TextField 
-                     id={problem.id}
-                     
-                     type='text' 
-                     sx={{'.MuiInputBase-input': { fontSize: '3rem', padding: 0, maxWidth: '70px', ml: '10px' }}}
-                     inputProps={{ maxLength: 2 }}
-                     onChange={(event) => handleInputChange(problem.id, event)}
-                     />
-                     <Button onClick={checkAnswer} value={`${problem.answer}_${problem.id}`} id={`check-btn-${problem.id}`}>Check</Button>
-                    </Typography>
-               )) 
-           
-                }
+                <Container sx={{minWidth: '450px', m: 0}}>
+                <Box>     
+                    {
+                        problems.map((problem) => (
+                        <Paper key={problem.id} elevation={5} sx={{p: 2, m: 2}}>
+                            <Grid2 container spacing={2} display="flex" justifyContent="center" alignItems="center" size="grow">
+                                <Typography fontSize={30}>{problem.problem}</Typography>                                        
+                                <TextField 
+                                    id={(problem.id).toString()}
+                                    type='text' 
+                                    size='small'
+                                    slotProps={{ htmlInput: { maxLength: 2 } }}
+                                    onChange={(event) => handleInputChange(problem.id, event)}
+                                    sx={{
+                                        input: { fontSize: '1.70rem', textAlign: 'center', p: 0 }, 
+                                        width: '70px'
+                                      }}
+                                />
+                                <Button onClick={checkAnswer}  value={`${problem.answer}_${problem.id}`} id={`check-btn-${problem.id}`} variant='contained'>Check</Button>
+                            </Grid2>
+                        </Paper> 
+                        )) 
+                    }
+                
+                </Box>
+                </Container>
                
             </>
         )
@@ -94,16 +108,13 @@ const ProblemSets = () => {
     const { userLoggedIn } = useAuth();
 
     return (
-        <div>
+    <div>
         { 
             userLoggedIn
             ?
             <>
-
-            <Box sx={{p:5}}>
-            <Typography>Problems</Typography>
+            <Typography sx={{p:0}}>Random</Typography>
             <CreateAdditionProblems/>
-            </Box>
             </>
             :
             <Navigate to="/login"/>  

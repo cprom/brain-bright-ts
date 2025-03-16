@@ -27,14 +27,22 @@ const theme = createTheme({
       main: '#FFD43B' // yellow
     },
     warning: {
-      main: '#63E6bE' // green
+      main: '#FFA047' // green
     },
     success: {
-      main: '#FFA047', // orange
-      light: '#FFZ0X0' // red
+      main: '#63E6bE', // orange
+      
+    },
+    error: {
+      main: '#FF6161' //red
     }
-  }
+
+  },
+
+
 })
+
+
 
 function App() {
   const routesArray = [

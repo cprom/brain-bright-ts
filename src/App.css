@@ -2,3 +2,24 @@
 background-color: #63E6bE;
 transition: .5s;
 }
+
+.btn-correct {
+    display: inline-block;
+    background-color: #63E6bE;
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    font-size: 17px;
+}
+
+.btn-incorrect {
+    background-color: #FF6161;
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    font-size: 17px;
+}
+
+

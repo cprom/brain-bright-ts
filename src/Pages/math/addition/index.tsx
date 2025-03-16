@@ -15,10 +15,8 @@ const Addition = () => {
             userLoggedIn
             ?
             <>
-            <Box sx={{p:5}}>
             <Typography>Addition</Typography>
             <ProblemSets />
-            </Box>
             </>
             :
             <Navigate to="/login"/>  
