@@ -62,7 +62,7 @@ const Header = () => {
                     <AppBar style={{background: '#B197FC'}}>
                     <Container maxWidth="xl">
                         <Toolbar disableGutters>
-                        <Button href='/brain-bright-ts/home/'>
+                        <Button href='#/'>
                             <FontAwesomeIcon icon={faBrain} style={{color: '#FFD43B', fontSize: '35px'}}/>
                             <FontAwesomeIcon icon={faLightbulb} style={{color: "#63E6bE", fontSize:'35px'}} />
                         </Button>
@@ -70,7 +70,7 @@ const Header = () => {
                             variant="h6"
                             noWrap
                             component="a"
-                            href="/brain-bright-ts/home"
+                            href="#/"
                             sx={{
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
@@ -87,7 +87,7 @@ const Header = () => {
                             variant="h6"
                             noWrap
                             component="a"
-                            href="/brain-bright-ts/home"
+                            href="#/"
                             sx={{
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },

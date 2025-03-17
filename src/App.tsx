@@ -49,7 +49,6 @@ function App() {
         <HashRouter>
           <Routes>
             <Route path="/" element={<Home/>}/>
-            <Route path="/home" element={<Home/>}/>
             <Route path="/math" element={<Math/>}/>
             <Route path="/reading" element={<Reading/>}/>
             <Route path="/writing" element={<Writing/>}/>
