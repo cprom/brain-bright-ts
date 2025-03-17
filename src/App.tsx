@@ -11,7 +11,7 @@ import Multiplication from "./Pages/math/multiplication/";
 import Division from "./Pages/math/division/";
 
 
-import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
