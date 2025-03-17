@@ -49,15 +49,15 @@ function App() {
         <BrowserRouter basename="/brain-bright-ts">
           <Routes>
             <Route path="/" element={<Home/>}/>
-            <Route path="/home/" element={<Home/>}/>
-            <Route path="/math/" element={<Math/>}/>
-            <Route path="/reading/" element={<Reading/>}/>
-            <Route path="/writing/" element={<Writing/>}/>
-            <Route path="/math/counting/" element={<Counting/>}/>
-            <Route path="/math/addition/" element={<Addition/>}/>
-            <Route path="/math/subtraction/" element={<Subtraction/>}/>
-            <Route path="/math/multiplication/" element={<Multiplication/>}/>
-            <Route path="/math/division/" element={<Division/>}/>
+            <Route path="/home" element={<Home/>}/>
+            <Route path="/math" element={<Math/>}/>
+            <Route path="/reading" element={<Reading/>}/>
+            <Route path="/writing" element={<Writing/>}/>
+            <Route path="/math/counting" element={<Counting/>}/>
+            <Route path="/math/addition" element={<Addition/>}/>
+            <Route path="/math/subtraction" element={<Subtraction/>}/>
+            <Route path="/math/multiplication" element={<Multiplication/>}/>
+            <Route path="/math/division" element={<Division/>}/>
           </Routes>
         </BrowserRouter>
     </ThemeProvider>
