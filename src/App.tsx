@@ -46,18 +46,18 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Header />
-        <BrowserRouter>
+        <BrowserRouter basename="/brain-bright-ts">
           <Routes>
-            <Route path="/brain-bright-ts/" element={<Home/>}/>
-            <Route path="/brain-bright-ts/home/" element={<Home/>}/>
-            <Route path="/brain-bright-ts/math" element={<Math/>}/>
-            <Route path="/brain-bright-ts/reading" element={<Reading/>}/>
-            <Route path="/brain-bright-ts/writing" element={<Writing/>}/>
-            <Route path="/brain-bright-ts/math/counting" element={<Counting/>}/>
-            <Route path="/brain-bright-ts/math/addition" element={<Addition/>}/>
-            <Route path="/brain-bright-ts/math/subtraction" element={<Subtraction/>}/>
-            <Route path="/brain-bright-ts/math/multiplication" element={<Multiplication/>}/>
-            <Route path="/brain-bright-ts/math/division" element={<Division/>}/>
+            <Route path="/" element={<Home/>}/>
+            <Route path="/home/" element={<Home/>}/>
+            <Route path="/math/" element={<Math/>}/>
+            <Route path="/reading/" element={<Reading/>}/>
+            <Route path="/writing/" element={<Writing/>}/>
+            <Route path="/math/counting/" element={<Counting/>}/>
+            <Route path="/math/addition/" element={<Addition/>}/>
+            <Route path="/math/subtraction/" element={<Subtraction/>}/>
+            <Route path="/math/multiplication/" element={<Multiplication/>}/>
+            <Route path="/math/division/" element={<Division/>}/>
           </Routes>
         </BrowserRouter>
     </ThemeProvider>
