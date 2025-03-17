@@ -11,7 +11,7 @@ import Multiplication from "./Pages/math/multiplication";
 import Division from "./Pages/math/division";
 
 
-import { useRoutes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
@@ -41,61 +41,27 @@ const theme = createTheme({
 })
 
 
-
 function App() {
-  const routesArray = [
-  
-    {
-      path: "/brain-bright-ts/",
-      element: <Home />,
-    },
-    {
-      path: "/brain-bright-ts/home",
-      element: <Home />,
-    },
-    {
-      path: "/brain-bright-ts/math",
-      element: <Math />,
-    },
-    {
-      path: "/brain-bright-ts/reading",
-      element: <Reading />,
-    },
-    {
-      path: "/brain-bright-ts/writing",
-      element: <Writing />,
-    },
-    {
-      path: "/brain-bright-ts/math/counting",
-      element: <Counting />,
-    },
-    {
-      path: "/brain-bright-ts/math/addition",
-      element: <Addition />,
-    },
-    {
-      path: "/brain-bright-ts/math/subtraction",
-      element: <Subtraction />,
-    },
-    {
-      path: "/brain-bright-ts/math/multiplication",
-      element: <Multiplication />,
-    },
-    {
-      path: "/brain-bright-ts/math/division",
-      element: <Division />,
-    },
-  ];
-  const routesElement = useRoutes(routesArray);
-  return (
-  
-      <ThemeProvider theme={theme}>
-      <Header />
-      <br/><br/><br/>
-      <div>{routesElement}</div>
-      </ThemeProvider>
 
-  );
+  return (
+    <ThemeProvider theme={theme}>
+      <Header />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/brain-bright-ts/" element={<Home/>}/>
+            <Route path="/brain-bright-ts/home/" element={<Home/>}/>
+            <Route path="/brain-bright-ts/math" element={<Math/>}/>
+            <Route path="/brain-bright-ts/reading" element={<Reading/>}/>
+            <Route path="/brain-bright-ts/writing" element={<Writing/>}/>
+            <Route path="/brain-bright-ts/math/counting" element={<Counting/>}/>
+            <Route path="/brain-bright-ts/math/addition" element={<Addition/>}/>
+            <Route path="/brain-bright-ts/math/subtraction" element={<Subtraction/>}/>
+            <Route path="/brain-bright-ts/math/multiplication" element={<Multiplication/>}/>
+            <Route path="/brain-bright-ts/math/division" element={<Division/>}/>
+          </Routes>
+        </BrowserRouter>
+    </ThemeProvider>
+  )
 }
 
 export default App;
