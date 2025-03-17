@@ -1,14 +1,14 @@
 
-import Header from "./components/header";
-import Home from "./Pages/home";
-import Math from "./Pages/math";
-import Reading from "./Pages/reading";
-import Writing from "./Pages/writing";
-import Counting from "./Pages/math/counting";
-import Addition from "./Pages/math/addition";
-import Subtraction from "./Pages/math/subtraction";
-import Multiplication from "./Pages/math/multiplication";
-import Division from "./Pages/math/division";
+import Header from "./components/header/index";
+import Home from "./Pages/home/index";
+import Math from "./Pages/math/index";
+import Reading from "./Pages/reading/index";
+import Writing from "./Pages/writing/index";
+import Counting from "./Pages/math/counting/index";
+import Addition from "./Pages/math/addition/index";
+import Subtraction from "./Pages/math/subtraction/index";
+import Multiplication from "./Pages/math/multiplication/index";
+import Division from "./Pages/math/division/index";
 
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
