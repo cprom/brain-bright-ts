@@ -20,18 +20,31 @@ import generateMultipleProblems from '../scripts/generateProblems'
         setItems(newItems);
       };
     
-      const checkAnswer = (e : any) => {
+      const checkAnswer = (e: React.ChangeEvent<any>) => {
         const value = e.target.value.split('_')
         items.forEach(item => {
             if(item.id == value[1] && item.answer == parseInt(item.inputValue)){
                 console.log(true, item.id)
                 console.log("inputValue",item.inputValue)
-                document.getElementById(`check-btn-${item.id}`).innerText = 'Correct'
-                document.getElementById(`check-btn-${item.id}`).setAttribute('class', 'btn-correct');
+                const correct = document.getElementById(`check-btn-${item.id}`)
+                if(correct){
+                    correct.innerText = 'Correct'
+                }
+                const btn_correct = document.getElementById(`check-btn-${item.id}`)
+                if(btn_correct){
+                    btn_correct.setAttribute('class', 'btn-correct')                    
+                }
             }
             if(item.id == value[1] && item.answer !== parseInt(item.inputValue)){
-                document.getElementById(`check-btn-${item.id}`).innerText = 'Incorrect'
-                document.getElementById(`check-btn-${item.id}`).setAttribute('class', 'btn-incorrect');
+
+               const incorrect =  document.getElementById(`check-btn-${item.id}`)
+               if(incorrect){
+                incorrect.innerText = 'Incorrect'
+               }
+               const btn_incorrect = document.getElementById(`check-btn-${item.id}`)
+                if(btn_incorrect){
+                    btn_incorrect.setAttribute('class', 'btn-incorrect');
+                }
             }
         })
     }
@@ -73,13 +86,13 @@ import generateMultipleProblems from '../scripts/generateProblems'
 
 
 const ProblemSets = () => {
-    const [level, setLevel] = useState(problems[0].level);
+    // const [level] = useState(problems[0].level);
 
     return (
     <div>
       
             <div style={{display: 'flex', justifyContent: 'space-between'}}>
-            <Typography>Level: {level} </Typography>
+            {/* <Typography>Level: {level} </Typography> */}
             <Typography sx={{p:0}}> Random</Typography>
             </div>
             <CreateAdditionProblems/>
