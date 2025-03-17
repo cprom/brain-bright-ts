@@ -15,7 +15,7 @@ const subjects = [
         id: 1,
         name: "Counting",
         description: 'Learn to Count',
-        path: '/brain-bright-ts/math/counting',
+        path: '#/math/counting',
         img: counting
 
     },
@@ -23,7 +23,7 @@ const subjects = [
         id: 2,
         name: "Addition",
         description: 'Learn to Add',
-        path: '/brain-bright-ts/math/addition',
+        path: '#/math/addition',
         img: addition
 
     },
@@ -31,7 +31,7 @@ const subjects = [
         id: 3,
         name: "Subtraction",
         description: 'Learn to Subtract',
-        path: '/brain-bright-ts/math/subtraction',
+        path: '#/math/subtraction',
         img: subtraction
 
     },
@@ -39,7 +39,7 @@ const subjects = [
         id: 4,
         name: "Multiplication",
         description: 'Learn to Multiply',
-        path: '/brain-bright-ts/math/multiplication',
+        path: '#/math/multiplication',
         img: multiplication
 
     },
@@ -47,7 +47,7 @@ const subjects = [
         id: 5,
         name: "Division",
         description: 'Learn to Divide',
-        path: '/brain-bright-ts/math/division',
+        path: '#/math/division',
         img: division
 
     },

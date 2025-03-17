@@ -18,17 +18,17 @@ const pages = [
     {
         id: 1,
         subject: 'Math',
-        path: '/brain-bright-ts/math'
+        path: '#/math'
     }, 
     {
         id: 2,
         subject: 'Reading',
-        path: '/brain-bright-ts/reading'
+        path: '#/reading'
     },
     {
         id: 3,
         subject: 'Writing',
-        path: '/brain-bright-ts/writing'
+        path: '#/writing'
     }
 ];
 
