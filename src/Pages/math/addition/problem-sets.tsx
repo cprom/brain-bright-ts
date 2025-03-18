@@ -4,7 +4,7 @@ import Grid2 from '@mui/material/Grid2';
 import generateMultipleProblems from '../scripts/generateProblems'
 import '../../../App.css'
 
-    const problems = generateMultipleProblems(10,1,1000)
+    const problems = generateMultipleProblems(10,1,10)
     console.log(problems)
 
     const CreateAdditionProblems = () => {
@@ -57,7 +57,7 @@ import '../../../App.css'
                     {
                         problems.map((problem) => (
                         <Paper key={problem.id} elevation={5} sx={{p: 2, m: 2}}>
-                            <Grid2 container spacing={2} display="flex" justifyContent="center" alignItems="center" size="grow">
+                            <Grid2 container spacing={2} display="flex" justifyContent="center" alignItems="center" textAlign='center' size="grow">
                                 <div >
                                 <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
                                     <div style={{textAlign: 'right', borderBottom: '3px solid black'}}>

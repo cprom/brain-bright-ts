@@ -21,7 +21,6 @@ transition: .5s;
 .btn-correct:hover {
     background-color: #74C0FC;
     cursor: pointer;
-    transition: .3s;
 }
 
 .btn-incorrect {
@@ -37,6 +36,5 @@ transition: .5s;
 .btn-incorrect:hover {
     background-color: #74C0FC;
     cursor: pointer;
-    transition: .3s;
 }
 
