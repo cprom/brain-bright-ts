@@ -1,9 +1,5 @@
-import { Box, Button, ButtonGroup, Container, IconButton} from '@mui/material'
+import { Box, Container, IconButton} from '@mui/material'
 import GitHubIcon from '@mui/icons-material/GitHub';
-
-const buttons = [
-    <Button key="one">GitHub</Button>,
-  ];
 
 const Footer = () => {
 
