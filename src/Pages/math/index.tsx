@@ -1,4 +1,4 @@
-import { Box, Button, Typography } from '@mui/material'
+import { Box, Button, Container, Typography } from '@mui/material'
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -57,10 +57,9 @@ const Math = () => {
    
 
     return (
-        <div>
-
-            <Box sx={{p:5}}>
-            <Typography>Math</Typography>
+        <Container sx={{textAlign: 'center'}}>
+            <Box sx={{p:5, mt: 5}}>
+            <Typography sx={{fontSize: '2rem', fontWeight: 'bold'}}>Math</Typography>
             </Box>
             <Grid
             container
@@ -94,10 +93,7 @@ const Math = () => {
                 ) )
                }  
             </Grid>
-
-        
-    </div>
-
+    </Container>
     )
 }
 

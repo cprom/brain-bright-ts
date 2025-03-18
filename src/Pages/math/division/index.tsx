@@ -1,19 +1,15 @@
-import { Box, Typography } from '@mui/material'
+import { Box, Container, Typography } from '@mui/material'
+import ComingSoon from '../../../components/coming_soon'
 
 const Division = () => {
 
-
-
-
     return (
-        <div>
-
-            <Box sx={{p:5}}>
-            <Typography>Division</Typography>
+        <Container sx={{textAlign: 'center'}}>
+            <Box sx={{p:5, mt: 5}}>
+            <Typography sx={{fontSize: '2rem', fontWeight: 'bold'}}>Division</Typography>
             </Box>
-
-    </div>
-
+            <ComingSoon/>
+        </Container>
     )
 }
 

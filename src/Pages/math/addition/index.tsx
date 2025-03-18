@@ -1,19 +1,15 @@
-import { Box,Typography } from '@mui/material'
+import { Box,Container,Typography } from '@mui/material'
 import ProblemSets from './problem-sets'
 
 const Addition = () => {
 
-
-
-
     return (
-        <div>
+        <Container sx={{textAlign: 'center'}}>
             <Box style={{justifyItems: 'center'}} sx={{mt: 12}}>
-            <Typography sx={{mt: 1}}>Addition</Typography>
+            <Typography sx={{fontSize: '2rem', fontWeight: 'bold'}}>Addition</Typography>
             <ProblemSets />
             </Box>
-
-        </div>
+        </Container>
 
     )
 }

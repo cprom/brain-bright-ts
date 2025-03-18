@@ -1,16 +1,15 @@
-import { Box } from '@mui/material'
+import { Box, Container, Typography } from '@mui/material'
+import ComingSoon from '../../components/coming_soon'
 
 const Writing = () => {
 
     return (
-        <div>
-
-            <Box sx={{p:5}}>
-            <h1>Writing</h1>
+        <Container sx={{textAlign: 'center'}}>
+            <Box sx={{p:5, mt: 5}}>
+            <Typography sx={{fontSize: '2rem', fontWeight: 'bold'}}>Writing</Typography>
             </Box>
-
-        </div>
-
+            <ComingSoon/>
+        </Container>
     )
 }
 

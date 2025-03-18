@@ -14,6 +14,7 @@ import Division from "./Pages/math/division/";
 import { HashRouter, Route, Routes } from "react-router-dom";
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Footer from "./components/footer";
 
 const theme = createTheme({
   palette: {
@@ -59,6 +60,7 @@ function App() {
             <Route path="/math/division" element={<Division/>}/>
           </Routes>
         </HashRouter>
+        <Footer/>
     </ThemeProvider>
   )
 }

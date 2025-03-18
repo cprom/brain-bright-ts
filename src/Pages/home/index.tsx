@@ -1,3 +1,4 @@
+import { Container } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
@@ -6,10 +7,8 @@ const Home = () => {
 
 
     return (
-        <div>
-        
-            <>
-            <Card sx={{ mt: 5, p: 10,minWidth: 275, minHeight: 300 }}>
+        <Container sx={{textAlign: 'center'}}>
+            <Card sx={{ mt: 10, p: 5, minHeight: 300 }}>
                 <CardContent>
                     <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 50 }}>
                     Welcome to Brain Bright.
@@ -22,10 +21,7 @@ const Home = () => {
                     </Typography>
                 </CardContent>
                 </Card>
-            </>
-
-        </div>
-
+        </Container>
     )
 }
 
