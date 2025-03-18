@@ -60,7 +60,7 @@ import '../../../App.css'
                             <Grid2 container spacing={2} display="flex" justifyContent="center" alignItems="center" size="grow">
                                 <div >
                                 <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
-                                    <div style={{textAlign: 'right', borderBottom: '3px solid #B197FC'}}>
+                                    <div style={{textAlign: 'right', borderBottom: '3px solid black'}}>
                                     <Stack><Typography fontSize={30}>{problem.num1}</Typography></Stack>                                 
                                     <Stack><Typography fontSize={30} >+ {problem.num2}</Typography> </Stack>   
                                     </div>
