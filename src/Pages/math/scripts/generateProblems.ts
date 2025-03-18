@@ -1,6 +1,9 @@
 function generateAdditionProblem(max : number, min: number, id : number) {
     const num1 = Math.floor(Math.random() * (max - min + 1)) + min;
     const num2 = Math.floor(Math.random() * (max - min + 1)) + min;
+
+    // const bigger = Math.max(num1, num2);
+    // const smaller = Math.min(num1, num2);
     // let level: number;
 
     // switch (true) {
@@ -38,12 +41,14 @@ function generateAdditionProblem(max : number, min: number, id : number) {
 
     return {
       id: id,
-      problem: `${num1} + ${num2} = `,
+      num1: num1,
+      num2: num2,
       answer: num1 + num2,
       inputValue: '',
       
     };
   }
+
   
  function generateMultipleProblems(numProblems: number,  min: number, max: number) {
       const problems = [];

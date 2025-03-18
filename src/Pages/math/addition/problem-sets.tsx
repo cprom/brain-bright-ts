@@ -1,11 +1,12 @@
 import {useState} from 'react'
-import { Box, Button,Container, Paper,TextField, Typography } from '@mui/material'
+import { Box, Button,Container, Paper,Stack,TextField, Typography } from '@mui/material'
 import Grid2 from '@mui/material/Grid2';
 import generateMultipleProblems from '../scripts/generateProblems'
+import '../../../App.css'
+import { BorderBottom } from '@mui/icons-material';
 
     const problems = generateMultipleProblems(10,1,10)
     console.log(problems)
-
 
     const CreateAdditionProblems = () => {
     const [items, setItems] = useState([...problems]);
@@ -58,18 +59,26 @@ import generateMultipleProblems from '../scripts/generateProblems'
                         problems.map((problem) => (
                         <Paper key={problem.id} elevation={5} sx={{p: 2, m: 2}}>
                             <Grid2 container spacing={2} display="flex" justifyContent="center" alignItems="center" size="grow">
-                                <Typography fontSize={30}>{problem.problem}</Typography>                                        
+                                <div >
+                                <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
+                                    <div style={{textAlign: 'right', borderBottom: '3px solid #B197FC'}}>
+                                    <Stack><Typography fontSize={30}>{problem.num1}</Typography></Stack>                                 
+                                    <Stack><Typography fontSize={30} >+ {problem.num2}</Typography> </Stack>   
+                                    </div>
+                                </div> 
                                 <TextField 
                                     id={(problem.id).toString()}
                                     type='text' 
                                     size='small'
-                                    slotProps={{ htmlInput: { maxLength: 2 } }}
+                                    slotProps={{ htmlInput: { maxLength: 5 } }}
                                     onChange={(event) => handleInputChange(problem.id, event)}
                                     sx={{
                                         input: { fontSize: '1.70rem', textAlign: 'center', p: 0 }, 
-                                        width: '70px'
+                                        width: '100px', mt: 1
                                       }}
                                 />
+                                </div>                                   
+
                                 <Button onClick={checkAnswer}  value={`${problem.answer}_${problem.id}`} id={`check-btn-${problem.id}`} variant='contained'>Check</Button>
                             </Grid2>
                         </Paper> 
