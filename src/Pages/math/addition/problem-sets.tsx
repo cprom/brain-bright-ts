@@ -3,7 +3,6 @@ import { Box, Button,Container, Paper,Stack,TextField, Typography } from '@mui/m
 import Grid2 from '@mui/material/Grid2';
 import generateMultipleProblems from '../scripts/generateProblems'
 import '../../../App.css'
-import { BorderBottom } from '@mui/icons-material';
 
     const problems = generateMultipleProblems(10,1,10)
     console.log(problems)
