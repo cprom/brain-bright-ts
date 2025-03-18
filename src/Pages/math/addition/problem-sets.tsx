@@ -32,7 +32,7 @@ import '../../../App.css'
                 }
                 const btn_correct = document.getElementById(`check-btn-${item.id}`)
                 if(btn_correct){
-                    btn_correct.setAttribute('class', 'btn-correct')                    
+                    btn_correct.setAttribute('class', 'btn-correct')                  
                 }
             }
             if(item.id == value[1] && item.answer !== parseInt(item.inputValue)){
