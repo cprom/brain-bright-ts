@@ -4,7 +4,7 @@ import Grid2 from '@mui/material/Grid2';
 import generateMultipleProblems from '../scripts/generateProblems'
 import '../../../App.css'
 
-    const problems = generateMultipleProblems(10,1,10)
+    const problems = generateMultipleProblems(10,1,1000)
     console.log(problems)
 
     const CreateAdditionProblems = () => {
@@ -78,7 +78,7 @@ import '../../../App.css'
                                 />
                                 </div>                                   
 
-                                <Button onClick={checkAnswer}  value={`${problem.answer}_${problem.id}`} id={`check-btn-${problem.id}`} variant='contained'>Check</Button>
+                                <Button onClick={checkAnswer}  value={`${problem.answer}_${problem.id}`} id={`check-btn-${problem.id}`} variant='contained' size='large' sx={{height:98.66, ml: '10px' }}>Check</Button>
                             </Grid2>
                         </Paper> 
                         )) 

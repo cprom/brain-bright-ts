@@ -70,7 +70,7 @@ const Math = () => {
             >
                {
                  subjects.map((subject)=>(
-                <Card sx={{ maxWidth: 345 }} key={subject.id}>
+                <Card sx={{ maxWidth: 345, textAlign: 'center' }} key={subject.id}>
                     <CardMedia
                         component="img"
                         alt={subject.name}
