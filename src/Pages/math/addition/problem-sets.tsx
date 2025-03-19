@@ -11,10 +11,8 @@ import '../../../App.css'
 
     const CreateAdditionProblems = () => {
     const [items, setItems] = useState([...problems]);
-    const [selectedButtonId, setSelectedButtonId] = useState('level-btn-1');
     const [selectedBtn, setSelectedBtn] = useState(-1);
-    console.log(selectedButtonId)
-    
+
     const handleInputChange = (id: number, event: React.ChangeEvent<any>) => {
         const newItems = items.map(item => {
           if (item.id === id) {
@@ -25,15 +23,34 @@ import '../../../App.css'
         setItems(newItems);
       };
 
-
       const chooseLevel = ( event: React.ChangeEvent<any>) => {
         const newProblems = generateMultipleProblems(10,1,event.target.value)
           setItems([...newProblems]);
-          setSelectedButtonId(event.target.id)
-          const a = event.target.id.split('-')
-          console.log('a',a[2])
-            setSelectedBtn(parseInt(a[2]))
+          const buttonId = event.target.id.split('-')
+            setSelectedBtn(parseInt(buttonId[2]))
+
+            // reset textfield
+            const selectedInput = document.querySelectorAll("input[type='text'");
+            console.log(selectedInput)
+            selectedInput.forEach(input => {
+                input.value = ''
+            })
+            
+            // reset button
+            checkButtonArr.forEach(button => {
+                document.getElementById(button)?.setAttribute('class', 'btn-initial');
+                
+            }) 
+            checkButtonArr.forEach(button => {
+                const selectedBtn = document.getElementById(button);
+                if(selectedBtn){
+                    selectedBtn.innerText = 'Check'
+                }
+            }) 
         }
+        
+
+        const checkButtonArr = ['check-btn-0','check-btn-1','check-btn-2','check-btn-3','check-btn-4','check-btn-5','check-btn-6','check-btn-7','check-btn-8','check-btn-9']
 
 
     
@@ -41,8 +58,6 @@ import '../../../App.css'
         const value = e.target.value.split('_')
         items.forEach(item => {
             if(item.id == value[1] && item.answer == parseInt(item.inputValue)){
-                console.log(true, item.id)
-                console.log("inputValue",item.inputValue)
                 const correct = document.getElementById(`check-btn-${item.id}`)
                 if(correct){
                     correct.innerText = 'Correct'
@@ -65,9 +80,6 @@ import '../../../App.css'
             }
         })
     }
-
-   
-    console.log(selectedBtn)
 
         return (
             <>
