@@ -30,7 +30,7 @@ import '../../../App.css'
             setSelectedBtn(parseInt(buttonId[2]))
 
             // reset textfield
-            const selectedInput = document.querySelectorAll("input[type='text'");
+            const selectedInput = document.querySelectorAll<HTMLInputElement>("input[type='text'");
             console.log(selectedInput)
             selectedInput.forEach(input => {
                 input.value = ''
