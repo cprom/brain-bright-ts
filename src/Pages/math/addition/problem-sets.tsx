@@ -4,13 +4,18 @@ import Grid2 from '@mui/material/Grid2';
 import generateMultipleProblems from '../scripts/generateProblems'
 import '../../../App.css'
 
+
+    
+
     const problems = generateMultipleProblems(10,1,10)
-    console.log(problems)
 
     const CreateAdditionProblems = () => {
     const [items, setItems] = useState([...problems]);
-
-    const handleInputChange = (id: number, event: any) => {
+    const [selectedButtonId, setSelectedButtonId] = useState('level-btn-1');
+    const [selectedBtn, setSelectedBtn] = useState(-1);
+    console.log(selectedButtonId)
+    
+    const handleInputChange = (id: number, event: React.ChangeEvent<any>) => {
         const newItems = items.map(item => {
           if (item.id === id) {
             return { ...item, inputValue: event.target.value };
@@ -19,6 +24,18 @@ import '../../../App.css'
         });
         setItems(newItems);
       };
+
+
+      const chooseLevel = ( event: React.ChangeEvent<any>) => {
+        const newProblems = generateMultipleProblems(10,1,event.target.value)
+          setItems([...newProblems]);
+          setSelectedButtonId(event.target.id)
+          const a = event.target.id.split('-')
+          console.log('a',a[2])
+            setSelectedBtn(parseInt(a[2]))
+        }
+
+
     
       const checkAnswer = (e: React.ChangeEvent<any>) => {
         const value = e.target.value.split('_')
@@ -49,13 +66,30 @@ import '../../../App.css'
         })
     }
 
+   
+    console.log(selectedBtn)
 
         return (
             <>
                 <Container sx={{minWidth: '400px', m: 0}}>
+                <Box sx={{ padding: 2}}>
+                    <Typography>Choose a level</Typography>
+                    
+                    <Button id='level-btn-1' variant='contained' sx={{fontSize: 20, fontWeight: 'bold', margin: .5}} value='10' color={selectedBtn === 1 ? "secondary" : "primary"} onClick={chooseLevel}>1</Button>
+                    <Button id='level-btn-2' variant='contained' sx={{fontSize: 20, fontWeight: 'bold', margin: .5}} value='50' color={selectedBtn === 2 ? "secondary" : "primary"} onClick={chooseLevel}>2</Button>
+                    <Button id='level-btn-3' variant='contained' sx={{fontSize: 20, fontWeight: 'bold', margin: .5}} value='100' color={selectedBtn === 3 ? "secondary" : "primary"} onClick={chooseLevel}>3</Button>
+                    <Button id='level-btn-4' variant='contained' sx={{fontSize: 20, fontWeight: 'bold', margin: .5}} value='500' color={selectedBtn === 4 ? "secondary" : "primary"} onClick={chooseLevel}>4</Button>
+                    <Button id='level-btn-5' variant='contained' sx={{fontSize: 20, fontWeight: 'bold', margin: .5}} value='1000' color={selectedBtn === 5 ? "secondary" : "primary"} onClick={chooseLevel}>5</Button>
+                    <Button id='level-btn-6' variant='contained' sx={{fontSize: 20, fontWeight: 'bold', margin: .5}} value='2000' color={selectedBtn === 6 ? "secondary" : "primary"} onClick={chooseLevel}>6</Button>
+                    <Button id='level-btn-7' variant='contained' sx={{fontSize: 20, fontWeight: 'bold', margin: .5}} value='3000' color={selectedBtn === 7 ? "secondary" : "primary"} onClick={chooseLevel}>7</Button>
+                    <Button id='level-btn-8' variant='contained' sx={{fontSize: 20, fontWeight: 'bold', margin: .5}} value='4000' color={selectedBtn === 8 ? "secondary" : "primary"} onClick={chooseLevel}>8</Button>
+                    <Button id='level-btn-9' variant='contained' sx={{fontSize: 20, fontWeight: 'bold', margin: .5}} value='5000' color={selectedBtn === 9 ? "secondary" : "primary"} onClick={chooseLevel}>9</Button>
+                    <Button id='level-btn-10' variant='contained' sx={{fontSize: 20, fontWeight: 'bold', margin: .5}} value='10000' color={selectedBtn === 10 ? "secondary" : "primary"} onClick={chooseLevel}>10</Button>
+                   
+                </Box>
                 <Box>     
                     {
-                        problems.map((problem) => (
+                        items.map((problem) => (
                         <Paper key={problem.id} elevation={5} sx={{p: 2, m: 2}}>
                             <Grid2 container spacing={2} display="flex" justifyContent="center" alignItems="center" textAlign='center' size="grow">
                                 <div >
@@ -92,17 +126,10 @@ import '../../../App.css'
 
 }
 
-
 const ProblemSets = () => {
-    // const [level] = useState(problems[0].level);
-
     return (
     <div>
-      
-            <div style={{display: 'flex', justifyContent: 'space-between'}}>
-            {/* <Typography>Level: {level} </Typography> */}
-            <Typography sx={{p:0}}> Random</Typography>
-            </div>
+
             <CreateAdditionProblems/>
 
     </div>
