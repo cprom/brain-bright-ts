@@ -49,8 +49,27 @@ function generateAdditionProblem(max : number, min: number, id : number) {
     };
   }
 
+  function generateSubtractionProblem(max : number, min: number, id : number) {
+    const num1 = Math.floor(Math.random() * (max - min + 1)) + min;
+    const num2 = Math.floor(Math.random() * (max - min + 1)) + min;
+
+    const maxNumber = Math.max(num1, num2);
+    const minNumber = Math.min(num1, num2);
+
+
+    return {
+      id: id,
+      num1: maxNumber,
+      num2: minNumber,
+      answer: maxNumber - minNumber,
+      inputValue: '',
+      
+    };
+  }
+
+
   
- function generateMultipleProblems(numProblems: number,  min: number, max: number) {
+ export function generateMultipleAdditionProblems(numProblems: number,  min: number, max: number) {
       const problems = [];
       for (let i = 0; i < numProblems; i++) {
           problems.push(generateAdditionProblem(max, min, i));
@@ -58,7 +77,14 @@ function generateAdditionProblem(max : number, min: number, id : number) {
       return problems
   }
 
+export function generateMultipleSubtractionProblems(numProblems: number,  min: number, max: number) {
+      const problems = [];
+      for (let i = 0; i < numProblems; i++) {
+          problems.push(generateSubtractionProblem(max, min, i));
+      }
+      return problems
+  }
+
 
  
 
-  export default generateMultipleProblems

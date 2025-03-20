@@ -1,15 +1,15 @@
 import {useState} from 'react'
 import { Box, Button,Container, Paper,Stack,TextField, Typography } from '@mui/material'
 import Grid2 from '@mui/material/Grid2';
-import { generateMultipleAdditionProblems } from '../scripts/generateProblems'
+import { generateMultipleSubtractionProblems } from '../scripts/generateProblems'
 import '../../../App.css'
 
 
     
 
-    const problems = generateMultipleAdditionProblems(10,1,10)
+    const problems = generateMultipleSubtractionProblems(10,1,10)
 
-    const CreateAdditionProblems = () => {
+    const CreateSubtractionProblems = () => {
     const [items, setItems] = useState([...problems]);
     const [selectedBtn, setSelectedBtn] = useState(-1);
 
@@ -24,7 +24,7 @@ import '../../../App.css'
       };
 
       const chooseLevel = ( event: React.ChangeEvent<any>) => {
-        const newProblems = generateMultipleAdditionProblems(10,1,event.target.value)
+        const newProblems = generateMultipleSubtractionProblems(10,1,event.target.value)
           setItems([...newProblems]);
           const buttonId = event.target.id.split('-')
             setSelectedBtn(parseInt(buttonId[2]))
@@ -107,7 +107,7 @@ import '../../../App.css'
                                 <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
                                     <div style={{textAlign: 'right', borderBottom: '3px solid black'}}>
                                     <Stack><Typography fontSize={30}>{problem.num1}</Typography></Stack>                                 
-                                    <Stack><Typography fontSize={30} >+ {problem.num2}</Typography> </Stack>   
+                                    <Stack><Typography fontSize={30} >- {problem.num2}</Typography> </Stack>   
                                     </div>
                                 </div> 
                                 <TextField 
@@ -141,7 +141,7 @@ const ProblemSets = () => {
     return (
     <div>
 
-            <CreateAdditionProblems/>
+            <CreateSubtractionProblems/>
 
     </div>
 

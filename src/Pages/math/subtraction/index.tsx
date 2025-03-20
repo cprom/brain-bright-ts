@@ -1,5 +1,5 @@
 import { Box, Container, Typography } from '@mui/material'
-import ComingSoon from '../../../components/coming_soon'
+import ProblemSets from './problem-sets'
 
 const Subtraction = () => {
 
@@ -8,7 +8,7 @@ const Subtraction = () => {
             <Box sx={{p:5, mt: 5}}>
             <Typography sx={{fontSize: '2rem', fontWeight: 'bold'}}>Subtraction</Typography>
             </Box>
-            <ComingSoon/>
+            <ProblemSets/>
         </Container>
     )
 }
