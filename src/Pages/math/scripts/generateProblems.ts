@@ -67,6 +67,41 @@ function generateAdditionProblem(max : number, min: number, id : number) {
     };
   }
 
+  function generateMultiplicationProblem(max : number, min: number, id : number) {
+    const num1 = Math.floor(Math.random() * (max - min + 1)) + min;
+    const num2 = Math.floor(Math.random() * (max - min + 1)) + min;
+
+    const maxNumber = Math.max(num1, num2);
+    const minNumber = Math.min(num1, num2);
+
+
+    return {
+      id: id,
+      num1: maxNumber,
+      num2: minNumber,
+      answer: maxNumber * minNumber,
+      inputValue: '',
+      
+    };
+  }
+
+  function generateDivisionProblem(max : number, min: number, id : number) {
+    const num1 = Math.floor(Math.random() * (max - min + 1)) + min;
+    const num2 = Math.floor(Math.random() * (max - min + 1)) + min;
+
+    const maxNumber = Math.max(num1, num2);
+    const minNumber = Math.min(num1, num2);
+
+
+    return {
+      id: id,
+      num1: maxNumber,
+      num2: minNumber,
+      answer: maxNumber / minNumber,
+      inputValue: '',
+      
+    };
+  }
 
   
  export function generateMultipleAdditionProblems(numProblems: number,  min: number, max: number) {
@@ -85,6 +120,21 @@ export function generateMultipleSubtractionProblems(numProblems: number,  min: n
       return problems
   }
 
+  export function generateMultipleMultiplicationProblems(numProblems: number,  min: number, max: number) {
+    const problems = [];
+    for (let i = 0; i < numProblems; i++) {
+        problems.push(generateMultiplicationProblem(max, min, i));
+    }
+    return problems
+}
+
+  export function generateMultipleDivisionProblems(numProblems: number,  min: number, max: number) {
+    const problems = [];
+    for (let i = 0; i < numProblems; i++) {
+        problems.push(generateDivisionProblem(max, min, i));
+    }
+    return problems
+}
 
  
 
