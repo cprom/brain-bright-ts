@@ -30,7 +30,7 @@ import '../../../App.css'
             setSelectedBtn(parseInt(buttonId[2]))
 
             // reset textfield
-            const selectedInput = document.querySelectorAll<HTMLInputElement>("input[type='text'");
+            const selectedInput = document.querySelectorAll<HTMLInputElement>("input[type='number'");
             selectedInput.forEach(input => {
                 input.value = ''
             })
@@ -112,10 +112,11 @@ import '../../../App.css'
                                 </div> 
                                 <TextField 
                                     id={(problem.id).toString()}
-                                    type='text' 
+                                    type='number' 
                                     size='small'
                                     slotProps={{ htmlInput: { maxLength: 5 } }}
                                     onChange={(event) => handleInputChange(problem.id, event)}
+                                    autoComplete='off'
                                     sx={{
                                         input: { fontSize: '1.70rem', textAlign: 'center', p: 0 }, 
                                         width: '100px', mt: 1
