@@ -55,7 +55,6 @@ const subjects = [
 
 const Math = () => {
    
-
     return (
         <Container sx={{textAlign: 'center'}}>
             <Box sx={{p:5, mt: 5}}>

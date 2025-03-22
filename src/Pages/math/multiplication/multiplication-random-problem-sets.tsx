@@ -1,15 +1,15 @@
 import {useState} from 'react'
 import { Box, Button,Container, Paper,Stack,TextField, Typography } from '@mui/material'
 import Grid2 from '@mui/material/Grid2';
-import { generateMultipleSubtractionProblems } from '../scripts/generateProblems'
+import { generateMultipleMultiplicationProblems } from '../scripts/generateProblems'
 import '../../../App.css'
 
 
     
 
-    const problems = generateMultipleSubtractionProblems(10,1,10)
+    const problems = generateMultipleMultiplicationProblems(10,1,10)
 
-    const CreateSubtractionProblems = () => {
+    const CreateRandomMultiplicationProblems = () => {
     const [items, setItems] = useState([...problems]);
     const [selectedBtn, setSelectedBtn] = useState(-1);
 
@@ -24,7 +24,7 @@ import '../../../App.css'
       };
 
       const chooseLevel = ( event: React.ChangeEvent<any>) => {
-        const newProblems = generateMultipleSubtractionProblems(10,1,event.target.value)
+        const newProblems = generateMultipleMultiplicationProblems(10,1,event.target.value)
           setItems([...newProblems]);
           const buttonId = event.target.id.split('-')
             setSelectedBtn(parseInt(buttonId[2]))
@@ -87,15 +87,15 @@ import '../../../App.css'
                     <Typography>Choose a level</Typography>
                     
                     <Button id='level-btn-1' variant='contained' sx={{fontSize: 20, fontWeight: 'bold', margin: .5}} value='10' color={selectedBtn === 1 ? "secondary" : "primary"} onClick={chooseLevel}>1</Button>
-                    <Button id='level-btn-2' variant='contained' sx={{fontSize: 20, fontWeight: 'bold', margin: .5}} value='50' color={selectedBtn === 2 ? "secondary" : "primary"} onClick={chooseLevel}>2</Button>
-                    <Button id='level-btn-3' variant='contained' sx={{fontSize: 20, fontWeight: 'bold', margin: .5}} value='100' color={selectedBtn === 3 ? "secondary" : "primary"} onClick={chooseLevel}>3</Button>
-                    <Button id='level-btn-4' variant='contained' sx={{fontSize: 20, fontWeight: 'bold', margin: .5}} value='500' color={selectedBtn === 4 ? "secondary" : "primary"} onClick={chooseLevel}>4</Button>
-                    <Button id='level-btn-5' variant='contained' sx={{fontSize: 20, fontWeight: 'bold', margin: .5}} value='1000' color={selectedBtn === 5 ? "secondary" : "primary"} onClick={chooseLevel}>5</Button>
-                    <Button id='level-btn-6' variant='contained' sx={{fontSize: 20, fontWeight: 'bold', margin: .5}} value='2000' color={selectedBtn === 6 ? "secondary" : "primary"} onClick={chooseLevel}>6</Button>
-                    <Button id='level-btn-7' variant='contained' sx={{fontSize: 20, fontWeight: 'bold', margin: .5}} value='3000' color={selectedBtn === 7 ? "secondary" : "primary"} onClick={chooseLevel}>7</Button>
-                    <Button id='level-btn-8' variant='contained' sx={{fontSize: 20, fontWeight: 'bold', margin: .5}} value='4000' color={selectedBtn === 8 ? "secondary" : "primary"} onClick={chooseLevel}>8</Button>
-                    <Button id='level-btn-9' variant='contained' sx={{fontSize: 20, fontWeight: 'bold', margin: .5}} value='5000' color={selectedBtn === 9 ? "secondary" : "primary"} onClick={chooseLevel}>9</Button>
-                    <Button id='level-btn-10' variant='contained' sx={{fontSize: 20, fontWeight: 'bold', margin: .5}} value='10000' color={selectedBtn === 10 ? "secondary" : "primary"} onClick={chooseLevel}>10</Button>
+                    <Button id='level-btn-2' variant='contained' sx={{fontSize: 20, fontWeight: 'bold', margin: .5}} value='20' color={selectedBtn === 2 ? "secondary" : "primary"} onClick={chooseLevel}>2</Button>
+                    <Button id='level-btn-3' variant='contained' sx={{fontSize: 20, fontWeight: 'bold', margin: .5}} value='30' color={selectedBtn === 3 ? "secondary" : "primary"} onClick={chooseLevel}>3</Button>
+                    <Button id='level-btn-4' variant='contained' sx={{fontSize: 20, fontWeight: 'bold', margin: .5}} value='40' color={selectedBtn === 4 ? "secondary" : "primary"} onClick={chooseLevel}>4</Button>
+                    <Button id='level-btn-5' variant='contained' sx={{fontSize: 20, fontWeight: 'bold', margin: .5}} value='50' color={selectedBtn === 5 ? "secondary" : "primary"} onClick={chooseLevel}>5</Button>
+                    <Button id='level-btn-6' variant='contained' sx={{fontSize: 20, fontWeight: 'bold', margin: .5}} value='60' color={selectedBtn === 6 ? "secondary" : "primary"} onClick={chooseLevel}>6</Button>
+                    <Button id='level-btn-7' variant='contained' sx={{fontSize: 20, fontWeight: 'bold', margin: .5}} value='70' color={selectedBtn === 7 ? "secondary" : "primary"} onClick={chooseLevel}>7</Button>
+                    <Button id='level-btn-8' variant='contained' sx={{fontSize: 20, fontWeight: 'bold', margin: .5}} value='80' color={selectedBtn === 8 ? "secondary" : "primary"} onClick={chooseLevel}>8</Button>
+                    <Button id='level-btn-9' variant='contained' sx={{fontSize: 20, fontWeight: 'bold', margin: .5}} value='90' color={selectedBtn === 9 ? "secondary" : "primary"} onClick={chooseLevel}>9</Button>
+                    <Button id='level-btn-10' variant='contained' sx={{fontSize: 20, fontWeight: 'bold', margin: .5}} value='100' color={selectedBtn === 10 ? "secondary" : "primary"} onClick={chooseLevel}>10</Button>
                    
                 </Box>
                 <Box>     
@@ -107,16 +107,16 @@ import '../../../App.css'
                                 <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
                                     <div style={{textAlign: 'right', borderBottom: '3px solid black'}}>
                                     <Stack><Typography fontSize={30}>{problem.num1}</Typography></Stack>                                 
-                                    <Stack><Typography fontSize={30} >- {problem.num2}</Typography> </Stack>   
+                                    <Stack><Typography fontSize={30} >x {problem.num2}</Typography> </Stack>   
                                     </div>
                                 </div> 
                                 <TextField 
                                     id={(problem.id).toString()}
-                                    type='number' 
+                                    type='number'
+                                    autoComplete='off' 
                                     size='small'
                                     slotProps={{ htmlInput: { maxLength: 5 } }}
                                     onChange={(event) => handleInputChange(problem.id, event)}
-                                    autoComplete='off'
                                     sx={{
                                         input: { fontSize: '1.70rem', textAlign: 'center', p: 0 }, 
                                         width: '100px', mt: 1
@@ -138,15 +138,15 @@ import '../../../App.css'
 
 }
 
-const ProblemSets = () => {
+const MultiplicationRandomProblemSets = () => {
     return (
-    <div>
-
-            <CreateSubtractionProblems/>
-
-    </div>
-
+    <Container sx={{textAlign: 'center'}}>
+        <Box  style={{justifyItems: 'center'}} sx={{mt: 12}}>
+            <Typography>Random Problems</Typography>
+            <CreateRandomMultiplicationProblems/>
+        </Box>
+    </Container>
     )
 }
 
-export default ProblemSets
+export default MultiplicationRandomProblemSets
