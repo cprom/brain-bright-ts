@@ -11,7 +11,6 @@ import Multiplication from "./Pages/math/multiplication/";
 import MultiplicationRandomProblemSets from "./Pages/math/multiplication/multiplication-random-problem-sets";
 import Division from "./Pages/math/division/";
 
-
 import { HashRouter, Route, Routes } from "react-router-dom";
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -30,10 +29,10 @@ const theme = createTheme({
       main: '#FFD43B' // yellow
     },
     warning: {
-      main: '#FFA047' // green
+      main: '#FFA047' // orange
     },
     success: {
-      main: '#63E6bE', // orange
+      main: '#63E6bE', // green
       
     },
     error: {

@@ -13,29 +13,32 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBrain, faLightbulb } from '@fortawesome/free-solid-svg-icons';
+import CalculateIcon from '@mui/icons-material/Calculate';
 
 const pages = [
     {
         id: 1,
         subject: 'Math',
-        path: '#/math'
+        path: '#/math',
+        icon: `<${CalculateIcon} />}`
     }, 
     {
         id: 2,
         subject: 'Reading',
-        path: '#/reading'
+        path: '#/reading',
+        icon: `<${CalculateIcon} />}`
     },
     {
         id: 3,
         subject: 'Writing',
-        path: '#/writing'
+        path: '#/writing',
+        icon: `<${CalculateIcon} />}`
     }
 ];
 
 
 
 const Header = () => {
-
 
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
     const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
@@ -57,162 +60,159 @@ const Header = () => {
 
     return (
         <div>
+            <AppBar style={{background: '#B197FC'}}>
+            <Container maxWidth="xl">
+                <Toolbar disableGutters>
+                <Button href='#/'>
+                    <FontAwesomeIcon icon={faBrain} style={{color: '#FFD43B', fontSize: '35px'}}/>
+                    <FontAwesomeIcon icon={faLightbulb} style={{color: "#63E6bE", fontSize:'35px'}} />
+                </Button>
+                <Typography
+                    variant="h6"
+                    noWrap
+                    component="a"
+                    href="#/"
+                    sx={{
+                    mr: 2,
+                    display: { xs: 'none', md: 'flex' },
+                    fontFamily: 'monospace',
+                    fontWeight: 700,
+                    letterSpacing: '.3rem',
+                    color: '#FFD43B',
+                    textDecoration: 'none',
+                    }}
+                >
+                    Brain
+                </Typography>
+                <Typography
+                    variant="h6"
+                    noWrap
+                    component="a"
+                    href="#/"
+                    sx={{
+                    mr: 2,
+                    display: { xs: 'none', md: 'flex' },
+                    fontFamily: 'monospace',
+                    fontWeight: 700,
+                    letterSpacing: '.3rem',
+                    color: '#63E6bE',
+                    textDecoration: 'none',
+                    }}
+                >
+                    Bright
+                </Typography>
 
-                    <>
-                    <AppBar style={{background: '#B197FC'}}>
-                    <Container maxWidth="xl">
-                        <Toolbar disableGutters>
-                        <Button href='#/'>
-                            <FontAwesomeIcon icon={faBrain} style={{color: '#FFD43B', fontSize: '35px'}}/>
-                            <FontAwesomeIcon icon={faLightbulb} style={{color: "#63E6bE", fontSize:'35px'}} />
+                <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                    <IconButton
+                    size="large"
+                    aria-label="account of current user"
+                    aria-controls="menu-appbar"
+                    aria-haspopup="true"
+                    onClick={handleOpenNavMenu}
+                    color="inherit"
+                    >
+                    <MenuIcon />
+                    </IconButton>
+                    <Menu
+                    id="menu-appbar"
+                    anchorEl={anchorElNav}
+                    anchorOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'left',
+                    }}
+                    keepMounted
+                    transformOrigin={{
+                        vertical: 'top',
+                        horizontal: 'left',
+                    }}
+                    open={Boolean(anchorElNav)}
+                    onClose={handleCloseNavMenu}
+                    sx={{ display: { xs: 'block', md: 'none' } }}
+                    >
+                    {pages.map((page) => (
+                        <MenuItem key={page.id} onClick={handleCloseNavMenu}>
+                        <Button
+                        key={page.id}
+                        onClick={handleCloseNavMenu}
+                        sx={{ color: 'white', display: 'block', fontSize: 20, textAlign: 'center' }}
+                        href={page.path}
+                        variant='contained'
+                        fullWidth
+                        >
+                        {page.subject}
                         </Button>
-                        <Typography
-                            variant="h6"
-                            noWrap
-                            component="a"
-                            href="#/"
-                            sx={{
-                            mr: 2,
-                            display: { xs: 'none', md: 'flex' },
-                            fontFamily: 'monospace',
-                            fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            color: '#FFD43B',
-                            textDecoration: 'none',
-                            }}
-                        >
-                            Brain
-                        </Typography>
-                        <Typography
-                            variant="h6"
-                            noWrap
-                            component="a"
-                            href="#/"
-                            sx={{
-                            mr: 2,
-                            display: { xs: 'none', md: 'flex' },
-                            fontFamily: 'monospace',
-                            fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            color: '#63E6bE',
-                            textDecoration: 'none',
-                            }}
-                        >
-                            Bright
-                        </Typography>
-
-                        <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-                            <IconButton
-                            size="large"
-                            aria-label="account of current user"
-                            aria-controls="menu-appbar"
-                            aria-haspopup="true"
-                            onClick={handleOpenNavMenu}
-                            color="inherit"
-                            >
-                            <MenuIcon />
-                            </IconButton>
-                            <Menu
-                            id="menu-appbar"
-                            anchorEl={anchorElNav}
-                            anchorOrigin={{
-                                vertical: 'bottom',
-                                horizontal: 'left',
-                            }}
-                            keepMounted
-                            transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'left',
-                            }}
-                            open={Boolean(anchorElNav)}
-                            onClose={handleCloseNavMenu}
-                            sx={{ display: { xs: 'block', md: 'none' } }}
-                            >
-                            {pages.map((page) => (
-                                <MenuItem key={page.id} onClick={handleCloseNavMenu}>
-                                <Button
-                                key={page.id}
-                                onClick={handleCloseNavMenu}
-                                sx={{ color: 'black', display: 'block' }}
-                                href={page.path}
-                                >
-                                {page.subject}
-                                </Button>
-                                </MenuItem>
-                            ))}
-                            </Menu>
-                        </Box>
-                        <Typography
-                            variant="h5"
-                            noWrap
-                            component="a"
-                            href="#app-bar-with-responsive-menu"
-                            sx={{
-                            mr: 2,
-                            display: { xs: 'flex', md: 'none' },
-                            flexGrow: 1,
-                            fontFamily: 'monospace',
-                            fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            color: 'inherit',
-                            textDecoration: 'none',
-                            }}
-                        >
-                        </Typography>
-                        <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                            {pages.map((page) => (
-                            <Button
-                                key={page.id}
-                                onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
-                                href={page.path}
-                            >
-                                {page.subject}
-                            </Button>
-                            ))}
-                        </Box>
-                        <Box sx={{ flexGrow: 0 }}>
-                            <Tooltip title="Open settings">
-                            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt="R" src="" />
-                            </IconButton>
-                            </Tooltip>
-                            <Menu
-                            sx={{ mt: '45px' }}
-                            id="menu-appbar"
-                            anchorEl={anchorElUser}
-                            anchorOrigin={{
-                                vertical: 'top',
-                                horizontal: 'right',
-                            }}
-                            keepMounted
-                            transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'right',
-                            }}
-                            open={Boolean(anchorElUser)}
-                            onClose={handleCloseUserMenu}
-                            >
-                           
-                                <MenuItem onClick={handleCloseUserMenu}>
-                                {/* <Button
-                                    className='button-hover-green' 
-                                    variant="contained" 
-                                    color='primary'
-                                    onClick={() => { doSignOut().then(() => { navigate('/login') }) }}>
-                                    Logout
-                                </Button> */}
-                                </MenuItem>
-                       
-                            </Menu>
-                        </Box>
-                        </Toolbar>
-                    </Container>
-                    </AppBar>
-                    </>
-                   
-
-
+                        </MenuItem>
+                    ))}
+                    </Menu>
+                </Box>
+                <Typography
+                    variant="h5"
+                    noWrap
+                    component="a"
+                    href="#app-bar-with-responsive-menu"
+                    sx={{
+                    mr: 2,
+                    display: { xs: 'flex', md: 'none' },
+                    flexGrow: 1,
+                    fontFamily: 'monospace',
+                    fontWeight: 700,
+                    letterSpacing: '.3rem',
+                    color: 'inherit',
+                    textDecoration: 'none',
+                    }}
+                >
+                </Typography>
+                <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                    {pages.map((page) => (
+                    <Button
+                        key={page.id}
+                        onClick={handleCloseNavMenu}
+                        sx={{ m: 1, color: 'white', display: 'block', backgroundColor: '#74C0FC', fontSize: 20}}
+                        href={page.path}
+                        variant='contained'
+                    >
+                        {page.subject}
+                    </Button>
+                    ))}
+                </Box>
+                <Box sx={{ flexGrow: 0 }}>
+                    <Tooltip title="Open settings">
+                    <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                        <Avatar alt="R" src="" />
+                    </IconButton>
+                    </Tooltip>
+                    <Menu
+                    sx={{ mt: '45px' }}
+                    id="menu-appbar"
+                    anchorEl={anchorElUser}
+                    anchorOrigin={{
+                        vertical: 'top',
+                        horizontal: 'right',
+                    }}
+                    keepMounted
+                    transformOrigin={{
+                        vertical: 'top',
+                        horizontal: 'right',
+                    }}
+                    open={Boolean(anchorElUser)}
+                    onClose={handleCloseUserMenu}
+                    >
+                    
+                        <MenuItem onClick={handleCloseUserMenu}>
+                        {/* <Button
+                            className='button-hover-green' 
+                            variant="contained" 
+                            color='primary'
+                            onClick={() => { doSignOut().then(() => { navigate('/login') }) }}>
+                            Logout
+                        </Button> */}
+                        </MenuItem>
+                
+                    </Menu>
+                </Box>
+                </Toolbar>
+            </Container>
+            </AppBar>
         </div>
     )
 }
