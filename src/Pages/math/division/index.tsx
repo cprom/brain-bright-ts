@@ -10,13 +10,20 @@ import divisionTable from '../../../assets/img/divisionTable.png'
 const subjects = [
     {
         id: 1,
+        name: "Division Tables",
+        description: "Division Tables with Answer.",
+        path: '#/math/division/tables',
+        img: division
+    },
+    {
+        id: 2,
         name: "Random Practice",
         description: "Random problems.",
         path: '#/math/division/practice',
         img: division
     },
     {
-        id: 2,
+        id: 3,
         name: "Division Tables",
         description: "Practice the Division Tables.",
         path: '#/math/division/table',
@@ -40,7 +47,7 @@ const Division = () => {
             >
                {
                  subjects.map((subject)=>(
-                <Card sx={{ maxWidth: 345, textAlign: 'center' }} key={subject.id}>
+                <Card sx={{ maxWidth: 345, minWidth:246.36, textAlign: 'center' }} key={subject.id}>
                     <CardMedia
                         component="img"
                         alt={subject.name}
@@ -65,9 +72,6 @@ const Division = () => {
             </Grid>
     </Container>
     )
-
-
-
 }
 
 export default Division

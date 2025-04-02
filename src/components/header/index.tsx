@@ -113,7 +113,7 @@ const Header = () => {
                     >
                     <MenuIcon />
                     </IconButton>
-                    <Menu
+                <Menu
                     id="menu-appbar"
                     anchorEl={anchorElNav}
                     anchorOrigin={{
@@ -143,7 +143,7 @@ const Header = () => {
                         </Button>
                         </MenuItem>
                     ))}
-                    </Menu>
+                </Menu>
                 </Box>
                 <Typography
                     variant="h5"
@@ -181,7 +181,7 @@ const Header = () => {
                         <Avatar alt="R" src="" />
                     </IconButton>
                     </Tooltip>
-                    <Menu
+                <Menu
                     sx={{ mt: '45px' }}
                     id="menu-appbar"
                     anchorEl={anchorElUser}
@@ -198,7 +198,7 @@ const Header = () => {
                     onClose={handleCloseUserMenu}
                     >
                     
-                        <MenuItem onClick={handleCloseUserMenu}>
+                        {/* <MenuItem onClick={handleCloseUserMenu}> */}
                         {/* <Button
                             className='button-hover-green' 
                             variant="contained" 
@@ -206,7 +206,7 @@ const Header = () => {
                             onClick={() => { doSignOut().then(() => { navigate('/login') }) }}>
                             Logout
                         </Button> */}
-                        </MenuItem>
+                        {/* </MenuItem> */}
                 
                     </Menu>
                 </Box>

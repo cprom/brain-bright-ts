@@ -8,20 +8,29 @@ import multiplicationTable from '../../../assets/img/multiplicationTable.png'
 import multiplication from '../../../assets/img/multiplication.jpg'
 
     const subjects = [
+
         {
             id: 1,
+            name: "Learn Multiplication Tables",
+            description: "Tables With Answers.",
+            path: '#/math/multiplication/tables',
+            img: multiplication
+        },
+        {
+            id: 2,
             name: "Random Practice",
             description: "Random problems.",
             path: '#/math/multiplication/practice',
             img: multiplication
         },
         {
-            id: 2,
+            id: 3,
             name: "Multiplication Tables",
             description: "Practice The Multiplication Tables",
             path: '#/math/multiplication/table',
             img: multiplicationTable
         }
+
     ]
     
     const Multiplication = () => {

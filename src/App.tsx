@@ -18,6 +18,8 @@ import Footer from "./components/footer";
 import MultiplicationTableProblemSets from "./Pages/math/multiplication/multiplication-table-problem-sets";
 import DivisionTableProblemSets from "./Pages/math/division/division-table-problem-sets";
 import DivisionRandomProblemSets from "./Pages/math/division/division-random-problem-sets";
+import MultiplicationTables from "./Pages/math/multiplication/multiplication-table";
+import DivisionTables from "./Pages/math/division/division-table";
 
 const theme = createTheme({
   palette: {
@@ -62,8 +64,10 @@ function App() {
             <Route path="/math/multiplication" element={<Multiplication/>}/>
             <Route path="/math/multiplication/practice" element={<MultiplicationRandomProblemSets/>}/>
             <Route path="/math/multiplication/table" element={<MultiplicationTableProblemSets/>}/>
+            <Route path="/math/multiplication/tables" element={<MultiplicationTables/>}/>
             <Route path="/math/division" element={<Division/>}/>
             <Route path="/math/division/table" element={<DivisionTableProblemSets/>}/>
+            <Route path="/math/division/tables" element={<DivisionTables/>}/>
             <Route path="/math/division/practice" element={<DivisionRandomProblemSets/>}/>
           </Routes>
         </HashRouter>
