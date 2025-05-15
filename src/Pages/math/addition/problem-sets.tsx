@@ -84,7 +84,7 @@ import '../../../App.css'
             <>
                 <Container sx={{minWidth: '400px', m: 0}}>
                 <Box sx={{ padding: 2}}>
-                    <Typography>Choose a level test</Typography>
+                    <Typography>Choose a level</Typography>
                     
                     <Button id='level-btn-1' variant='contained' sx={{fontSize: 20, fontWeight: 'bold', margin: .5}} value='10' color={selectedBtn === 1 ? "secondary" : "primary"} onClick={chooseLevel}>1</Button>
                     <Button id='level-btn-2' variant='contained' sx={{fontSize: 20, fontWeight: 'bold', margin: .5}} value='50' color={selectedBtn === 2 ? "secondary" : "primary"} onClick={chooseLevel}>2</Button>
