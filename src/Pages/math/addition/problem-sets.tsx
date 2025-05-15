@@ -112,7 +112,8 @@ import '../../../App.css'
                                 </div> 
                                 <TextField 
                                     id={(problem.id).toString()}
-                                    type='number' 
+                                    type='number'
+                                    inputMode='numeric' 
                                     size='small'
                                     slotProps={{ htmlInput: { maxLength: 5 } }}
                                     onChange={(event) => handleInputChange(problem.id, event)}
