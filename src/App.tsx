@@ -1,7 +1,7 @@
 
 import Header from "./components/header/";
 import Home from "./Pages/home/";
-import Math from "./Pages/math/";
+import Math from "./Pages/math";
 import Reading from "./Pages/reading/";
 import Writing from "./Pages/writing/";
 import Counting from "./Pages/math/counting/";
@@ -10,8 +10,9 @@ import Subtraction from "./Pages/math/subtraction/";
 import Multiplication from "./Pages/math/multiplication/";
 import MultiplicationRandomProblemSets from "./Pages/math/multiplication/multiplication-random-problem-sets";
 import Division from "./Pages/math/division/";
+import Register from "./components/auth/register";
 
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Footer from "./components/footer";
@@ -20,6 +21,8 @@ import DivisionTableProblemSets from "./Pages/math/division/division-table-probl
 import DivisionRandomProblemSets from "./Pages/math/division/division-random-problem-sets";
 import MultiplicationTables from "./Pages/math/multiplication/multiplication-table";
 import DivisionTables from "./Pages/math/division/division-table";
+import { AuthProvider } from "./contexts/authContext";
+import Login from "./components/auth/login"
 
 const theme = createTheme({
   palette: {
@@ -50,29 +53,33 @@ const theme = createTheme({
 function App() {
 
   return (
-    <ThemeProvider theme={theme}>
+    <AuthProvider>
+         <ThemeProvider theme={theme}>
       <Header />
-        <HashRouter>
+        <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Home/>}/>
-            <Route path="/math" element={<Math/>}/>
-            <Route path="/reading" element={<Reading/>}/>
-            <Route path="/writing" element={<Writing/>}/>
-            <Route path="/math/counting" element={<Counting/>}/>
-            <Route path="/math/addition" element={<Addition/>}/>
-            <Route path="/math/subtraction" element={<Subtraction/>}/>
-            <Route path="/math/multiplication" element={<Multiplication/>}/>
-            <Route path="/math/multiplication/practice" element={<MultiplicationRandomProblemSets/>}/>
-            <Route path="/math/multiplication/table" element={<MultiplicationTableProblemSets/>}/>
-            <Route path="/math/multiplication/tables" element={<MultiplicationTables/>}/>
-            <Route path="/math/division" element={<Division/>}/>
-            <Route path="/math/division/table" element={<DivisionTableProblemSets/>}/>
-            <Route path="/math/division/tables" element={<DivisionTables/>}/>
-            <Route path="/math/division/practice" element={<DivisionRandomProblemSets/>}/>
+            <Route path="brain-bright-ts" element={<Home/>}/>
+            <Route path="/login" element={<Login/>}/>
+            <Route path="/register" element={<Register/>}/>
+            <Route path="brain-bright-ts/math" element={<Math/>}/>
+            <Route path="brain-bright-ts/reading" element={<Reading/>}/>
+            <Route path="brain-bright-ts/writing" element={<Writing/>}/>
+            <Route path="brain-bright-ts/math/counting" element={<Counting/>}/>
+            <Route path="brain-bright-ts/math/addition" element={<Addition/>}/>
+            <Route path="brain-bright-ts/math/subtraction" element={<Subtraction/>}/>
+            <Route path="brain-bright-ts/math/multiplication" element={<Multiplication/>}/>
+            <Route path="brain-bright-ts/math/multiplication/practice" element={<MultiplicationRandomProblemSets/>}/>
+            <Route path="brain-bright-ts/math/multiplication/table" element={<MultiplicationTableProblemSets/>}/>
+            <Route path="brain-bright-ts/math/multiplication/tables" element={<MultiplicationTables/>}/>
+            <Route path="brain-bright-ts/math/division" element={<Division/>}/>
+            <Route path="brain-bright-ts/math/division/table" element={<DivisionTableProblemSets/>}/>
+            <Route path="brain-bright-ts/math/division/tables" element={<DivisionTables/>}/>
+            <Route path="brain-bright-ts/math/division/practice" element={<DivisionRandomProblemSets/>}/>
           </Routes>
-        </HashRouter>
+          </BrowserRouter>
         <Footer/>
     </ThemeProvider>
+    </AuthProvider>
   )
 }
 

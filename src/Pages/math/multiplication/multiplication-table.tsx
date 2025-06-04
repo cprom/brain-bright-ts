@@ -3,6 +3,10 @@ import { Box, Button,Container, Paper, Stack, Typography } from '@mui/material'
 import Grid2 from '@mui/material/Grid2';
 import '../../../App.css'
 
+import { Navigate } from 'react-router-dom'
+
+import { useAuth } from '../../../contexts/authContext'
+
 
 // generate and array of objects use to build multiplication problems without remainders 
 type multiplicationObject = {
@@ -112,13 +116,22 @@ type multiplicationObject = {
 }
 
 const MultiplicationTables = () => {
+    const { userLoggedIn } : any = useAuth()
     return (
-        <Container sx={{textAlign: 'center'}}>
+        <>
+        {
+            userLoggedIn
+            ?
+            <Container sx={{textAlign: 'center'}}>
             <Box style={{justifyItems: 'center'}} sx={{mt: 12}}>
                 <Typography>Practice The Multiplication Tables</Typography>
                 <MultiplicationTableProblems/>
             </Box>
         </Container>
+        :
+        <Navigate to="/login" />
+        }
+        </>
     )
 }
 

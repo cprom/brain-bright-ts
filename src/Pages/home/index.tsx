@@ -3,11 +3,20 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 
-const Home = () => {
+import { Navigate } from 'react-router-dom'
 
+import { useAuth } from '../../contexts/authContext'
+
+const Home = () => {
+    
+    const { userLoggedIn } : any = useAuth()
 
     return (
-        <Container sx={{textAlign: 'center'}}>
+       <>
+        {
+            userLoggedIn
+            ?
+            <Container sx={{textAlign: 'center'}}>
             <Card sx={{ mt: 10, p: 5, minHeight: 300 }}>
                 <CardContent>
                     <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 50 }}>
@@ -22,6 +31,9 @@ const Home = () => {
                 </CardContent>
                 </Card>
         </Container>
+        :
+        <Navigate to="/login"/>
+        }</>
     )
 }
 

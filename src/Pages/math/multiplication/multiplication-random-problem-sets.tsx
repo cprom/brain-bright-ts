@@ -4,7 +4,9 @@ import Grid2 from '@mui/material/Grid2';
 import { generateMultipleMultiplicationProblems } from '../scripts/generateProblems'
 import '../../../App.css'
 
+import { Navigate } from 'react-router-dom'
 
+import { useAuth } from '../../../contexts/authContext'
     
 
     const problems = generateMultipleMultiplicationProblems(10,1,10)
@@ -139,13 +141,24 @@ import '../../../App.css'
 }
 
 const MultiplicationRandomProblemSets = () => {
+
+    const { userLoggedIn } : any = useAuth()
+
     return (
-    <Container sx={{textAlign: 'center'}}>
-        <Box  style={{justifyItems: 'center'}} sx={{mt: 12}}>
-            <Typography>Random Problems</Typography>
-            <CreateRandomMultiplicationProblems/>
-        </Box>
-    </Container>
+        <>
+        {
+            userLoggedIn
+            ?
+            <Container sx={{textAlign: 'center'}}>
+            <Box  style={{justifyItems: 'center'}} sx={{mt: 12}}>
+                <Typography>Random Problems</Typography>
+                <CreateRandomMultiplicationProblems/>
+            </Box>
+        </Container>
+        :
+        <Navigate to="/login"/>
+        }
+        </>
     )
 }
 

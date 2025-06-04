@@ -4,7 +4,9 @@ import Grid2 from '@mui/material/Grid2';
 import { generateMultipleSubtractionProblems } from '../scripts/generateProblems'
 import '../../../App.css'
 
+import { Navigate } from 'react-router-dom'
 
+import { useAuth } from '../../../contexts/authContext'
     
 
     const problems = generateMultipleSubtractionProblems(10,1,10)
@@ -139,12 +141,21 @@ import '../../../App.css'
 }
 
 const ProblemSets = () => {
+
+    const { userLoggedIn } : any = useAuth()
+
     return (
-    <div>
+    <>
 
-            <CreateSubtractionProblems/>
+            {
+                userLoggedIn
+                ?
+                <CreateSubtractionProblems/>
+                :
+                <Navigate to="/login" />
+            }
 
-    </div>
+    </>
 
     )
 }

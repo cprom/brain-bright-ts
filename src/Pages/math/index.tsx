@@ -10,12 +10,16 @@ import multiplication from '../../assets/img/multiplication.jpg'
 import division from '../../assets/img/division.jpg'
 import counting from '../../assets/img/counting.jpg'
 
+import { Navigate } from 'react-router-dom'
+
+import { useAuth } from '../../contexts/authContext'
+
 const subjects = [
     {
         id: 1,
         name: "Counting",
         description: 'Learn to Count',
-        path: '#/math/counting',
+        path: '/brain-bright-ts/math/counting',
         img: counting
 
     },
@@ -23,7 +27,7 @@ const subjects = [
         id: 2,
         name: "Addition",
         description: 'Learn to Add',
-        path: '#/math/addition',
+        path: '/brain-bright-ts/math/addition',
         img: addition
 
     },
@@ -31,7 +35,7 @@ const subjects = [
         id: 3,
         name: "Subtraction",
         description: 'Learn to Subtract',
-        path: '#/math/subtraction',
+        path: '/brain-bright-ts/math/subtraction',
         img: subtraction
 
     },
@@ -39,7 +43,7 @@ const subjects = [
         id: 4,
         name: "Multiplication",
         description: 'Learn to Multiply',
-        path: '#/math/multiplication',
+        path: '/brain-bright-ts/math/multiplication',
         img: multiplication
 
     },
@@ -47,16 +51,22 @@ const subjects = [
         id: 5,
         name: "Division",
         description: 'Learn to Divide',
-        path: '#/math/division',
+        path: '/brain-bright-ts/math/division',
         img: division
 
     },
 ]
 
 const Math = () => {
-   
+     const { userLoggedIn } : any = useAuth()
     return (
-        <Container sx={{textAlign: 'center'}}>
+        <>
+        {
+            userLoggedIn 
+            
+            ?
+            <>
+            <Container sx={{textAlign: 'center'}}>
             <Box sx={{p:5, mt: 5}}>
             <Typography sx={{fontSize: '2rem', fontWeight: 'bold'}}>Math</Typography>
             </Box>
@@ -93,6 +103,12 @@ const Math = () => {
                }  
             </Grid>
     </Container>
+    </>
+      :
+      <Navigate to="/login"/>
+    
+        }
+      </>
     )
 }
 

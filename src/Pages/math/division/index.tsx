@@ -7,70 +7,84 @@ import Grid from '@mui/material/Grid2';
 import division from '../../../assets/img/division.jpg'
 import divisionTable from '../../../assets/img/divisionTable.png'
 
+import { Navigate } from 'react-router-dom'
+
+import { useAuth } from '../../../contexts/authContext'
+
 const subjects = [
     {
         id: 1,
         name: "Division Tables",
         description: "Division Tables with Answer.",
-        path: '#/math/division/tables',
+        path: '/brain-bright-ts/math/division/tables',
         img: division
     },
     {
         id: 2,
         name: "Random Practice",
         description: "Random problems.",
-        path: '#/math/division/practice',
+        path: '/brain-bright-ts/math/division/practice',
         img: division
     },
     {
         id: 3,
         name: "Division Tables",
         description: "Practice the Division Tables.",
-        path: '#/math/division/table',
+        path: '/brain-bright-ts/math/division/table',
         img: divisionTable
     }
 ]
 
 const Division = () => {
 
-    return (
-        <Container sx={{textAlign: 'center'}}>
-            <Box sx={{p:5, mt: 5}}>
-            <Typography sx={{fontSize: '2rem', fontWeight: 'bold'}}>Division</Typography>
-            </Box>
-            <Grid
-            container
-            spacing={3}
-            direction="row"
-            alignItems="center"
-            justifyContent="center"
-            >
-               {
-                 subjects.map((subject)=>(
-                <Card sx={{ maxWidth: 345, minWidth:246.36, textAlign: 'center' }} key={subject.id}>
-                    <CardMedia
-                        component="img"
-                        alt={subject.name}
-                        height="140"
-                        image={subject.img}
-                    />
+    const { userLoggedIn } : any = useAuth()
 
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
-                        {subject.name}
-                        </Typography>
-                        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                        {subject.description}
-                        </Typography>
-                    </CardContent>
-                    <CardActions>
-                    <Button className='button-hover-green' variant='contained' size='large' color="primary" href={subject.path} sx={{fontSize: '1rem'}} fullWidth >Start Learning</Button>
-                    </CardActions>
-                </Card>
-                ) )
-               }  
-            </Grid>
-    </Container>
+    return (
+        <>
+        {
+            userLoggedIn
+            ?
+            <Container sx={{textAlign: 'center'}}>
+                <Box sx={{p:5, mt: 5}}>
+                <Typography sx={{fontSize: '2rem', fontWeight: 'bold'}}>Division</Typography>
+                </Box>
+                <Grid
+                    container
+                    spacing={3}
+                    direction="row"
+                    alignItems="center"
+                    justifyContent="center"
+                    >
+                    {
+                        subjects.map((subject)=>(
+                        <Card sx={{ maxWidth: 345, minWidth:246.36, textAlign: 'center' }} key={subject.id}>
+                            <CardMedia
+                                component="img"
+                                alt={subject.name}
+                                height="140"
+                                image={subject.img}
+                            />
+
+                            <CardContent>
+                                <Typography gutterBottom variant="h5" component="div">
+                                {subject.name}
+                                </Typography>
+                                <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                                {subject.description}
+                                </Typography>
+                            </CardContent>
+                            <CardActions>
+                            <Button className='button-hover-green' variant='contained' size='large' color="primary" href={subject.path} sx={{fontSize: '1rem'}} fullWidth >Start Learning</Button>
+                            </CardActions>
+                        </Card>
+                        ) )
+                    }  
+                </Grid>
+            </Container>
+            :
+            <Navigate to='/login'/>
+        }
+        </>
     )
 }
 
