@@ -40,7 +40,7 @@ const Login = () => {
         justifyContent="center"
         >
             <Stack spacing={5}>
-            {userLoggedIn && (<Navigate to={'/home'} replace={true} />)}
+            {userLoggedIn && (<Navigate to={'/brain-bright-ts'} replace={true} />)}
             <Title/>
 
             <Card sx={{ width: 300, mt: 20, p: 5 }}>
@@ -53,19 +53,14 @@ const Login = () => {
                         onSubmit={onSubmit}
                         
                     >
-                        <div 
-                            // container
-                            // spacing={1}
-                            // direction="column"
-                            // alignItems="center"
-                            // justify="center"
-                        >
+                        <div>
                         <TextField
                             type="email"
                             label="Email"
                             required
                             value={email} onChange={(e) => { setEmail(e.target.value) }}
                             fullWidth
+                            sx={{mb: 1}}
                         />
 
                         <TextField
@@ -74,6 +69,7 @@ const Login = () => {
                             label="Password"
                             value={password} onChange={(e) => { setPassword(e.target.value) }}
                             fullWidth
+                            sx={{mb: 1}}
                         />
 
                         {errorMessage && (

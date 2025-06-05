@@ -55,13 +55,7 @@ const Register = () => {
                         onSubmit={onSubmit}
                         className="space-y-4"
                     >
-                        <div
-                        //   container
-                        //   spacing={1}
-                        //   direction="column"
-                        //   alignItems="center"
-                        //   justify="center"
-                        >
+                        <div>
                             <TextField
                                 type="email"
                                 label="Email"
@@ -69,6 +63,7 @@ const Register = () => {
                                 required
                                 value={email} onChange={(e) => { setEmail(e.target.value) }}
                                 fullWidth
+                                sx={{mb: 1}}
                             />
                       
                             <TextField
@@ -79,6 +74,7 @@ const Register = () => {
                                 required
                                 value={password} onChange={(e) => { setPassword(e.target.value) }}
                                 fullWidth
+                                sx={{mb: 1}}
                             />
                        
                             <TextField
@@ -89,6 +85,7 @@ const Register = () => {
                                 required
                                 value={confirmPassword} onChange={(e) => { setconfirmPassword(e.target.value) }}
                                 fullWidth
+                                sx={{mb: 1}}
                             />
 
                         <Button
@@ -108,7 +105,7 @@ const Register = () => {
                         )}
                         <Typography sx={{mt: 2}}>
                             Already have an account? {'   '}
-                            <Link to={'/brain-bright-ts/login'}>Sign In</Link>
+                            <Link to={'/login'}>Sign In</Link>
                         </Typography>
                     </form>
                 </div>

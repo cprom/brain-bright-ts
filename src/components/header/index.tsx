@@ -19,24 +19,22 @@ import { Navigate } from 'react-router-dom'
 import { useAuth } from '../../contexts/authContext'
 import { doSignOut } from '../../firebase/auth'
 
+
 const pages = [
     {
         id: 1,
         subject: 'Math',
         path: '/brain-bright-ts/math',
-        icon: `<${CalculateIcon} />}`
     }, 
     {
         id: 2,
         subject: 'Reading',
         path: '/brain-bright-ts/reading',
-        icon: `<${CalculateIcon} />}`
     },
     {
         id: 3,
         subject: 'Writing',
         path: '/brain-bright-ts/writing',
-        icon: `<${CalculateIcon} />}`
     }
 ];
 
@@ -177,9 +175,10 @@ const Header = () => {
                         <Button
                             key={page.id}
                             onClick={handleCloseNavMenu}
-                            sx={{ m: 1, color: 'white', display: 'block', backgroundColor: '#74C0FC', fontSize: 20}}
+                            sx={{ m: 1, color: 'black', display: 'block', backgroundColor: '#63E6bE', fontSize: 20}}
                             href={page.path}
                             variant='contained'
+                            className='button-hover-blue'
                         >
                             {page.subject}
                         </Button>
