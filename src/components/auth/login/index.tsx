@@ -89,6 +89,7 @@ const Login = () => {
                         </div>
                     </form>
                     <Typography sx={{mt: 2}} >Don't have an account? <Link to={'/register'}>Register</Link></Typography>
+                    <Typography sx={{mt: 2, fontSize: 13}} > <Link to={''}>Continue as Guest</Link></Typography>
                   </Box>
                 </CardContent>
             </Card>
