@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Navigate, Link } from 'react-router-dom'
 import { doSignInWithEmailAndPassword } from '../../../firebase/auth'
 import { useAuth } from '../../../contexts/authContext'
+import { doSignInAnonymously } from '../../../firebase/auth'
 
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -89,7 +90,7 @@ const Login = () => {
                         </div>
                     </form>
                     <Typography sx={{mt: 2}} >Don't have an account? <Link to={'/register'}>Register</Link></Typography>
-                    <Typography sx={{mt: 2, fontSize: 13}} > <Link to={''}>Continue as Guest</Link></Typography>
+                    <Button sx={{mt: 2, fontSize: 13}} onClick={doSignInAnonymously}> Continue as Guest</Button>
                   </Box>
                 </CardContent>
             </Card>
