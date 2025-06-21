@@ -4,14 +4,14 @@ import {
 } from "react-sketch-canvas";
 import { type ChangeEvent, useRef, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEraser, faPen, faPenToSquare, faRedo, faTrash, faUndo } from "@fortawesome/free-solid-svg-icons";
+import { faEraser, faPen, faPenToSquare, faRedo, faScrewdriverWrench, faTrash, faUndo } from "@fortawesome/free-solid-svg-icons";
 import { Button, Stack, Typography } from "@mui/material";
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
- function Canvas() {
+ function ScratchPad() {
   const canvasRef = useRef<ReactSketchCanvasRef>(null);
   const [eraseMode, setEraseMode] = useState(false);
   const [strokeWidth, setStrokeWidth] = useState(2);
@@ -63,6 +63,14 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
           <Typography component="span"><FontAwesomeIcon icon={faPenToSquare} style={{marginRight: '10px', color: '#63E6bE'}}/>Scratch Pad</Typography>
         </AccordionSummary>
         <AccordionDetails>
+     <Accordion>
+      <AccordionSummary   expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1-content"
+          id="panel1-header"
+        >
+          <Typography component="span"><FontAwesomeIcon icon={faScrewdriverWrench} style={{marginRight: '10px', color: '#FFD43B'}}/>Scratch Pad Tools</Typography>
+      </AccordionSummary>
+      <AccordionDetails>
       <Typography >
           Pen width
         </Typography>
@@ -143,12 +151,14 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
           Reset
         </Button> */}
       </Stack>
+      </AccordionDetails>
+     </Accordion>
       <Typography sx={{mt: 1}}>Scratch Pad</Typography>
       <ReactSketchCanvas 
         ref={canvasRef}
         strokeWidth={strokeWidth}
         eraserWidth={eraserWidth}
-        height="200px"
+        height="300px"
         style={{border: '1px solid #B197FC', opacity: '.5'}}
         />
         </AccordionDetails>
@@ -156,4 +166,4 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
     </div>
   );
 }
-export default Canvas
+export default ScratchPad
