@@ -5,9 +5,8 @@ import {
 import { type ChangeEvent, useRef, useState } from "react";
 import { Button, Stack, Typography } from "@mui/material";
 
-import ModeIcon from '@mui/icons-material/Mode';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEraser, faInfo, faPen, faRedo, faTrash, faUndo } from "@fortawesome/free-solid-svg-icons";
+import { faEraser, faPen, faRedo, faTrash, faUndo } from "@fortawesome/free-solid-svg-icons";
 
  function Canvas() {
   const canvasRef = useRef<ReactSketchCanvasRef>(null);
@@ -46,9 +45,9 @@ import { faEraser, faInfo, faPen, faRedo, faTrash, faUndo } from "@fortawesome/f
     canvasRef.current?.clearCanvas();
   };
 
-  const handleResetClick = () => {
-    canvasRef.current?.resetCanvas();
-  };
+  // const handleResetClick = () => {
+  //   canvasRef.current?.resetCanvas();
+  // };
 
   return (
     <div className="d-flex flex-column gap-2 p-2">
