@@ -3,6 +3,7 @@ import { Box, Button,Container, Paper,Stack,TextField, Typography } from '@mui/m
 import Grid2 from '@mui/material/Grid2';
 import { generateMultipleAdditionProblems } from '../scripts/generateProblems'
 import '../../../App.css'
+import  Canvas  from '../../../components/hand-writing/hand-writing';
 
 
     
@@ -126,6 +127,7 @@ import '../../../App.css'
                                 </div>                                   
 
                                 <Button onClick={checkAnswer}  value={`${problem.answer}_${problem.id}`} id={`check-btn-${problem.id}`} variant='contained' size='large' sx={{height:98.66, ml: '10px' }}>Check</Button>
+                                <Canvas />
                             </Grid2>
                         </Paper> 
                         )) 
