@@ -6,7 +6,13 @@ import { type ChangeEvent, useRef, useState } from "react";
 import { Button, Stack, Typography } from "@mui/material";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEraser, faPen, faRedo, faTrash, faUndo } from "@fortawesome/free-solid-svg-icons";
+import { faEraser, faPen, faPenToSquare, faRedo, faTrash, faUndo } from "@fortawesome/free-solid-svg-icons";
+
+import Accordion from '@mui/material/Accordion';
+import AccordionActions from '@mui/material/AccordionActions';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
  function Canvas() {
   const canvasRef = useRef<ReactSketchCanvasRef>(null);
@@ -51,20 +57,28 @@ import { faEraser, faPen, faRedo, faTrash, faUndo } from "@fortawesome/free-soli
 
   return (
     <div className="d-flex flex-column gap-2 p-2">
-      <Typography>Tools</Typography>
+      <Accordion>
+      <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1-content"
+          id="panel1-header"
+        >
+          <Typography component="span"><FontAwesomeIcon icon={faPenToSquare} style={{marginRight: '10px', color: '#63E6bE'}}/>Scratch Pad</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
       <Typography >
           Pen width
         </Typography>
         <input
           disabled={eraseMode}
           type="range"
-          className="form-range"
           min="1"
           max="10"
           step="1"
           id="strokeWidth"
           value={strokeWidth}
           onChange={handleStrokeWidthChange}
+          className="slider"
         />
         <Typography>
           Eraser width
@@ -72,13 +86,13 @@ import { faEraser, faPen, faRedo, faTrash, faUndo } from "@fortawesome/free-soli
         <input
           disabled={!eraseMode}
           type="range"
-          className="form-range"
           min="1"
           max="20"
           step="1"
           id="eraserWidth"
           value={eraserWidth}
           onChange={handleEraserWidthChange}
+          className="slider"
         />
       <Stack spacing={1}>
         <Button
@@ -137,7 +151,11 @@ import { faEraser, faPen, faRedo, faTrash, faUndo } from "@fortawesome/free-soli
         ref={canvasRef}
         strokeWidth={strokeWidth}
         eraserWidth={eraserWidth}
+        height="200px"
+        style={{border: '1px solid #B197FC', opacity: '.5'}}
         />
+        </AccordionDetails>
+      </Accordion>
     </div>
   );
 }
