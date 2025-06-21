@@ -11,7 +11,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
- function Canvas() {
+ function ScratchPad() {
   const canvasRef = useRef<ReactSketchCanvasRef>(null);
   const [eraseMode, setEraseMode] = useState(false);
   const [strokeWidth, setStrokeWidth] = useState(2);
@@ -148,7 +148,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
         ref={canvasRef}
         strokeWidth={strokeWidth}
         eraserWidth={eraserWidth}
-        height="200px"
+        height="250px"
         style={{border: '1px solid #B197FC', opacity: '.5'}}
         />
         </AccordionDetails>
@@ -156,4 +156,4 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
     </div>
   );
 }
-export default Canvas
+export default ScratchPad

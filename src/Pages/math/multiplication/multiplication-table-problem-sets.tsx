@@ -2,7 +2,7 @@ import {useState} from 'react'
 import { Box, Button,Container, Paper,Stack,TextField, Typography } from '@mui/material'
 import Grid2 from '@mui/material/Grid2';
 import '../../../App.css'
-import Canvas from '../../../components/hand-writing/hand-writing';
+import ScratchPad from '../../../components/scratch-pad/scratch-pad';
 
 
 // generate and array of objects use to build multiplication problems without remainders 
@@ -149,7 +149,7 @@ type multiplicationObject = {
                                 />
                                 </div>                                   
                                 <Button onClick={checkAnswer}  value={`${problem.answer}_${problem.id}`} id={`check-btn-${problem.id}`} variant='contained' size='large' sx={{height:98.66, ml: '10px' }}>Check</Button>
-                                <Canvas/>
+                                <ScratchPad/>
                             </Grid2>
                         </Paper> 
                         )) 
