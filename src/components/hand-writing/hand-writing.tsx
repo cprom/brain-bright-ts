@@ -3,13 +3,10 @@ import {
   type ReactSketchCanvasRef,
 } from "react-sketch-canvas";
 import { type ChangeEvent, useRef, useState } from "react";
-import { Button, Stack, Typography } from "@mui/material";
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEraser, faPen, faPenToSquare, faRedo, faTrash, faUndo } from "@fortawesome/free-solid-svg-icons";
-
+import { Button, Stack, Typography } from "@mui/material";
 import Accordion from '@mui/material/Accordion';
-import AccordionActions from '@mui/material/AccordionActions';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -146,7 +143,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
           Reset
         </Button> */}
       </Stack>
-      <Typography>Scratch Pad</Typography>
+      <Typography sx={{mt: 1}}>Scratch Pad</Typography>
       <ReactSketchCanvas 
         ref={canvasRef}
         strokeWidth={strokeWidth}
