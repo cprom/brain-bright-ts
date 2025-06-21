@@ -49,3 +49,6 @@ export default tseslint.config({
 })
 ```
 # brain-bright-ts
+
+# Deploy
+run npm deploy
