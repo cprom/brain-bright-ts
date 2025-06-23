@@ -33,8 +33,6 @@ type multiplicationObject = {
  
     // const problems = generateMultiplemultiplicationProblems(10,1,10)
     const problems = multiplicationProblems(1)
-    console.log(problems)
-
     const MultiplicationTableProblems = () => {
     const [items, setItems] = useState([...problems]);
     const [selectedBtn, setSelectedBtn] = useState(-1);
