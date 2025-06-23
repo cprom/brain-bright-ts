@@ -21,6 +21,8 @@ import DivisionRandomProblemSets from "./Pages/math/division/division-random-pro
 import MultiplicationTables from "./Pages/math/multiplication/multiplication-table";
 import DivisionTables from "./Pages/math/division/division-table";
 import Alphabet from "./Pages/reading/alphabet";
+import Words from "./Pages/reading/words";
+import Sentences from "./Pages/reading/sentences";
 
 const theme = createTheme({
   palette: {
@@ -59,7 +61,8 @@ function App() {
             <Route path="/math" element={<Math/>}/>
             <Route path="/reading" element={<Reading/>}/>
             <Route path="/reading/alphabet" element={<Alphabet/>}/>
-            <Route path="/reading/reading" element={<Alphabet/>}/>
+            <Route path="/reading/words" element={<Words/>}/>
+            <Route path="/reading/sentences" element={<Sentences/>}/>
             <Route path="/writing" element={<Writing/>}/>
             <Route path="/math/counting" element={<Counting/>}/>
             <Route path="/math/addition" element={<Addition/>}/>

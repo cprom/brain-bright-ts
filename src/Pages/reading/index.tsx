@@ -1,6 +1,7 @@
 import { Box, Button, Card, CardActions, CardContent, CardMedia, Container, Grid2, Typography } from '@mui/material'
 import alphabet from '../../assets/img/abc.jpg'
 import openbook from '../../assets/img/openbook.jpg'
+import words from '../../assets/img/words.jpg'
 
 const subjects = [
     {
@@ -12,9 +13,16 @@ const subjects = [
     },
     {
         id: 2,
-        name: "Reading",
-        description: "Learn to Read",
-        path: '#/reading/reading',
+        name: "Words",
+        description: 'Learn Basic Words',
+        path: '#/reading/words',
+        img: words
+    },
+    {
+        id: 3,
+        name: "Sentences",
+        description: "Learn to Read Sentences",
+        path: '#/reading/sentences',
         img: openbook
     }
 ]

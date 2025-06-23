@@ -230,7 +230,7 @@ const handleLetterClick = (e: any) => {
 }
 
 const handlePronounciationClick = (e: any) => {
-    textToSpeech(e.target.value, 2)
+    textToSpeech(e.target.value, 1.2)
 }
 
 const textToSpeech = (letter: any, rate: number) => {
@@ -250,25 +250,27 @@ const textToSpeech = (letter: any, rate: number) => {
 const AlphabetCard = () => {
     return (
         <>
-        <Box>
+        <Container>
+            <Grid2 container direction='row'>
             {
                 alphabet.map((letter) => (
                     <Paper key={letter.id} sx={{width: 300, m: 3}}>
-                        <Grid2 container spacing={2} display="flex" justifyContent="center" alignItems="center" textAlign='center'>
+                        <Grid2 container spacing={2} direction="row" justifyContent="center" alignItems="center" >
                             <Grid2 display="flex">
-                            <Button variant='contained' sx={{fontSize: '8em', fontWeight: 'bold', margin: 1, height: 150, width: 150, background: letter.color}} value={letter.letterCap} onClick={handleLetterClick}>{letter.letterCap}</Button>
-                            <Button variant='contained' sx={{fontSize: '8em', fontWeight: 'bold', margin: 1, height: 150, width: 150, background: letter.color, textTransform: 'none'}} value={letter.letterLow} onClick={handleLetterClick}>{letter.letterLow}</Button>
+                                <Button variant='contained' sx={{fontSize: '8em', fontWeight: 'bold', margin: 1, height: 150, width: 150, background: letter.color}} value={letter.letterCap} onClick={handleLetterClick}>{letter.letterCap}</Button>
+                                <Button variant='contained' sx={{fontSize: '8em', fontWeight: 'bold', margin: 1, height: 150, width: 150, background: letter.color, textTransform: 'none'}} value={letter.letterLow} onClick={handleLetterClick}>{letter.letterLow}</Button>
                             </Grid2>
                         </Grid2>
                         {
-                        letter.pronounciation.map((sound) => (
-                            <Button variant='contained' sx={{ fontWeight: 'bold', margin: 1, background: letter.color}} value={sound} onClick={handlePronounciationClick}><FontAwesomeIcon icon={faVolumeHigh} style={{marginRight: 5}}/>pronounce</Button>
+                        letter.pronounciation.map((sound, index) => (
+                            <Button key={index} variant='contained' sx={{ fontWeight: 'bold', margin: 1, background: letter.color}} value={sound} onClick={handlePronounciationClick}><FontAwesomeIcon icon={faVolumeHigh} style={{marginRight: 5}}/>pronounce</Button>
                         ))
                         }
                     </Paper>
                 ))
             }
-        </Box>
+            </Grid2>
+        </Container>
         </>
     )
 }
