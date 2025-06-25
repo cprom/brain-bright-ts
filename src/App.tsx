@@ -61,7 +61,7 @@ function App() {
       <Header />
         <BrowserRouter>
           <Routes>
-            <Route path="brain-bright-ts" element={<Home/>}/>
+            <Route path="brain-bright-ts/" element={<Home/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/register" element={<Register/>}/>
             <Route path="brain-bright-ts/math" element={<Math/>}/>
