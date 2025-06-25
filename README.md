@@ -18,6 +18,7 @@ This project was inspired by my 5-year-old daughter, and aims to support young l
 - **TypeScript** – for type safety and better developer experience
 - **JavaScript** – for dynamic client-side behavior
 - **Vite**
+- **React-sketch-canvas**
 
 ## 🚀 Getting Started
 

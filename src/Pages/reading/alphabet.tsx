@@ -235,9 +235,6 @@ const handlePronounciationClick = (e: any) => {
 
 const textToSpeech = (letter: any, rate: number) => {
     const utterance = new SpeechSynthesisUtterance(letter)
-    // Get available voices and select one
-    const voices = window.speechSynthesis.getVoices();
-    utterance.voice = voices[0]; // Select the first available voice
 
     utterance.volume = 1; // From 0 to 1
     utterance.rate = rate;   // From 0.1 to 10
