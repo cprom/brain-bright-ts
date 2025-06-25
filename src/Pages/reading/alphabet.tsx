@@ -18,208 +18,208 @@ const alphabet = [
         letterCap: 'a',
         letterLow: 'a',
         pronounciation: ['ah','a'],
-        color: red
-
+        color: red,
+        vowel: true
     },
     {
         id: 2,
         letterCap: 'b',
         letterLow: 'b',
         pronounciation: ['buh'],
-        color: green
-
+        color: green,
+        vowel: false
     },
     {
         id: 3,
         letterCap: 'c',
         letterLow: 'c',
         pronounciation: ['cuh','suh'],
-        color: violet
-
+        color: violet,
+        vowel: false
     },
     {
         id: 4,
         letterCap: 'd',
         letterLow: 'd',
         pronounciation: ['duh'],
-        color: orange
-
+        color: orange,
+        vowel: false
     },
     {
         id: 5,
         letterCap: 'e',
         letterLow: 'e',
         pronounciation: ['eh', 'ee'],
-        color: blue
-
+        color: blue,
+        vowel: true
     },
     {
         id: 6,
         letterCap: 'f',
         letterLow: 'f',
         pronounciation: ['fuh'],
-        color: yellow
-
+        color: yellow,
+        vowel: false
     },
     {
         id: 7,
         letterCap: 'g',
         letterLow: 'g',
         pronounciation: ['guh', 'juh'],
-        color: red
-
+        color: red,
+        vowel: false
     },
     {
         id: 8,
         letterCap: 'h',
         letterLow: 'h',
         pronounciation: ['huh'],
-        color: green
-
+        color: green,
+        vowel: false
     },
     {
         id: 9,
         letterCap: 'i',
         letterLow: 'i',
-        pronounciation: ['eeh', 'i'], //! Need to fix pro
-        color: violet
-
+        pronounciation: ['eeh', 'i'], 
+        color: violet,
+        vowel: true
     },
     {
         id: 10,
         letterCap: 'j',
         letterLow: 'j',
         pronounciation: ['juh'],
-        color: orange
-
+        color: orange,
+        vowel: false
     },
     {
         id: 11,
         letterCap: 'k',
         letterLow: 'k',
         pronounciation: ['kuh'], 
-        color: blue
-
+        color: blue,
+        vowel: false
     },
     {
         id: 12,
         letterCap: 'l',
         letterLow: 'l',
-        pronounciation: ['luh', 'ul'], //! Need to fix pro
-        color: yellow
-
+        pronounciation: ['luh', 'ul'], 
+        color: yellow,
+        vowel: false
     },
     {
         id: 13,
         letterCap: 'm',
         letterLow: 'm',
         pronounciation: ['muh'], 
-        color: red
-
+        color: red,
+        vowel: false
     },
     {
         id: 14,
         letterCap: 'n',
         letterLow: 'n',
-        pronounciation: ['nuh'], //! Need to fix pro
-        color: green
-
+        pronounciation: ['nnuh'], 
+        color: green,
+        vowel: false
     },
     {
         id: 15,
         letterCap: 'o',
         letterLow: 'o',
-        pronounciation: ['uh', 'oh','u'], //! Need to fix pro
-        color: violet
-
+        pronounciation: ['uh', 'o','ooh'], 
+        color: violet,
+        vowel: true
     },
     {
         id: 16,
         letterCap: 'p',
         letterLow: 'p',
         pronounciation: ['puh'], 
-        color: orange
-
+        color: orange,
+        vowel: false
     },
     {
         id: 17,
         letterCap: 'q',
         letterLow: 'q',
         pronounciation: ['kwuh'], 
-        color: blue
-
+        color: blue,
+        vowel: false
     },
     {
         id: 18,
         letterCap: 'r',
         letterLow: 'r',
-        pronounciation: ['ruh', 'ur'], //! Need to fix pro
-        color: yellow
-
+        pronounciation: ['ruh', 'ur'], 
+        color: yellow,
+        vowel: false
     },
     {
         id: 19,
         letterCap: 's',
         letterLow: 's',
-        pronounciation: ['suh'], //! Need to fix pro
-        color: red
-
+        pronounciation: ['suh'], 
+        color: red,
+        vowel: false
     },
     {
         id: 20,
         letterCap: 't',
         letterLow: 't',
         pronounciation: ['tuh'], 
-        color: green
-
+        color: green,
+        vowel: false
     },
     {
         id: 21,
         letterCap: 'u',
         letterLow: 'u',
-        pronounciation: ['uh', 'yoo'], //! Need to fix pro
-        color: violet
-
+        pronounciation: ['uh', 'yoo', 'ooh'], 
+        color: violet,
+        vowel: true
     },
     {
         id: 22,
         letterCap: 'v',
         letterLow: 'v',
-        pronounciation: ['vuh'], //! Need to fix pro
-        color: orange
-
+        pronounciation: ['vuh'], 
+        color: orange,
+        vowel: false
     },
     {
         id: 23,
         letterCap: 'w',
         letterLow: 'w',
-        pronounciation: ['wuh'], //! Need to fix pro
-        color: blue
-
+        pronounciation: ['wuh'], 
+        color: blue,
+        vowel: false
     },
     {
         id: 24,
         letterCap: 'x',
         letterLow: 'x',
-        pronounciation: ['x','zuh'], //! Need to fix pro
-        color: yellow
-
+        pronounciation: ['x','zuh'], 
+        color: yellow,
+        vowel: false
     },
     {
         id: 25,
         letterCap: 'y',
         letterLow: 'y',
-        pronounciation: ['yuh', 'e', 'i'], //! Need to fix pro
-        color: red
-
+        pronounciation: ['yuh', 'e', 'i'], 
+        color: red,
+        vowel: true
     },
     {
         id: 26,
         letterCap: 'z',
         letterLow: 'z',
-        pronounciation: ['zuh'], //! Need to fix pro
-        color: green
-
+        pronounciation: ['zuh'], 
+        color: green,
+        vowel: false
     },
 
 ]
