@@ -184,7 +184,7 @@ const Header = () => {
                         ))}
                     </Box>
                     <GuestBanner message="Logged in as Guest"/>
-                    <Box sx={{ flexGrow: 0, ml: 5 }}>
+                    <Box sx={{ flexGrow: 0, ml: 1 }}>
                         <Tooltip title="Open settings">
                         <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                             <Avatar alt="R" src="" />

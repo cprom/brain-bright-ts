@@ -3,6 +3,7 @@ import { Navigate, Link } from 'react-router-dom'
 import { doSignInWithEmailAndPassword } from '../../../firebase/auth'
 import { useAuth } from '../../../contexts/authContext'
 import { doSignInAnonymously } from '../../../firebase/auth'
+import backgroundImage from '../../../assets/img/backgound2.jpg'
 
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -44,8 +45,8 @@ const Login = () => {
             {userLoggedIn && (<Navigate to={'/brain-bright-ts'} replace={true} />)}
             <Title/>
 
-            <Card sx={{ width: 300, mt: 20, p: 5 }}>
-                <CardContent>
+            <Card sx={{ width: 300, mt: 20, p: 5, backgroundImage: `url(${backgroundImage})`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }}>
+                <CardContent className='glass-morphism'>
                   <Box>
                     <Typography sx={{ fontWeight: 'bold', fontSize: 18, p: 1 }}>
                             Welcome Back
@@ -90,7 +91,7 @@ const Login = () => {
                         </div>
                     </form>
                     <Typography sx={{mt: 2}} >Don't have an account? <Link to={'/register'}>Register</Link></Typography>
-                    <Button sx={{mt: 2, fontSize: 13}} onClick={doSignInAnonymously}> Continue as Guest</Button>
+                    <Button sx={{mt: 2, fontSize: 13}} onClick={doSignInAnonymously} variant='contained' color='secondary'> Continue as Guest</Button>
                   </Box>
                 </CardContent>
             </Card>

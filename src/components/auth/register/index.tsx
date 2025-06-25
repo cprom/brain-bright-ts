@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Navigate, Link } from 'react-router-dom'
 import { useAuth } from '../../../contexts/authContext'
 import { doCreateUserWithEmailAndPassword } from '../../../firebase/auth'
+import { doSignInAnonymously } from '../../../firebase/auth'
 import Grid from '@mui/material/Grid2';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -10,6 +11,7 @@ import { TextField, Typography } from '@mui/material';
 import Button from '@mui/material/Button';
 import Title from '../../../components/title'
 import Stack from '@mui/material/Stack';
+import backgroundImage from '../../../assets/img/backgound2.jpg'
 
 const Register = () => {
 
@@ -40,8 +42,8 @@ const Register = () => {
             <Stack spacing={5}>
             {userLoggedIn && (<Navigate to={'/brain-bright-ts/home'} replace={true} />)}
         <Title />
-            <Card sx={{ width: 300, mt: 20, p: 5 }}>
-            <CardContent>
+            <Card sx={{ width: 300, mt: 20, p: 5, backgroundImage: `url(${backgroundImage})`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }}>
+            <CardContent className='glass-morphism'>
                 <Box>
             <main >
                 <div>
@@ -110,6 +112,8 @@ const Register = () => {
                     </form>
                 </div>
             </main>
+            <Button sx={{mt: 2, fontSize: 13}} onClick={doSignInAnonymously} variant='contained' color='secondary'> Continue as Guest</Button>
+
             </Box>
             </CardContent>
             </Card>
