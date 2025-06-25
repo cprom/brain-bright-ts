@@ -23,6 +23,9 @@ import MultiplicationTables from "./Pages/math/multiplication/multiplication-tab
 import DivisionTables from "./Pages/math/division/division-table";
 import { AuthProvider } from "./contexts/authContext";
 import Login from "./components/auth/login"
+import Alphabet from "./Pages/reading/alphabet";
+import Words from "./Pages/reading/words";
+import Sentences from "./Pages/reading/sentences";
 
 const theme = createTheme({
   palette: {
@@ -63,6 +66,9 @@ function App() {
             <Route path="/register" element={<Register/>}/>
             <Route path="brain-bright-ts/math" element={<Math/>}/>
             <Route path="brain-bright-ts/reading" element={<Reading/>}/>
+            <Route path="brain-bright-ts/reading/alphabet" element={<Alphabet/>}/>
+            <Route path="brain-bright-ts/reading/words" element={<Words/>}/>
+            <Route path="brain-bright-ts/reading/sentences" element={<Sentences/>}/>
             <Route path="brain-bright-ts/writing" element={<Writing/>}/>
             <Route path="brain-bright-ts/math/counting" element={<Counting/>}/>
             <Route path="brain-bright-ts/math/addition" element={<Addition/>}/>

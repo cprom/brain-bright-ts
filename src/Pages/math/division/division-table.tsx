@@ -37,8 +37,6 @@ type divisionObject = {
  
     // const problems = generateMultipleDivisionProblems(10,1,10)
     const problems = divisionProblems(1)
-    console.log(problems)
-
     const DivisionTableProblems = () => {
     const [items, setItems] = useState([...problems]);
     const [selectedBtn, setSelectedBtn] = useState(-1);

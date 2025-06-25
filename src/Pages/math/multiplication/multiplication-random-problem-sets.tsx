@@ -7,6 +7,7 @@ import '../../../App.css'
 import { Navigate } from 'react-router-dom'
 
 import { useAuth } from '../../../contexts/authContext'
+import ScratchPad from '../../../components/scratch-pad/scratch-pad';
     
 
     const problems = generateMultipleMultiplicationProblems(10,1,10)
@@ -127,6 +128,7 @@ import { useAuth } from '../../../contexts/authContext'
                                 </div>                                   
 
                                 <Button onClick={checkAnswer}  value={`${problem.answer}_${problem.id}`} id={`check-btn-${problem.id}`} variant='contained' size='large' sx={{height:98.66, ml: '10px' }}>Check</Button>
+                                <ScratchPad />
                             </Grid2>
                         </Paper> 
                         )) 
