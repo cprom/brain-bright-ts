@@ -4,8 +4,13 @@ import { auth } from "../../firebase/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 
 
+interface AuthContextValue {
+  userLoggedIn: boolean
+}
 
-const AuthContext = React.createContext();
+const AuthContext = React.createContext<AuthContextValue>({
+  userLoggedIn: false
+});
 
 export function useAuth() {
   return useContext(AuthContext);
