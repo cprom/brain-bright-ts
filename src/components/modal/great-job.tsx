@@ -15,7 +15,7 @@ const GreatJob = ({count}: GreatJobProps) => {
     }
 
     useEffect(() => {
-        if(count === 10){
+        if(count === 10 || count === 12){
             window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
         }
     }, [count])
@@ -35,7 +35,7 @@ const GreatJob = ({count}: GreatJobProps) => {
             <FontAwesomeIcon icon={faTrophy} style={{color: "#FFD43B", fontSize: 100, marginTop: -70, padding: 0}} />
             </div>
             <Typography variant="h5">Great Job!</Typography>
-            <Typography variant="h6">You got all 10 correct.</Typography>
+            <Typography variant="h6">You got all {count} correct.</Typography>
             <Typography variant="h6">Keep going.</Typography>
         </div>
         <Button variant="contained" sx={{mt: 35}} onClick={handleCloseCard}>Close</Button>

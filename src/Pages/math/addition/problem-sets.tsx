@@ -7,8 +7,6 @@ import  ScratchPad  from '../../../components/scratch-pad/scratch-pad';
 import GreatJob from '../../../components/modal/great-job';
 
 
-    
-
     const problems = generateMultipleAdditionProblems(10,1,10)
 
     const CreateAdditionProblems = () => {
@@ -65,7 +63,6 @@ import GreatJob from '../../../components/modal/great-job';
                 const correct = document.getElementById(`check-btn-${item.id}`)
                 if(correct){
                     correct.innerText = 'Correct';
-                    
                     setCorrectAnswerCounter(prevCount => prevCount + 1);
                 }
                 const btn_correct = document.getElementById(`check-btn-${item.id}`)
@@ -112,7 +109,7 @@ import GreatJob from '../../../components/modal/great-job';
                 <div className='center-container'><GreatJob count={correctAnswerCounter} /></div>
                 :
                 ""
-        }
+                }
                 <Box>     
                     {
                         items.map((problem) => (
