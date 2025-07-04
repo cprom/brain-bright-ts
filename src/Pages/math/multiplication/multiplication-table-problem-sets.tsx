@@ -3,6 +3,7 @@ import { Box, Button,Container, Paper,Stack,TextField, Typography } from '@mui/m
 import Grid2 from '@mui/material/Grid2';
 import '../../../App.css'
 import ScratchPad from '../../../components/scratch-pad/scratch-pad';
+import GreatJob from '../../../components/modal/great-job';
 
 
 // generate and array of objects use to build multiplication problems without remainders 
@@ -36,6 +37,7 @@ type multiplicationObject = {
     const MultiplicationTableProblems = () => {
     const [items, setItems] = useState([...problems]);
     const [selectedBtn, setSelectedBtn] = useState(-1);
+    const [correctAnswerCounter, setCorrectAnswerCounter] = useState(0);
 
     const handleInputChange = (id: number, event: React.ChangeEvent<any>) => {
         const newItems = items.map(item => {
@@ -81,6 +83,7 @@ type multiplicationObject = {
                 const correct = document.getElementById(`check-btn-${item.id}`)
                 if(correct){
                     correct.innerText = 'Correct'
+                    setCorrectAnswerCounter(prevCount => prevCount + 1);
                 }
                 const btn_correct = document.getElementById(`check-btn-${item.id}`)
                 if(btn_correct){
@@ -121,6 +124,13 @@ type multiplicationObject = {
                     <Button id='level-btn-12' variant='contained' sx={{fontSize: 20, fontWeight: 'bold', margin: .5}} value='12' color={selectedBtn === 12 ? "secondary" : "primary"} onClick={chooseLevel}>12</Button>
                    
                 </Box>
+                {
+                correctAnswerCounter == 12
+                ? 
+                <div className='center-container'><GreatJob count={correctAnswerCounter} /></div>
+                :
+                ""
+                }
                 <Box>     
                     {
                         items.map((problem) => (

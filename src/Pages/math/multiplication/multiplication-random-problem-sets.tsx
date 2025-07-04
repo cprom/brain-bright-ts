@@ -4,15 +4,14 @@ import Grid2 from '@mui/material/Grid2';
 import { generateMultipleMultiplicationProblems } from '../scripts/generateProblems'
 import '../../../App.css'
 import ScratchPad from '../../../components/scratch-pad/scratch-pad';
-
-
-    
+import GreatJob from '../../../components/modal/great-job';
 
     const problems = generateMultipleMultiplicationProblems(10,1,10)
 
     const CreateRandomMultiplicationProblems = () => {
     const [items, setItems] = useState([...problems]);
     const [selectedBtn, setSelectedBtn] = useState(-1);
+    const [correctAnswerCounter, setCorrectAnswerCounter] = useState(0);
 
     const handleInputChange = (id: number, event: React.ChangeEvent<any>) => {
         const newItems = items.map(item => {
@@ -25,6 +24,7 @@ import ScratchPad from '../../../components/scratch-pad/scratch-pad';
       };
 
       const chooseLevel = ( event: React.ChangeEvent<any>) => {
+        setCorrectAnswerCounter(0);
         const newProblems = generateMultipleMultiplicationProblems(10,1,event.target.value)
           setItems([...newProblems]);
           const buttonId = event.target.id.split('-')
@@ -61,6 +61,7 @@ import ScratchPad from '../../../components/scratch-pad/scratch-pad';
                 const correct = document.getElementById(`check-btn-${item.id}`)
                 if(correct){
                     correct.innerText = 'Correct'
+                    setCorrectAnswerCounter(prevCount => prevCount + 1);
                 }
                 const btn_correct = document.getElementById(`check-btn-${item.id}`)
                 if(btn_correct){
@@ -80,7 +81,7 @@ import ScratchPad from '../../../components/scratch-pad/scratch-pad';
             }
         })
     }
-
+    
         return (
             <>
                 <Container sx={{minWidth: '400px', m: 0}}>
@@ -99,6 +100,13 @@ import ScratchPad from '../../../components/scratch-pad/scratch-pad';
                     <Button id='level-btn-10' variant='contained' sx={{fontSize: 20, fontWeight: 'bold', margin: .5}} value='100' color={selectedBtn === 10 ? "secondary" : "primary"} onClick={chooseLevel}>10</Button>
                    
                 </Box>
+                {
+                correctAnswerCounter == 10
+                ? 
+                <div className='center-container'><GreatJob count={correctAnswerCounter} /></div>
+                :
+                ""
+                }
                 <Box>     
                     {
                         items.map((problem) => (
