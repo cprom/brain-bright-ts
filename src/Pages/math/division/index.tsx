@@ -24,7 +24,7 @@ const subjects = [
     },
     {
         id: 3,
-        name: "Division Tables",
+        name: "Division Tables Practice",
         description: "Practice the Division Tables.",
         path: '#/math/division/table',
         img: divisionTable
@@ -70,7 +70,7 @@ const Division = () => {
                 ) )
                }  
             </Grid>
-    </Container>
+        </Container>
     )
 }
 

@@ -15,10 +15,10 @@ const GreatJob = ({count}: GreatJobProps) => {
     }
 
     useEffect(() => {
-        if(count === 10 || count === 12){
+        if(open){
             window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
         }
-    }, [count])
+    }, [open])
     
 
   return (
