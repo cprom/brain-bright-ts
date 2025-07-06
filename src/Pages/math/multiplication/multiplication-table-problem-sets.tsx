@@ -31,8 +31,6 @@ type multiplicationObject = {
   return multiplicationArray;
   }
 
- 
-    // const problems = generateMultiplemultiplicationProblems(10,1,10)
     const problems = multiplicationProblems(1)
     const MultiplicationTableProblems = () => {
     const [items, setItems] = useState([...problems]);
@@ -50,6 +48,7 @@ type multiplicationObject = {
       };
 
       const chooseLevel = ( event: React.ChangeEvent<any>) => {
+        setCorrectAnswerCounter(0);
         const newProblems = multiplicationProblems(event.target.value)
           setItems([...newProblems]);
           const buttonId = event.target.id.split('-')
