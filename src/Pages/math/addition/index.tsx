@@ -17,6 +17,7 @@ const subjects = [
         img: addition
     }
 ]
+
 const Addition = () => {
 
     return (

@@ -17,6 +17,7 @@ import Counting from "./Pages/math/counting/";
 import Addition from "./Pages/math/addition/";
 import AdditionRandomProblemSets from "./Pages/math/addition/addition-random-problem-sets";
 import Subtraction from "./Pages/math/subtraction/";
+import SubtractionRandomProblemSets from "./Pages/math/subtraction/subtraction-random-problem-sets";
 import Multiplication from "./Pages/math/multiplication/";
 import MultiplicationRandomProblemSets from "./Pages/math/multiplication/multiplication-random-problem-sets";
 import Division from "./Pages/math/division/";
@@ -26,6 +27,7 @@ import DivisionTableProblemSets from "./Pages/math/division/division-table-probl
 import DivisionRandomProblemSets from "./Pages/math/division/division-random-problem-sets";
 import DivisionTables from "./Pages/math/division/division-table";
 import AdditionTableProblemSets from "./Pages/math/addition/addition-table-problem-sets";
+import SubtractionTableProblemSets from "./Pages/math/subtraction/subtraction-table-problem-sets";
 
 const theme = createTheme({
   palette: {
@@ -69,6 +71,8 @@ function App() {
             <Route path="/math/addition/practice" element={<AdditionRandomProblemSets/>}/>
             <Route path="/math/addition/table/practice" element={<AdditionTableProblemSets/>}/>
             <Route path="/math/subtraction" element={<Subtraction/>}/>
+            <Route path="/math/subtraction/practice" element={<SubtractionRandomProblemSets/>}/>
+            <Route path="math/subtraction/table/practice" element={<SubtractionTableProblemSets/>}/>
             <Route path="/math/multiplication" element={<Multiplication/>}/>
             <Route path="/math/multiplication/practice" element={<MultiplicationRandomProblemSets/>}/>
             <Route path="/math/multiplication/table" element={<MultiplicationTableProblemSets/>}/>
