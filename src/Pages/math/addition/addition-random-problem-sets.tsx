@@ -143,22 +143,22 @@ import GreatJob from '../../../components/modal/great-job';
                         </Paper> 
                         )) 
                     }
-                
                 </Box>
-                </Container>
-               
+                </Container> 
             </>
         )
 
 }
 
-const ProblemSets = () => {
+const AdditionRandomProblemSets = () => {
     return (
-    <div>
-        <CreateAdditionProblems/>
-    </div>
-
+    <Container sx={{textAlign: 'center'}}>
+        <Box  style={{justifyItems: 'center'}} sx={{mt: 12}}>
+            <Typography>Random Problems</Typography>
+            <CreateAdditionProblems/>
+        </Box>
+    </Container>
     )
 }
 
-export default ProblemSets
+export default AdditionRandomProblemSets
