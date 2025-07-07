@@ -1,26 +1,24 @@
-import { Container } from '@mui/material';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
+import { Box, Container } from '@mui/material';
 import Typography from '@mui/material/Typography';
+import kidsBackgroundImage3D from '../../assets/img/kids_in_a_circle.png'
 
 const Home = () => {
 
 
     return (
         <Container sx={{textAlign: 'center'}}>
-            <Card sx={{ mt: 10, p: 5, minHeight: 300 }}>
-                <CardContent>
-                    <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 50 }}>
-                    Welcome to Brain Bright.
+            <Box sx={{ mt: 10, p: 5, minHeight: 300 }}   style={{
+                backgroundImage: `url(${kidsBackgroundImage3D})`,
+                backgroundSize: "cover",
+                height: "100vh",
+                color: "#f5f5f5",
+                backgroundPosition: 'center'}}>
+                <div style={{marginBottom: 100}}>
+                    <Typography className='outline-letter' gutterBottom sx={{ color: '#63E6bE', fontSize: 70, fontWeight: 'bolder'}}>
+                    Welcome to Brain Bright.  Learn, Grow, Have Fun.
                     </Typography>
-                    <Typography sx={{ color: '#B197FC', fontSize: 50 }}>
-                        Learn
-                    </Typography>
-                    <Typography sx={{ color: '#63E6bE', fontSize: 50 }}>
-                        Grow
-                    </Typography>
-                </CardContent>
-                </Card>
+                </div>
+                </Box>
         </Container>
     )
 }

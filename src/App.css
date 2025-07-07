@@ -7,6 +7,10 @@ background-color: #63E6bE;
 transition: .5s;
 }
 
+.outline-letter{
+  -webkit-text-stroke: 3px #000000;
+}
+
 .btn-initial {
     display: inline-block;
     background-color: #B197FC;
