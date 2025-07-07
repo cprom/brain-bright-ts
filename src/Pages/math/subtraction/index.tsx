@@ -23,7 +23,7 @@ const Subtraction = () => {
     return (
 <Container sx={{textAlign: 'center'}}>
             <Box sx={{p:5, mt: 5}}>
-            <Typography sx={{fontSize: '2rem', fontWeight: 'bold'}}>Division</Typography>
+            <Typography sx={{fontSize: '2rem', fontWeight: 'bold'}}>Subtraction</Typography>
             </Box>
             <Grid2
             container
