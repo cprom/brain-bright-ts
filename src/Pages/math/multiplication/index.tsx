@@ -11,7 +11,7 @@ import multiplication from '../../../assets/img/multiplication.jpg'
 
         {
             id: 1,
-            name: "Learn Multiplication Tables",
+            name: "Practice Multiplication Tables",
             description: "Tables With Answers.",
             path: '#/math/multiplication/tables',
             img: multiplication
@@ -66,7 +66,7 @@ import multiplication from '../../../assets/img/multiplication.jpg'
                             </Typography>
                         </CardContent>
                         <CardActions>
-                        <Button className='button-hover-green' variant='contained' size='large' color="primary" href={subject.path} sx={{fontSize: '1rem'}} fullWidth >Start Learning</Button>
+                        <Button className='button-hover-green' variant='contained' size='large' color="primary" href={subject.path} sx={{fontSize: '1rem'}} fullWidth >Start</Button>
                         </CardActions>
                     </Card>
                     ) )

@@ -51,7 +51,7 @@ const Addition = () => {
                         </Typography>
                     </CardContent>
                     <CardActions>
-                    <Button className='button-hover-green' variant='contained' size='large' color="primary" href={subject.path} sx={{fontSize: '1rem'}} fullWidth >Start Learning</Button>
+                    <Button className='button-hover-green' variant='contained' size='large' color="primary" href={subject.path} sx={{fontSize: '1rem'}} fullWidth >Start</Button>
                     </CardActions>
                 </Card>
                 ) )

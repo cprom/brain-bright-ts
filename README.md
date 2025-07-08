@@ -3,14 +3,14 @@
 
 **Brain Bright** is a web-based educational platform designed to help children from **Kindergarten through 5th Grade** build foundational skills in **reading, writing**, and **basic math** (addition, subtraction, multiplication, and division).
 
-This project was inspired by my 5-year-old daughter, and aims to support young learners in a fun, interactive, and accessible way.
+This project was inspired by my 5-year-old daughter, and aims to support young Practiceers in a fun, interactive, and accessible way.
 
 ## 🎯 Features
 
 - ✏️ **Early Literacy Activities**: Letter tracing, phonics, and word recognition
 - ➕ **Basic Math Skills**: Covers addition, subtraction, multiplication, and division
 - 🧩 **Interactive Exercises**: Games and practice modules designed to hold kids’ attention
-- 🎨 **Kid-Friendly UI**: Simple, colorful interface ideal for young learners
+- 🎨 **Kid-Friendly UI**: Simple, colorful interface ideal for young Practiceers
 
 ## 🛠️ Tech Stack
 
@@ -69,7 +69,7 @@ Contributions are welcome! Whether it's adding features, fixing bugs, or improvi
 This project is open source and available under the MIT License.
 
 ## 👨‍👧 A Personal Note
-This app was built with love for my daughter and others like her who are just beginning their learning journey. I hope it brings as much joy to you and your children as it did to us during development. 💖
+This app was built with love for my daughter and others like her who are just beginning their Practiceing journey. I hope it brings as much joy to you and your children as it did to us during development. 💖
 
 # React + TypeScript + Vite
 

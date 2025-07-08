@@ -7,21 +7,21 @@ const subjects = [
     {
         id: 1,
         name: "Alphabet",
-        description: 'Learn the Alphabet',
+        description: 'Practice the Alphabet',
         path: '#/reading/alphabet',
         img: alphabet
     },
     {
         id: 2,
         name: "Words",
-        description: 'Learn Basic Words',
+        description: 'Practice Basic Words',
         path: '#/reading/words',
         img: words
     },
     {
         id: 3,
         name: "Sentences",
-        description: "Learn to Read Sentences",
+        description: "Practice reading Sentences",
         path: '#/reading/sentences',
         img: openbook
     }
@@ -60,7 +60,7 @@ const Reading = () => {
                     </Typography>
                 </CardContent>
                 <CardActions>
-                <Button className='button-hover-green' variant='contained' size='large' color="primary" href={subject.path} sx={{fontSize: '1rem'}} fullWidth >Start Learning</Button>
+                <Button className='button-hover-green' variant='contained' size='large' color="primary" href={subject.path} sx={{fontSize: '1rem'}} fullWidth >Start</Button>
                 </CardActions>
             </Card>
             ) )

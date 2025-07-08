@@ -9,7 +9,7 @@ const Home = () => {
         <>
             <div style={{marginTop: 100, textAlign: 'center', padding: 5}}>
                 <Typography className='outline-letter' gutterBottom sx={{ color: '#B197FC', fontSize: 50, fontWeight: 'bolder'}}>
-                Welcome to <span style={{color: '#FFD43B'}}>Brain</span> <span style={{color:'#63E6bE'}}>Bright</span>.  <span style={{color:'#FFA047'}}>Learn</span>, <span style={{color:"#FF6161"}}>Grow</span>, Have <span style={{color: '#74C0FC'}}>Fun</span>.
+                Welcome to <span style={{color: '#FFD43B'}}>Brain</span> <span style={{color:'#63E6bE'}}>Bright</span>.  <span style={{color:'#FFA047'}}>Practice</span>, <span style={{color:"#FF6161"}}>Grow</span>, Have <span style={{color: '#74C0FC'}}>Fun</span>.
                 </Typography>
             </div>
             <Box sx={{ minHeight: 300, maxWidth: '1000px', textAlign: 'center', margin: 'auto' }}   style={{

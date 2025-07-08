@@ -14,7 +14,7 @@ const subjects = [
     {
         id: 1,
         name: "Counting",
-        description: 'Learn to Count',
+        description: 'Practice Counting',
         path: '#/math/counting',
         img: counting
 
@@ -22,7 +22,7 @@ const subjects = [
     {
         id: 2,
         name: "Addition",
-        description: 'Learn to Add',
+        description: 'Practice Addition',
         path: '#/math/addition',
         img: addition
 
@@ -30,7 +30,7 @@ const subjects = [
     {
         id: 3,
         name: "Subtraction",
-        description: 'Learn to Subtract',
+        description: 'Practice Subtraction',
         path: '#/math/subtraction',
         img: subtraction
 
@@ -38,7 +38,7 @@ const subjects = [
     {
         id: 4,
         name: "Multiplication",
-        description: 'Learn to Multiply',
+        description: 'Practice Multiplication',
         path: '#/math/multiplication',
         img: multiplication
 
@@ -46,7 +46,7 @@ const subjects = [
     {
         id: 5,
         name: "Division",
-        description: 'Learn to Divide',
+        description: 'Practice Division',
         path: '#/math/division',
         img: division
 
@@ -86,7 +86,7 @@ const Math = () => {
                         </Typography>
                     </CardContent>
                     <CardActions>
-                    <Button className='button-hover-green' variant='contained' size='large' color="primary" href={subject.path} sx={{fontSize: '1rem'}} fullWidth >Start Learning</Button>
+                    <Button className='button-hover-green' variant='contained' size='large' color="primary" href={subject.path} sx={{fontSize: '1rem'}} fullWidth >Start</Button>
                     </CardActions>
                 </Card>
                 ) )
