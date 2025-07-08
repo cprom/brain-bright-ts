@@ -14,7 +14,7 @@ const Home = () => {
             </div>
             <Box sx={{ minHeight: 300, maxWidth: '1000px', textAlign: 'center', margin: 'auto' }}   style={{
                 backgroundImage: `url(${kidsBackgroundImage3D})`,
-                backgroundSize: "contained",
+                backgroundSize: "cover",
                 height: "80vh",
                 color: "#f5f5f5",
                 backgroundPosition: 'center'}}>
