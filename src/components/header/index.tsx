@@ -167,9 +167,11 @@ const Header = () => {
                     <Button
                         key={page.id}
                         onClick={handleCloseNavMenu}
-                        sx={{ m: 1, color: 'white', display: 'block', backgroundColor: '#74C0FC', fontSize: 20}}
+                        sx={{ m: 1, color: 'white', display: 'block', fontSize: 20}}
                         href={page.path}
-                        variant='contained'
+                        variant='text'
+                        color='success'
+                        className='btn-hover'
                     >
                         {page.subject}
                     </Button>
