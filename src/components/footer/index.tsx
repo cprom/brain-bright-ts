@@ -1,5 +1,7 @@
 import { Box, Container, IconButton} from '@mui/material'
 import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+
 
 const Footer = () => {
 
@@ -9,15 +11,19 @@ const Footer = () => {
             <Box
             sx={{
                 display: 'flex',
-                flexDirection: 'column',
+                flexDirection: 'row',
                 alignItems: 'center',
+                justifyContent: 'center',
                 '& > *': {
                 m: 1,p: 1
                 },
             }}
             >
              <IconButton href='https://github.com/cprom/brain-bright-ts' target='blank'>
-                <GitHubIcon sx={{fontSize: 40, color:'#74C0FC' }}/>
+                <GitHubIcon sx={{fontSize: 40, color:'#B197FC' }}/>
+             </IconButton>
+             <IconButton href='https://www.linkedin.com/in/chenprom' target='blank'>
+                <LinkedInIcon sx={{fontSize: 40, color:'#B197FC'}}/>
              </IconButton>
             </Box>
         </Box>
