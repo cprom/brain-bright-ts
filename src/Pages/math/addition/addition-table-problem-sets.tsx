@@ -36,7 +36,7 @@ const problems = generateAdditionTableProblems(1);
 const AddtionTableProblems = () => {
 
         const [items, setItems] = useState([...problems]);
-        const [selectedBtn, setSelectedBtn] = useState(-1);
+        const [selectedBtn, setSelectedBtn] = useState(1);
         const [correctAnswerCounter, setCorrectAnswerCounter] = useState(0);
     
         const handleInputChange = (id: number, event: React.ChangeEvent<any>) => {
@@ -70,7 +70,7 @@ const AddtionTableProblems = () => {
                 checkButtonArr.forEach(button => {
                     const selectedBtn = document.getElementById(button);
                     if(selectedBtn){
-                        selectedBtn.innerText = 'Check'
+                        selectedBtn.innerText = 'CHECK'
                     }
                 }) 
             }
@@ -162,7 +162,7 @@ const AddtionTableProblems = () => {
                                 />
                                 </div>                                   
 
-                                <Button onClick={checkAnswer}  value={`${problem.answer}_${problem.id}`} id={`check-btn-${problem.id}`} variant='contained' size='large' sx={{height:98.66, ml: '10px' }}>Check</Button>
+                                <Button onClick={checkAnswer}  value={`${problem.answer}_${problem.id}`} id={`check-btn-${problem.id}`} variant='contained' size='large' sx={{height:98.66, ml: '10px'}}>Check</Button>
                                 <ScratchPad />
                             </Grid2>
                         </Paper> 

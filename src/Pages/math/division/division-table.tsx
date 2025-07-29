@@ -34,7 +34,7 @@ type divisionObject = {
     const problems = divisionProblems(1)
     const DivisionTableProblems = () => {
     const [items, setItems] = useState([...problems]);
-    const [selectedBtn, setSelectedBtn] = useState(-1);
+    const [selectedBtn, setSelectedBtn] = useState(1);
 
 
       const chooseLevel = ( event: React.ChangeEvent<any>) => {

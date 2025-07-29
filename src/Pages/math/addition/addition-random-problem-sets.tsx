@@ -11,7 +11,7 @@ import GreatJob from '../../../components/modal/great-job';
 
     const CreateAdditionProblems = () => {
     const [items, setItems] = useState([...problems]);
-    const [selectedBtn, setSelectedBtn] = useState(-1);
+    const [selectedBtn, setSelectedBtn] = useState(1);
     const [correctAnswerCounter, setCorrectAnswerCounter] = useState(0);
 
     const handleInputChange = (id: number, event: React.ChangeEvent<any>) => {

@@ -34,7 +34,7 @@ type multiplicationObject = {
     const problems = multiplicationProblems(1)
     const MultiplicationTableProblems = () => {
     const [items, setItems] = useState([...problems]);
-    const [selectedBtn, setSelectedBtn] = useState(-1);
+    const [selectedBtn, setSelectedBtn] = useState(1);
 
 
       const chooseLevel = ( event: React.ChangeEvent<any>) => {
