@@ -92,6 +92,7 @@ transition: .5s;
 
   body {
     background: #74C0FC;
+    overflow: auto;
   }
 
   .glass-morphism{
@@ -103,6 +104,8 @@ transition: .5s;
     border: 1px solid rgba(255, 255, 255, 0.3);
 
   }
+
+
 /* ==================== */
 /* Award Card*/
 /* ==================== */
