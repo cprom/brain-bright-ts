@@ -62,14 +62,8 @@ npm run dev
 🧮 Adaptive difficulty based on user progress
 
 
-## 🤝 Contributing
-Contributions are welcome! Whether it's adding features, fixing bugs, or improving the UI — feel free to submit a PR or open an issue.
-
-## 📄 License
-This project is open source and available under the MIT License.
-
 ## 👨‍👧 A Personal Note
-This app was built with love for my daughter and others like her who are just beginning their Practiceing journey. I hope it brings as much joy to you and your children as it did to us during development. 💖
+This app was built with love for my daughter and others like her who are just beginning their Learning journey. I hope it brings as much joy to you and your children as it did to us during development. 💖
 
 # React + TypeScript + Vite
 

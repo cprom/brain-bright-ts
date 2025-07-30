@@ -20,10 +20,10 @@ const Footer = () => {
             }}
             >
              <IconButton href='https://github.com/cprom/brain-bright-ts' target='blank'>
-                <GitHubIcon sx={{fontSize: 40, color:'#B197FC' }}/>
+                <GitHubIcon sx={{fontSize: 40, color:'#ffff' }}/>
              </IconButton>
              <IconButton href='https://www.linkedin.com/in/chenprom' target='blank'>
-                <LinkedInIcon sx={{fontSize: 40, color:'#B197FC'}}/>
+                <LinkedInIcon sx={{fontSize: 40, color:'#ffff'}}/>
              </IconButton>
             </Box>
         </Box>

@@ -9,6 +9,7 @@ import subtraction from '../../assets/img/subtraction.jpg'
 import multiplication from '../../assets/img/multiplication.jpg'
 import division from '../../assets/img/division.jpg'
 import counting from '../../assets/img/counting.jpg'
+import little_boy_pointing from '../../assets/img/little_boy_pointing.png'
 
 const subjects = [
     {
@@ -92,6 +93,7 @@ const Math = () => {
                 ) )
                }  
             </Grid>
+            <img src={little_boy_pointing} style={{maxWidth: '100%', padding: 0, margin: 0, width: '20%'}} className=''/>
     </Container>
     )
 }
