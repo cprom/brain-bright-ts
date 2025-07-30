@@ -130,7 +130,13 @@ type multiplicationObject = {
                 :
                 ""
                 }
-                <Box>     
+                <Box sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center', 
+                        alignItems: 'center',     
+                        width: '100%',            
+                        }}>     
                     {
                         items.map((problem) => (
                         <Paper key={problem.id} elevation={5} sx={{p: 2, m: 2}}>
