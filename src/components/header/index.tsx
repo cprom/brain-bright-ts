@@ -8,11 +8,10 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBrain, faLightbulb } from '@fortawesome/free-solid-svg-icons';
+import { faBrain, faLightbulb, faShieldDog } from '@fortawesome/free-solid-svg-icons';
 import CalculateIcon from '@mui/icons-material/Calculate';
 
 const pages = [
@@ -180,7 +179,7 @@ const Header = () => {
                 <Box sx={{ flexGrow: 0 }}>
                     <Tooltip title="Open settings">
                     <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                        <Avatar alt="R" src="" />
+                        <FontAwesomeIcon icon={faShieldDog} style={{color: '#747474ff', fontSize: '35px'}}/>
                     </IconButton>
                     </Tooltip>
                 <Menu
@@ -200,7 +199,7 @@ const Header = () => {
                     onClose={handleCloseUserMenu}
                     >
                     
-                        {/* <MenuItem onClick={handleCloseUserMenu}> */}
+                        <MenuItem onClick={handleCloseUserMenu}>
                         {/* <Button
                             className='button-hover-green' 
                             variant="contained" 
@@ -208,7 +207,8 @@ const Header = () => {
                             onClick={() => { doSignOut().then(() => { navigate('/login') }) }}>
                             Logout
                         </Button> */}
-                        {/* </MenuItem> */}
+                        Comming soon
+                        </MenuItem>
                 
                     </Menu>
                 </Box>
