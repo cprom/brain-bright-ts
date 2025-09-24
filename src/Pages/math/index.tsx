@@ -93,7 +93,7 @@ const Math = () => {
                 ) )
                }  
             </Grid>
-            <img src={little_boy_pointing} style={{maxWidth: '100%', padding: 0, margin: 0, width: '20%'}} className=''/>
+            <img src={little_boy_pointing} style={{maxWidth: '100%', padding: 0, margin: 0, width: '20%'}} alt='little boy pointing'/>
     </Container>
     )
 }
