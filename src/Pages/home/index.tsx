@@ -21,7 +21,7 @@ const Home = () => {
             <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
             <Grid2 container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} className='gradient' sx={{ borderRadius: 5, justifyContent: 'space-evenly', maxWidth: 1450}} >
                 <Grid2 size={{xs: 4, sm: 4, md: 8}}>
-                <ListItem><img src={kidsBackgroundImage3D} style={{maxWidth: '100%', height:'auto', borderRadius: '50%'}} className=''/></ListItem>
+                <ListItem><img src={kidsBackgroundImage3D} style={{maxWidth: '100%', height:'auto', borderRadius: '50%'}} alt='kids surrounding on a mobile device'/></ListItem>
                 </Grid2>
                 <Grid2  size={{xs: 4, sm: 4, md: 4 }} sx={{p: 2, width: '98vw'}} >
                     <ListItem   className='box-shadow'>
