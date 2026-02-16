@@ -17,7 +17,7 @@ const levels = [
     level: 1,
     title: "Level 1",
     color: red,
-    words: ["I", "a", "the", "is", "it", "in", "to", "we", "me", "my"],
+    words: ["be", "a", "the", "is", "it", "in", "to", "we", "me", "my"],
   },
   {
     level: 2,
@@ -98,6 +98,7 @@ const Words = () => {
         </Typography>
 
         <Typography sx={{ fontSize: "1.2rem", mt: 1 }}>
+           <Button></Button> 
           Choose a level, then click a word to hear it!
         </Typography>
       </Box>
