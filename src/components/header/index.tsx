@@ -207,7 +207,7 @@ const Header = () => {
                             onClick={() => { doSignOut().then(() => { navigate('/login') }) }}>
                             Logout
                         </Button> */}
-                        Comming soon
+                        Coming soon
                         </MenuItem>
                 
                     </Menu>
