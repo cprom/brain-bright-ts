@@ -31,17 +31,19 @@ const CountingRandomPractice = () => {
     }))
   );
 
-  const chooseLevel = (newLevel: number) => {
-    setLevel(newLevel);
-    const newProblems = Array.from({ length: 5 }, (_, i) => ({
-      id: i,
-      count: generateCountingNumbers(newLevel),
-      inputValue: "",
-      status: "initial",
-      highlightedIndex: -1,
-    }));
-    setProblems(newProblems);
-  };
+const chooseLevel = (newLevel: number) => {
+  setLevel(newLevel);
+
+  const newProblems: CountingProblem[] = Array.from({ length: 5 }, (_, i) => ({
+    id: i,
+    count: generateCountingNumbers(newLevel),
+    inputValue: "",
+    status: "initial" as const,
+    highlightedIndex: -1,
+  }));
+
+  setProblems(newProblems);
+};
 
   const handleInputChange = (id: number, value: string) => {
     setProblems((prev) =>
