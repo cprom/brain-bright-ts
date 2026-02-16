@@ -234,16 +234,6 @@ const handlePronounciationClick = (e: any) => {
     textToSpeech(e.target.value, 1.2)
 }
 
-// const textToSpeech = (letter: any, rate: number) => {
-//     const utterance = new SpeechSynthesisUtterance(letter)
-
-//     utterance.volume = 1; // From 0 to 1
-//     utterance.rate = rate;   // From 0.1 to 10
-//     utterance.pitch = 1;  // From 0 to 2
-//     utterance.lang = 'en-US'; // Set language
-
-//     window.speechSynthesis.speak(utterance);
-// }
 
 const AlphabetCard = () => {
     return (

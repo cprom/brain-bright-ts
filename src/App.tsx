@@ -14,6 +14,7 @@ import Writing from "./Pages/writing/";
 
 import Math from "./Pages/math/";
 import Counting from "./Pages/math/counting/";
+import CountingRandomPractice from "./Pages/math/counting/counting-random-practice";
 import Addition from "./Pages/math/addition/";
 import AdditionRandomProblemSets from "./Pages/math/addition/addition-random-problem-sets";
 import Subtraction from "./Pages/math/subtraction/";
@@ -67,6 +68,7 @@ function App() {
             <Route path="/reading/sentences" element={<Sentences/>}/>
             <Route path="/writing" element={<Writing/>}/>
             <Route path="/math/counting" element={<Counting/>}/>
+            <Route path="/math/counting/practice" element={<CountingRandomPractice/>}/>
             <Route path="/math/addition" element={<Addition/>}/>
             <Route path="/math/addition/practice" element={<AdditionRandomProblemSets/>}/>
             <Route path="/math/addition/table/practice" element={<AdditionTableProblemSets/>}/>
