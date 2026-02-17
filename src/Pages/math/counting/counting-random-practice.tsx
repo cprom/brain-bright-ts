@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Box, Button, Container, Paper, Stack, TextField, Typography } from "@mui/material";
 import Grid2 from "@mui/material/Grid2";
+import GreatJob from "../../../components/modal/great-job";
 
 const red = "#FF6161";
 const green = "#63E6bE";
@@ -16,11 +17,13 @@ interface CountingProblem {
   count: number;
   inputValue: string;
   status: "initial" | "correct" | "incorrect";
-  highlightedIndex: number; // index of object being counted
+  highlightedIndex: number; 
+  disabled: boolean;
 }
 
 const CountingRandomPractice = () => {
   const [level, setLevel] = useState(1);
+  const [correctAnswerCounter, setCorrectAnswerCounter] = useState(0);
   const [problems, setProblems] = useState<CountingProblem[]>(
     Array.from({ length: 5 }, (_, i) => ({
       id: i,
@@ -28,22 +31,25 @@ const CountingRandomPractice = () => {
       inputValue: "",
       status: "initial",
       highlightedIndex: -1,
+      disabled: false,
     }))
   );
 
 const chooseLevel = (newLevel: number) => {
   setLevel(newLevel);
-
   const newProblems: CountingProblem[] = Array.from({ length: 5 }, (_, i) => ({
     id: i,
     count: generateCountingNumbers(newLevel),
     inputValue: "",
     status: "initial" as const,
     highlightedIndex: -1,
+    disabled: false
   }));
-
+  
   setProblems(newProblems);
+  setCorrectAnswerCounter(0);
 };
+
 
   const handleInputChange = (id: number, value: string) => {
     setProblems((prev) =>
@@ -51,17 +57,26 @@ const chooseLevel = (newLevel: number) => {
     );
   };
 
-  const checkAnswer = (id: number) => {
-    setProblems((prev) =>
-      prev.map((p) => {
-        if (p.id === id) {
-          const isCorrect = parseInt(p.inputValue) === p.count;
-          return { ...p, status: isCorrect ? "correct" : "incorrect" };
+const checkAnswer = (id: number) => {
+  setProblems((prev) =>
+    prev.map((p) => {
+      if (p.id === id) {
+        const isCorrect = parseInt(p.inputValue) === p.count;
+
+        if (isCorrect && p.status !== "correct") {
+          setCorrectAnswerCounter((prevCount) => prevCount + 1);
         }
-        return p;
-      })
-    );
-  };
+
+        return {
+          ...p,
+          status: isCorrect ? "correct" : "incorrect",
+          disabled: isCorrect,
+        };
+      }
+      return p;
+    })
+  );
+};
 
   const getButtonColor = (status: "initial" | "correct" | "incorrect") => {
     switch (status) {
@@ -91,6 +106,13 @@ const chooseLevel = (newLevel: number) => {
           </Button>
         ))}
       </Box>
+        {
+                correctAnswerCounter == 5
+                ? 
+                <div className='center-container'><GreatJob count={correctAnswerCounter} /></div>
+                :
+                ""
+                }
 
     <Box sx={{
             display: 'flex',
@@ -130,9 +152,11 @@ const chooseLevel = (newLevel: number) => {
 
                 <Button
                   variant="contained"
+                  disabled={p.disabled}
+                  className={p.status === "correct" ? "btn-correct" : "btn-initial"}
                   color={getButtonColor(p.status)}
                   onClick={() => checkAnswer(p.id)}
-                  sx={{ mt: 1, width: "100%" }}
+                  sx={{ mt: 1 }}
                 >
                   {p.status === "initial"
                     ? "Check"

@@ -91,7 +91,8 @@ const AddtionTableProblems = () => {
                     }
                     const btn_correct = document.getElementById(`check-btn-${item.id}`)
                     if(btn_correct){
-                        btn_correct.setAttribute('class', 'btn-correct')                  
+                        btn_correct.setAttribute('class', 'btn-correct')
+                        btn_correct.setAttribute('disabled', 'true')                   
                     }
                 }
                 if(item.id == value[1] && item.answer !== parseInt(item.inputValue)){

@@ -68,6 +68,7 @@ import GreatJob from '../../../components/modal/great-job';
                 const btn_correct = document.getElementById(`check-btn-${item.id}`)
                 if(btn_correct){
                     btn_correct.setAttribute('class', 'btn-correct')                  
+                    btn_correct.setAttribute('disabled', 'true')                  
                 }
             }
             if(item.id == value[1] && item.answer !== parseInt(item.inputValue)){
@@ -143,7 +144,16 @@ import GreatJob from '../../../components/modal/great-job';
                                 />
                                 </div>                                   
 
-                                <Button onClick={checkAnswer}  value={`${problem.answer}_${problem.id}`} id={`check-btn-${problem.id}`} variant='contained' size='large' sx={{height:98.66, ml: '10px' }}>Check</Button>
+                                <Button
+                                onClick={checkAnswer}  
+                                value={`${problem.answer}_${problem.id}`} 
+                                id={`check-btn-${problem.id}`} 
+                                variant='contained' 
+                                size='large' 
+                                sx={{height:98.66, ml: '10px' }}
+                                >
+                                    Check
+                                </Button>
                                 <ScratchPad />
                             </Grid2>
                         </Paper> 
