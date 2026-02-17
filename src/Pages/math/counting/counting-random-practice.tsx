@@ -63,37 +63,6 @@ const chooseLevel = (newLevel: number) => {
     );
   };
 
-  // Highlight objects with audio counting
-//   const highlightCounting = (problemId: number) => {
-//     const problem = problems.find((p) => p.id === problemId);
-//     if (!problem) return;
-
-//     let index = 0;
-//     const interval = setInterval(() => {
-//       setProblems((prev) =>
-//         prev.map((p) =>
-//           p.id === problemId ? { ...p, highlightedIndex: index } : p
-//         )
-//       );
-
-//       // Speak the number (1,2,3...)
-//       if (index < problem.count) {
-//         const utterance = new SpeechSynthesisUtterance((index + 1).toString());
-//         utterance.rate = 0.8;
-//         utterance.lang = "en-US";
-//         window.speechSynthesis.speak(utterance);
-//       }
-
-//       index++;
-//       if (index > problem.count) {
-//         clearInterval(interval);
-//         setProblems((prev) =>
-//           prev.map((p) => (p.id === problemId ? { ...p, highlightedIndex: -1 } : p))
-//         );
-//       }
-//     }, 600); // 600ms per object
-//   };
-
   const getButtonColor = (status: "initial" | "correct" | "incorrect") => {
     switch (status) {
       case "correct": return "success";
@@ -109,7 +78,6 @@ const chooseLevel = (newLevel: number) => {
           Count the circles and enter the number in the box.
         </Typography>
 
-      {/* Level Buttons */}
       <Box sx={{ mb: 4 }}>
         {Array.from({ length: 10 }, (_, i) => i + 1).map((lvl) => (
           <Button
@@ -137,7 +105,7 @@ const chooseLevel = (newLevel: number) => {
           <Grid2 container spacing={2} display="flex" justifyContent="center" alignItems="center" textAlign='center' size="grow">
               <Stack spacing={2} alignItems="center">
                 {/* Display objects with highlighting */}
-                <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center", mb: 2 , maxWidth: 600}}>
+                <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center", mb: 2 , maxWidth: 600, width: {xs: "100%", sm:600}}}>
                   {Array.from({ length: p.count }, (_, i) => (
                     <Box
                       key={i}
@@ -153,17 +121,6 @@ const chooseLevel = (newLevel: number) => {
                   ))}
                 </Box>
 
-                {/* Hear & Highlight Button */}
-                {/* <Button
-                  variant="contained"
-                  color="secondary"
-                  onClick={() => highlightCounting(p.id)}
-                  sx={{ width: "100%" }}
-                >
-                  Hear & Count
-                </Button> */}
-
-                {/* Input */}
                 <TextField
                   type="number"
                   value={p.inputValue}
@@ -171,7 +128,6 @@ const chooseLevel = (newLevel: number) => {
                   sx={{ width: "80px", textAlign: "center" }}
                 />
 
-                {/* Check */}
                 <Button
                   variant="contained"
                   color={getButtonColor(p.status)}
