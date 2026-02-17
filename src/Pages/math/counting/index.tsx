@@ -2,15 +2,9 @@ import { Box,Button,Card,CardActions,CardContent,CardMedia,Container,Grid2,Typog
 import counting from '../../../assets/img/counting.jpg'
 
 const subjects = [
+
     {
         id: 1,
-        name: "Counting table Practice",
-        description: "Practice counting tables.",
-        path: '#/math/counting/table/practice',
-        img: counting
-    },
-    {
-        id: 2,
         name: "Counting Practice",
         description: "Practice random counting problems.",
         path: '#/math/counting/practice',
