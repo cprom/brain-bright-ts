@@ -127,7 +127,7 @@ const checkAnswer = (id: number) => {
           <Grid2 container spacing={2} display="flex" justifyContent="center" alignItems="center" textAlign='center' size="grow">
               <Stack spacing={2} alignItems="center">
                 {/* Display objects with highlighting */}
-                <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center", mb: 2 , maxWidth: 600, width: {xs: "100%", sm:600}}}>
+                <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center", mb: 2 , maxWidth: 600, width: {xs: "70vw", sm:600}}}>
                   {Array.from({ length: p.count }, (_, i) => (
                     <Box
                       key={i}
