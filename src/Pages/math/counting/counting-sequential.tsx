@@ -6,10 +6,18 @@ import GreatJob from "../../../components/modal/great-job";
 const red = "#FF6161";
 const green = "#63E6bE";
 
-// Generate a counting number based on level
-const generateCountingNumbers = (level: number) => {
-  const maxNumber = level * 5;
-  return Math.floor(Math.random() * maxNumber) + 1;
+
+const createSequentialProblems = (level: number): CountingProblem[] => {
+  const start = (level - 1) * 10 + 1; // Level 1 → 1, Level 2 → 11          // Level 1 → 10, Level 2 → 20
+
+  return Array.from({ length: 10 }, (_, i) => ({
+    id: i,
+    count: start + i, // First 5 numbers in that level range
+    inputValue: "",
+    status: "initial" as const,
+    highlightedIndex: -1,
+    disabled: false,
+  }));
 };
 
 interface CountingProblem {
@@ -21,35 +29,18 @@ interface CountingProblem {
   disabled: boolean;
 }
 
-const CountingRandomPractice = () => {
+const CountingSequential = () => {
   const [level, setLevel] = useState(1);
   const [correctAnswerCounter, setCorrectAnswerCounter] = useState(0);
-  const [problems, setProblems] = useState<CountingProblem[]>(
-    Array.from({ length: 5 }, (_, i) => ({
-      id: i,
-      count: generateCountingNumbers(1),
-      inputValue: "",
-      status: "initial",
-      highlightedIndex: -1,
-      disabled: false,
-    }))
-  );
+const [problems, setProblems] = useState<CountingProblem[]>(
+  createSequentialProblems(1)
+);
 
 const chooseLevel = (newLevel: number) => {
   setLevel(newLevel);
-  const newProblems: CountingProblem[] = Array.from({ length: 5 }, (_, i) => ({
-    id: i,
-    count: generateCountingNumbers(newLevel),
-    inputValue: "",
-    status: "initial" as const,
-    highlightedIndex: -1,
-    disabled: false
-  }));
-  
-  setProblems(newProblems);
+  setProblems(createSequentialProblems(newLevel));
   setCorrectAnswerCounter(0);
 };
-
 
   const handleInputChange = (id: number, value: string) => {
     setProblems((prev) =>
@@ -107,7 +98,7 @@ const checkAnswer = (id: number) => {
         ))}
       </Box>
         {
-                correctAnswerCounter == 5
+                correctAnswerCounter == 10
                 ? 
                 <div className='center-container'><GreatJob count={correctAnswerCounter} /></div>
                 :
@@ -139,7 +130,8 @@ const checkAnswer = (id: number) => {
                         m: 0.5,
                         transition: "background-color 0.3s",
                       }}
-                    />
+                    ></Box>
+                    
                   ))}
                 </Box>
 
@@ -173,4 +165,4 @@ const checkAnswer = (id: number) => {
   );
 };
 
-export default CountingRandomPractice
+export default CountingSequential

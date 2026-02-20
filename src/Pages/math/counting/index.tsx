@@ -3,8 +3,16 @@ import counting from '../../../assets/img/counting.jpg'
 
 const subjects = [
 
+
     {
         id: 1,
+        name: "Counting In Order",
+        description: "Practice counting.",
+        path: '#/math/counting/sequential',
+        img: counting
+    },
+    {
+        id: 2,
         name: "Counting Practice",
         description: "Practice random counting problems.",
         path: '#/math/counting/practice',
