@@ -29,6 +29,7 @@ import DivisionRandomProblemSets from "./Pages/math/division/division-random-pro
 import DivisionTables from "./Pages/math/division/division-table";
 import AdditionTableProblemSets from "./Pages/math/addition/addition-table-problem-sets";
 import SubtractionTableProblemSets from "./Pages/math/subtraction/subtraction-table-problem-sets";
+import CountingSequential from "./Pages/math/counting/counting-sequential";
 
 const theme = createTheme({
   palette: {
@@ -68,6 +69,7 @@ function App() {
             <Route path="/reading/sentences" element={<Sentences/>}/>
             <Route path="/writing" element={<Writing/>}/>
             <Route path="/math/counting" element={<Counting/>}/>
+            <Route path="/math/counting/sequential" element={<CountingSequential/>}/>
             <Route path="/math/counting/practice" element={<CountingRandomPractice/>}/>
             <Route path="/math/addition" element={<Addition/>}/>
             <Route path="/math/addition/practice" element={<AdditionRandomProblemSets/>}/>
